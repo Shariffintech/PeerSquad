@@ -28,6 +28,10 @@ const renderStrategy = (strategy) => {
 
 }
 
+// event handler
+const attachFormEvents = () => {
+    strategyForm.addEventListener('submit', createStrategy)
+}
 
 // node getter
 
@@ -44,8 +48,3 @@ const loadStrategies = async () => {
 
 // node setter
 
-// event handler
-
-document.addEventListener("DOMContentLoaded", function() {
-loadStrategies();
-});

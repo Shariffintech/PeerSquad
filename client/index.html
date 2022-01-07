@@ -3,67 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
     <title>Document</title>
 </head>
 <body>
-    <h1> Student Strategies </h1>
+    <div class="container is-max-widescreen">
+    <h1 class="title"> Student Strategies </h1>
     <!-- list all strategies from ruby on rails backend api -->
     <ul>
 
     </ul>
-    <h2> Please Submit your strategies for peer review </h2>
-    <h3> Create A New Strategy</h3>
+    
+    <h2 class="subtitle"> Please Submit your strategies for peer review </h2>
+    <h3 class="subtitle"> Create A New Strategy</h3>
 
     <section>
+        
         <form id="strategy-form" method="post">
-            <div>
+            <div class="field">
+                <div class="column is-one-third">
             <label for="name">Strategy Name:</label>
-            <input type="text" name="name" id="name">
+            <input class="input is-one-third" type="text" placeholder="Calm down counting" name="name" id="name">
+                </div>
             </div>
 
-            <div>
+            <div class="column is-three-fifths">
             <label for="description">Strategy Description:</label>
-            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <textarea class="textarea is-hovered I" placeholder="Count to 10 and ask child..." name="description" id="description"></textarea>
             </div>
+            <br>
+            <br>
 
             <div>
             <label for="tier">Tier</label>
+            <div class="select is-primary is-small">
             <select name="tier" id="tier">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
             </select>
             </div>
+            </div>
+            <br>
+        
 
-            <div>
+            <div class>
             <label for="category">Strategy Category:</label>
+            <div class="select is-primary is-small">
             <select name="category" id="category">
                 <option value="">Select a Category</option>
-                <option value="1">Academic</option>
-                <option value="2">Social</option>
-                <option value="3">Emotional</option>
-                <option value="4">Literacy</option>
-                <option value="5">Developmental</option>
+                <option value="Academic">Academic</option>
+                <option value="Social">Social</option>
+                <option value="Emotional">Emotional</option>
+                <option value="Literacy">Literacy</option>
+                <option value="Developmental">Developmental</option>
+               
             </select>
             </div>
-
-            <div>
-            <label for="reference">Reference:</label>
-            <input type="text" name="reference" id="reference">
             </div>
 
-            <input type="submit" value="Create Strategy" id="submit">
+            <br>
+
+            <div class="column is-three-fifths">
+            <label for="reference">Reference:</label>
+            <input class="input is-link is-small" type="text" name="reference" id="reference" >
+            </div>
+            <br>
+
+            <input class="is-primary button is-black" type="submit" value="Create Strategy" id="submit">
 
         </form>
+        
     </section>
+    <br>
 
     <section>
-        <h3> All Strategies </h3>
-        <div id="strategies"></div>
+     
+
+
+          <div class="card">
+            <header class="card-header">
+              
+                <div class="column is-half card-header-title"><h1 class="title"> All Strategies </h1></div>
+            
+              <button class="card-header-icon" aria-label="more options">
+                <span class="icon">
+                  <i class="fas fa-angle-down" aria-hidden="true"></i>
+                </span>
+              </button>
+            </header>
+            <div class="card-content">
+                <div class="content" id="strategies">
+                
+                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
+                <br>
+           
+              </div>
+            </div>
+            <!-- <footer class="card-footer">
+              <a href="#" class="card-footer-item">Save</a>
+              <a href="#" class="card-footer-item">Edit</a>
+              <a href="#" class="card-footer-item">Delete</a>
+            </footer> -->
+          </div>
+        
+     
+        </div>
         
     </section>
     <script src="javascripts/index.js"></script>
-
+</div>
 </body>
 </html>

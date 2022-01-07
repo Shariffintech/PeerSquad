@@ -1,6 +1,5 @@
 class StrategiesController < ApplicationController
-    
-   
+    before_action :set_strategy, only: [:show, :edit, :update, :destroy]
 
     def index
         strategies = Strategy.all
@@ -9,7 +8,7 @@ class StrategiesController < ApplicationController
 
     def show
         strategy = Strategy.find_by(id: params[:id])
-        ender json: StrategySerializer.new(strategy).to_serialized_json
+        render json: StrategySerializer.new(strategy).to_serialized_json
     end
 
     def create

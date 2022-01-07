@@ -11,65 +11,154 @@
 
 //trigger'd effect - grab strategies from the backend show them on the page
 
+
 // global variabless
 const baseUrl = 'http://localhost:3000';
-
-let strategies = []
+let strategies = [];
 
 
 // node getters
 
-const strategyList = () => document.getElementById('strategies')
+function strategyList() {
+    return document.getElementById('strategies');
+}
 const strategyForm = () => document.getElementById('strategy-form')
 const strategyFormSubmit = () => document.getElementById('submit')
-const getStrategyName = () => document.getElementById('strategy-name')
-// const getStrategyReference = () => document.getElementById('strategy-reference')
-// const getStrategyTier = () => document.getElementById('tier')
-// const getStrategyCategory = () => document.getElementById('category')
+const getStrategyName = () => document.getElementById('name')
+const getStrategyReference = () => document.getElementById('reference')
+const getStrategyTier = () => document.getElementById('tier')
+const getStrategyCategory = () => document.getElementById('category')
 const getStrategyDescription = () => document.getElementById('description')
 
 
 const resetStrategies = () => {
     strategyList().innerHTML = ''
 }
+
+// event listeners
+
+// attaching an event listener to the form
+
+const attachFormEvents = () => {
+    strategyForm().addEventListener('submit', createStrategy);
+}
+
+
+//event handler
+
+const createStrategy = async (e) => {
+    e.preventDefault();
+
+    const description = document.getElementById('description').value;
+    const reference = document.getElementById('reference').value;
+    const tier = document.getElementById('tier').value;
+    const category = document.getElementById('category').value;
+    const name = document.getElementById('name').value;
+
+    const strongParams = {
+        strategy: { 
+        name,
+        tier,
+        description,
+        reference,
+        category
+        }
+    }
+
+    const res = await fetch(baseUrl + "/strategies", {
+        method: "POST",
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(strongParams)
+    });
+
+    const strategy = await res.json();
+    // push new strategy to the strategies array
+    strategies.push(strategy);
+    renderStrategy(strategy);
+    strategyForm().reset();
+    alert('strategy created')
+};
+
+
+const deleteStrategy = async strategy => {
+    // fetching the strategy with the ID of the strategy we want to delete.
+    await fetch(baseUrl + '/strategies/'+ strategy.id, {
+         // deleting the strategy with the DELETE HTTP method.
+        method: 'DELETE'
+    });
+    // filtering out the strategy from the strategies array.
+    strategies = strategies.filter(s => s.id !== strategy.id);
+    renderStrategy();
+};
+
+const editStrategy = async (e) => {
+    const id = e.target.dataset.id;
+    const res = await fetch(baseUrl + `/strategies/${id}`, {
+        method: 'PUT',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+    }
+    );
+    const strategy = await res.json();
+    renderStrategy(strategy);
+};
+
+
+
+
+
 /* Renderer's */
 
 // this function creates a new div element and adds it to the strategyList() element
 const renderStrategy = (strategy) => {
-    const strategyList = document.getElementById('strategies')
-    const div = document.createElement('div')
-    const h3 = document.createElement('h3')
-    const p = document.createElement('p')
-    const editButton = document.createElement('button')
-    const deleteButton = document.createElement('button')
-   
+    const strategyList = () => document.getElementById('strategies')
+    const div = document.createElement('div');
+    const h3 = document.createElement('h3');
+    const h4 = document.createElement('h4');
+    const p = document.createElement('p');
+    const p2 = document.createElement('p');
+    const p3 = document.createElement('p');
+    const p4 = document.createElement('p');
+    const editButton = document.createElement('button');
+    const deleteButton = document.createElement('button');
     // creates two new elements, h3 and p, and adds them to the new div
     // sets the textContent of the h3, p elements to the strategy content.
-    div.classList.add('strategy')
-    h3.textContent = strategy.strategy
-    p.textContent = strategy.description
-    p.textContent = strategy.reference
-    p.textContent = strategy.tier
-    p.textContent = strategy.created_at
-    p.textContent = strategy.category
+    // const strategyName = document.getElementById('name').name;
+    // strategyName
+    h3.innerText = strategy.name;
+    h4.innerText = strategy.tier;
+    p2.textContent = strategy.category;
+    p3.innerText = strategy.description;
+    p.innerText = strategy.reference;
+    p4.innerText = strategy.created_at;
+    
     p.style.color = 'blue'
+    h3.style.color = 'green'
 
-    editButton.textContent = 'Edit'
-    editButton.classList.add('edit-strategy')
-    editButton.dataset.id = strategy.id
+    editButton.innerText = 'Edit'
     editButton.addEventListener('click', editStrategy)
+    
 
-    deleteButton.textContent = 'Delete'
-    deleteButton.classList.add('delete-strategy')
-    deleteButton.dataset.id = strategy.id
-    deleteButton.addEventListener('click', deleteStrategy)
+    deleteButton.innerText = 'Delete'
+    deleteButton.addEventListener('click', e => deleteStrategy(strategy))
+   
 
     // adding elements into the DOM
     div.appendChild(h3)
+    div.appendChild(h4)
+    div.appendChild(p2)
+    div.appendChild(p3)
     div.appendChild(p)
-    div.appendChild(button)
+    div.appendChild(p4)
+    div.appendChild(deleteButton)
+    div.appendChild(editButton)
 
-    strategyList().append(div)
+    strategyList().appendChild(div)
 
 }
 
@@ -81,57 +170,23 @@ const renderStrategies = async () => {
     strategies.forEach(strategy => renderStrategy(strategy));
 }
 
-const sortStrategies = (strategies) => {
-    // sort strategies by most recent
-    strategies.sort((a, b) => {
-        return new Date(b.created_at) - new Date(a.created_at)
-    })
-}
 
-// event handler
 
-const attachFormEvents = () => {
-    strategyForm().addEventListener('submit', createStrategy);
-}
-
-// attaching an event listener to the form
-
-const createStrategy = async (s) => {
-    s.preventDefault();
-
-    const description = document.getElementById('description').value;
-    const reference = document.getElementById('strategy-reference').value;
-    const tier = document.getElementById('tier').value;
-    const category = document.getElementById('category').value;
-    const strategyName = document.getElementById('strategy-name').value;
-
-    const strongParams = {
-        strategy: { strategyName,
-        tier,
-        description,
-        reference,
-        category
-        }
-    }
-
-    const res = await fetch(baseUrl + '/api/strategies', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({strongParams})
-    })
-    const strategy = await res.json()
-    strategies.push(strategy)
-    renderStrategy(strategy)
-    strategyForm().reset();
-}
 
 const loadStrategy = async () => {
-    const res = await fetch(baseUrl + '/api/strategies/');
-    strategy = await res.json()
+    const res = await fetch(baseUrl + '/strategies');
+    strategy = await res.json();
     renderStrategies();
-}
+};
+
+const loadStrategies = async () => {
+    const res = await fetch(baseUrl + '/strategies');
+    const strategies = await res.json();
+    
+    return strategies;
+};
+
+
 
 document.addEventListener('DOMContentLoaded', () => {
     loadStrategy();

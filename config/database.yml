@@ -3,7 +3,7 @@ development:
   encoding: unicode
   database: test
   pool: 5
-  username: admin
-  password: admin
-  port: 5433
+  username: shariftarver
+  password: p@55w0rd
+  port: 5432
   host: localhost

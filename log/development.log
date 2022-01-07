@@ -1,0 +1,1440 @@
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(225855107082426885)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStrategies (20220105002621)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE TABLE "strategies" ("id" bigserial primary key, "name" character varying, "category" character varying, "tier" integer, "description" character varying, "reference" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220105002621"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20220105064400)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220105064400"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-06 22:57:11.007325"], ["updated_at", "2022-01-06 22:57:11.007325"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(225855107082426885)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(225855107082426885)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(225855107082426885)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStrategies (20220105002621)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStrategies (20220105002621)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateStrategies (20220105002621)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "strategies" ("id" bigserial primary key, "name" character varying, "category" character varying, "tier" integer, "description" character varying, "reference" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220105002621"]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20220105064400)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "name" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220105064400"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-06 23:11:48.858236"], ["updated_at", "2022-01-06 23:11:48.858236"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "strategies"."name" FROM "strategies"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "strategies"."name" FROM "strategies"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (4.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calm down counting"], ["category", "Academics"], ["tier", 1], ["description", "Count to 10 and ask child to calm down"], ["reference", "Floyd, D. (2017). The Future of Education: The Role of Technology in the 21st Century. Retrieved from https://www.nytimes.com/2017/04/12/education/the-future-of-education-the-role-of-technology-in-the-21st-century.html"], ["created_at", "2022-01-06 23:48:01.861492"], ["updated_at", "2022-01-06 23:48:01.861492"]]
+  [1m[36mTRANSACTION (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (0.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Develop a positive attitude"], ["category", "Developmental"], ["tier", 1], ["description", "Develop a positive attitude"], ["reference", "Ralph, J. (2017). Positive Attitude: The Power of Positive Thinking. Retrieved from https://www.amazon.com/Positive-Attitude-Power-Thinking-ebook/dp/B071JZQWQW/ref=sr_1_1?ie=UTF8&qid=1524098982&sr=8-1&keywords=positive+attitude"], ["created_at", "2022-01-06 23:48:01.870664"], ["updated_at", "2022-01-06 23:48:01.870664"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (0.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Read aloud"], ["category", "Literacy"], ["tier", 1], ["description", "Read aloud"], ["reference", "Tom, R. (2017). Reading aloud: How to improve reading comprehension. Retrieved from https://www.amazon.com/Reading-Aloud-Improving-Reading-Comprehension-ebook/dp/B071JZQWQW/ref=sr_1_1?ie=UTF8&qid=1524098982&sr=8-1&keywords=reading+aloud"], ["created_at", "2022-01-06 23:48:01.874077"], ["updated_at", "2022-01-06 23:48:01.874077"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (2.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "strategies"[0m
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/" for ::1 at 2022-01-06 19:16:48 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/shariftarver/.rvm/gems/ruby-2.6.8/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/shariftarver/.rvm/gems/ruby-2.6.8/gems/railties-6.1.4.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 8.4ms | Allocations: 474)
+Completed 200 OK in 33ms (Views: 17.4ms | ActiveRecord: 0.0ms | Allocations: 4195)
+
+
+Started GET "/favicon.ico" for ::1 at 2022-01-06 19:16:49 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/strategies" for ::1 at 2022-01-06 19:16:55 -0500
+Processing by StrategiesController#index as HTML
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms | Allocations: 3146)
+
+
+  
+NameError (uninitialized constant StrategiesController::StrategySerializer):
+  
+app/controllers/strategies_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-06 19:34:25 -0500
+Processing by StrategiesController#index as HTML
+Completed 500 Internal Server Error in 5ms (Allocations: 1551)
+
+
+  
+NameError (uninitialized constant StrategiesController::StrategySerializer):
+  
+app/controllers/strategies_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-06 21:07:52 -0500
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/controllers/strategies_controller.rb:51:in `initialize'
+Started GET "/strategies" for ::1 at 2022-01-06 21:10:21 -0500
+Processing by StrategiesController#index as HTML
+  [1m[36mStrategy Load (11.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 190ms (Views: 4.1ms | ActiveRecord: 75.6ms | Allocations: 8729)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:10:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 988)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:10:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 978)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:11:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 978)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:19:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 59ms (Views: 0.1ms | ActiveRecord: 10.3ms | Allocations: 3062)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:19:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:23:52 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:23:52 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:32:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 85ms (Views: 0.1ms | ActiveRecord: 10.7ms | Allocations: 3047)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:32:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:54:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (7.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 61ms (Views: 0.2ms | ActiveRecord: 15.6ms | Allocations: 3047)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:54:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 971)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:55:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:55:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:55:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:55:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:56:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:56:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:57:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:57:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:57:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:57:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:59:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 40ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:59:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 27ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:59:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 15ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 21:59:30 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:00:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:00:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:00:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 26ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 970)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:00:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 970)
+
+
+Started POST "/strategies" for ::1 at 2022-01-06 22:00:37 -0500
+Processing by StrategiesController#create as JSON
+  Parameters: {"strategy"=>{"name"=>"Countdown breathing", "tier"=>"1", "description"=>"1,2,3 and breathe", "reference"=>"klopp", "category"=>"1"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:16:in `create'
+  [1m[36mStrategy Create (12.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Countdown breathing"], ["category", "1"], ["tier", 1], ["description", "1,2,3 and breathe"], ["reference", "klopp"], ["created_at", "2022-01-07 03:00:37.856726"], ["updated_at", "2022-01-07 03:00:37.856726"]]
+  ↳ app/controllers/strategies_controller.rb:16:in `create'
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/strategies_controller.rb:16:in `create'
+Completed 201 Created in 47ms (Views: 1.9ms | ActiveRecord: 15.2ms | Allocations: 2335)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:01:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:01:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started PUT "/strategies/undefined" for ::1 at 2022-01-06 22:01:19 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 81ms (ActiveRecord: 0.8ms | Allocations: 2318)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/undefined" for ::1 at 2022-01-06 22:01:22 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.3ms | Allocations: 554)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/undefined" for ::1 at 2022-01-06 22:06:38 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 47ms (ActiveRecord: 7.3ms | Allocations: 2747)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:29 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:30 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:31 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:32 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:35 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:36 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:37 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:38 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 103)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:08:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:08:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:43 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:43 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:44 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:45 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-06 22:08:46 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 102)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:08:52 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:08:52 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started PUT "/strategies/undefined" for ::1 at 2022-01-06 22:11:45 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (5.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 8ms (ActiveRecord: 5.6ms | Allocations: 557)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/undefined" for ::1 at 2022-01-06 22:47:42 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 59ms (ActiveRecord: 9.4ms | Allocations: 2719)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started GET "/strategies" for ::1 at 2022-01-06 22:47:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:47:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1099)
+
+
+Started PUT "/strategies/4" for ::1 at 2022-01-06 22:47:46 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"4", "strategy"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 2ms (ActiveRecord: 0.5ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/3" for ::1 at 2022-01-06 22:49:42 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"3", "strategy"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.4ms | Allocations: 567)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/2" for ::1 at 2022-01-06 22:49:45 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"2", "strategy"=>{}}
+  [1m[36mStrategy Load (2.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 5ms (ActiveRecord: 2.3ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/1" for ::1 at 2022-01-06 22:50:04 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"1", "strategy"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.5ms | Allocations: 567)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started GET "/strategies" for ::1 at 2022-01-06 22:52:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:52:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started PUT "/strategies/1" for ::1 at 2022-01-06 22:52:08 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"1", "strategy"=>{}}
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.8ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started GET "/strategies" for ::1 at 2022-01-06 22:53:00 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:53:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started PUT "/strategies/4" for ::1 at 2022-01-06 22:53:04 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"4", "strategy"=>{}}
+  [1m[36mStrategy Load (2.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 5ms (ActiveRecord: 2.0ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started PUT "/strategies/4" for ::1 at 2022-01-06 22:53:08 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"4", "strategy"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 3ms (ActiveRecord: 0.4ms | Allocations: 567)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started GET "/strategies" for ::1 at 2022-01-06 22:53:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:53:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started PUT "/strategies/4" for ::1 at 2022-01-06 22:53:35 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"4", "strategy"=>{}}
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.7ms | Allocations: 568)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started GET "/strategies" for ::1 at 2022-01-06 22:54:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:54:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:55:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 22:55:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:10 -0500
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.3ms | ActiveRecord: 6.4ms | Allocations: 10386)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:10 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1117)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:42 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1117)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:42:42 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:45:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1117)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:45:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:48:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1117)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:48:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:49:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1101)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:51:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:51:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1099)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:51:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:51:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:56:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:56:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (3.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 3.8ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:59:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 4.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:59:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:59:36 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-06 23:59:36 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:00:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:00:27 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:01:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:01:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:02:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 4.9ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:02:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.3ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:08:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 82ms (Views: 0.3ms | ActiveRecord: 18.4ms | Allocations: 3231)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:08:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:20:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 68ms (Views: 0.1ms | ActiveRecord: 27.6ms | Allocations: 3175)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:20:57 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:22:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:22:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:26:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 21ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:26:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:27:57 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:27:57 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (8.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 106ms (Views: 0.1ms | ActiveRecord: 8.6ms | Allocations: 1099)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:36:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 78ms (Views: 0.1ms | ActiveRecord: 23.8ms | Allocations: 3231)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:36:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:37:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:37:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:38:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 00:38:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:62:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:08:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:61:in `to_serialized_json'
+Completed 200 OK in 79ms (Views: 0.2ms | ActiveRecord: 13.8ms | Allocations: 7863)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:08:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:61:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started PUT "/strategies/4" for ::1 at 2022-01-07 01:09:06 -0500
+Processing by StrategiesController#update as JSON
+  Parameters: {"id"=>"4", "strategy"=>{}}
+  [1m[36mStrategy Load (4.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:24:in `update'
+Completed 400 Bad Request in 19ms (ActiveRecord: 4.7ms | Allocations: 1028)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:43:in `strategy_params'
+app/controllers/strategies_controller.rb:25:in `update'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:09:09 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 467)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 01:11:47 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:61:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:11:47 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:61:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:13:01 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:14:04 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 19.3ms | Allocations: 474)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:16:51 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:33:in `destroy'
+Completed 400 Bad Request in 3ms (ActiveRecord: 3.3ms | Allocations: 681)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: strategy):
+  
+app/controllers/strategies_controller.rb:44:in `strategy_params'
+app/controllers/strategies_controller.rb:34:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:17:35 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:33:in `destroy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 3.5ms | Allocations: 1031)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:34:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:18:33 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:33:in `destroy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 3.9ms | Allocations: 1033)
+
+
+  
+NoMethodError (undefined method `errors' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:37:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:19:12 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:33:in `destroy'
+Completed 204 No Content in 4ms (ActiveRecord: 1.7ms | Allocations: 605)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:19:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:60:in `to_serialized_json'
+Completed 200 OK in 84ms (Views: 0.2ms | ActiveRecord: 67.5ms | Allocations: 4624)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:19:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:60:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:19:44 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:33:in `destroy'
+Completed 204 No Content in 3ms (ActiveRecord: 0.5ms | Allocations: 477)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:21:01 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 6.9ms | Allocations: 475)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 01:23:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 35ms (Views: 0.1ms | ActiveRecord: 20.2ms | Allocations: 4653)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:23:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:23:58 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 01:24:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:24:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:24:25 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 01:26:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 1097)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:26:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:26:24 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 01:29:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.2ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 01:29:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:29:58 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 460)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:30:57 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:33:26 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:34:29 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:36:59 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:37:03 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 1ms (Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started DELETE "/strategies/undefined" for ::1 at 2022-01-07 01:42:06 -0500
+Processing by StrategiesController#destroy as JSON
+  Parameters: {"id"=>"undefined", "strategy"=>{}}
+Completed 500 Internal Server Error in 2ms (Allocations: 459)
+
+
+  
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  
+app/controllers/strategies_controller.rb:33:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-07 11:40:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (2.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 192ms (Views: 0.4ms | ActiveRecord: 56.1ms | Allocations: 7890)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 11:40:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 11:43:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 11:43:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 0.5ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 11:44:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 11:44:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1098)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 12:58:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 83ms (Views: 0.2ms | ActiveRecord: 16.1ms | Allocations: 3175)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 12:58:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:58:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1098)
+
+

@@ -1,9 +1,10 @@
 class StrategiesController < ApplicationController
-    before_action :set_strategy, only: [:show, :update, :destroy]
+    
+   
 
     def index
         strategies = Strategy.all
-        render json: StrategySerializer.new(strategies).to_serialized_json, include: [:strategy_categories, :comments]
+        render json: StrategySerializer.new(strategies).to_serialized_json
     end
 
     def show
@@ -12,11 +13,11 @@ class StrategiesController < ApplicationController
     end
 
     def create
-        @strategy = Strategy.create(strategy_params)
+        @strategy = Strategy.new(strategy_params)
         if @strategy.save
-            render json: StrategySerializer.new(strategy).to_serialized_json
+            render json: @strategy, status: :created, location: @strategy
         else
-            render json: {error: @strategy.errors.full_messages}
+            render json: @strategy.errors, status: :unprocessable_entity
         end
     end
 
@@ -30,27 +31,25 @@ class StrategiesController < ApplicationController
     end
 
     def destroy
-        if @strategy
         @strategy.destroy
-        render json: {message: "Successfully deleted strategy"}
-        else
-        render json: {message: "Strategy not found"}
-        end
     end
 
     private
 
     def strategy_params
-        params.require(:strategy).permit(:title, :description, :user_id, :strategy_category_id)
+        params.require(:strategy).permit(:name, :description, :tier, :category, :reference)
     end
 
     def set_strategy
         @strategy = Strategy.find_by(id: params[:id])
     end
+
    
 end
 
+
 class StrategySerializer
+
     def initialize(strategy_object)
         @strategy_object = strategy_object
     end
@@ -59,4 +58,3 @@ class StrategySerializer
         @strategy_object.to_json
     end
 end
-

@@ -3152,3 +3152,136 @@ Processing by StrategiesController#index as */*
 Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 703)
 
 
+Started GET "/strategies" for ::1 at 2022-01-07 14:50:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 704)
+
+
+Started GET "/strategies" for ::1 at 2022-01-07 14:50:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:57:in `to_serialized_json'
+Completed 200 OK in 2ms (Views: 0.1ms | ActiveRecord: 0.3ms | Allocations: 703)
+
+
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (3.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (6.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (24.9ms)[0m  [1m[35mALTER TABLE "comments" ADD "title" character varying[0m
+  [1m[35m (0.9ms)[0m  [1m[35mALTER TABLE "comments" ADD "body" text[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "strategy_id" bigint[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE INDEX "index_comments_on_strategy_id" ON "comments" ("strategy_id")[0m
+  [1m[35m (16.9ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_fbfef54321"
+FOREIGN KEY ("strategy_id")
+  REFERENCES "strategies" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220107200010"]]
+  [1m[36mTRANSACTION (6.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.3ms)[0m  [1m[35mALTER TABLE "comments" DROP CONSTRAINT "fk_rails_fbfef54321"[0m
+  [1m[35m (2.7ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "strategy_id"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "body"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "title"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.5ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220107200010"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "comments" ADD "title" character varying[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "body" character varying[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "strategy_id" bigint[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE INDEX "index_comments_on_strategy_id" ON "comments" ("strategy_id")[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_fbfef54321"
+FOREIGN KEY ("strategy_id")
+  REFERENCES "strategies" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220107200010"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mALTER TABLE "comments" DROP CONSTRAINT "fk_rails_fbfef54321"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "strategy_id"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "body"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "comments" DROP COLUMN "title"[0m
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.8ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = $1[0m  [["version", "20220107200010"]]
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7458657555131878620)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddColumnsToComments (20220107200010)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.0ms)[0m  [1m[35mALTER TABLE "comments" RENAME COLUMN "name" TO "title"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mALTER TABLE "comments" ADD "body" character varying[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "comments" ADD "strategy_id" bigint[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE INDEX "index_comments_on_strategy_id" ON "comments" ("strategy_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_fbfef54321"
+FOREIGN KEY ("strategy_id")
+  REFERENCES "strategies" ("id")
+[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20220107200010"]]
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(7458657555131878620)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

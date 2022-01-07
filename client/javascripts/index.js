@@ -1,17 +1,5 @@
 /*jshint esversion: 8 */
 
-// overview
-
-// have one event handler on the 
-// document that will handle all events of a particular type.
-
-// when : on load
-
-//cause of trigger "onload"
-
-//trigger'd effect - grab strategies from the backend show them on the page
-
-
 // global variabless
 const baseUrl = 'http://localhost:3000';
 let strategies = [];

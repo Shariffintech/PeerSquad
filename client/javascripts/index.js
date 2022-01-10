@@ -3,6 +3,7 @@
 // global variabless
 const baseUrl = 'http://localhost:3000';
 let strategies = [];
+let comments = [];
 
 
 // node getters
@@ -63,11 +64,12 @@ const createStrategy = async (e) => {
     });
 
     const strategy = await res.json();
+
     // push new strategy to the strategies array
     strategies.push(strategy);
     renderStrategy(strategy);
     strategyForm().reset();
-    alert('strategy created')
+    alert('Strategy created successfully');
 };
 
 
@@ -80,8 +82,13 @@ const deleteStrategy = async strategy => {
     });
     // filtering out the strategy from the strategies array.
     strategies = strategies.filter(s => s.id !== strategy.id);
-    renderStrategy();
-};
+    
+    // rendering the strategy from the DOM.
+    alert('Strategy deleted successfully');
+
+    renderStrategies(strategies);
+    
+    };
 
 const editStrategy = async (e) => {
     const id = e.target.dataset.id;
@@ -94,9 +101,49 @@ const editStrategy = async (e) => {
     }
     );
     const strategy = await res.json();
+
+    alert('Strategy successfully edited');
     renderStrategy(strategy);
 };
 
+
+const createComment = async (c) => {
+    c.preventDefault();
+
+    const id = c.target.dataset.id;
+    const title = document.getElementById('title').value;
+    const body = document.getElementById('body').value;
+    const strongParams = {
+        comment: {
+            title,
+            body
+        }
+    }
+
+    const res = await fetch(baseUrl + `/comments/${id}`, {
+        method: 'PUT',
+        headers: {
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(strongParams)
+    });
+    const comment = await res.json();
+    renderComment(comment);
+    alert('Comment successfully added');
+
+}  
+
+const deleteComment = async (comment) => {
+    // fetching the strategy with the ID of the strategy we want to delete.
+    await fetch(baseUrl + `/comments/${comment.id}`, {
+        method: 'DELETE'
+    });
+    // filtering out the strategy from the strategies array.
+    comments = comments.filter(s => s.id !== id);
+
+    renderComment(comment);
+}
 
 
 
@@ -115,11 +162,10 @@ const renderStrategy = (strategy) => {
     const p4 = document.createElement('p');
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
+
     // creates two new elements, h3 and p, and adds them to the new div
     // sets the textContent of the h3, p elements to the strategy content.
-    // const strategyName = document.getElementById('name').name;
-    // strategyName
-
+   
     h2.innerText = strategy['name'];
     h4.innerText = strategy['tier'];
     h3.textContent = strategy['category'];
@@ -149,6 +195,7 @@ const renderStrategy = (strategy) => {
     div.appendChild(editButton)
 
     strategyList().appendChild(div)
+    return strategyList();
 
 }
 
@@ -173,6 +220,36 @@ const loadStrategies = async () => {
     
     return strategies;
 };
+
+const loadComments = async () => {
+    const res = await fetch(baseUrl + '/comments');
+    const comments = await res.json();
+    return comments;
+};
+
+
+const renderComments = async (comment) => {
+    const comments = await loadComments(strategy);
+    const commentList = document.getElementById('comments');
+    comments.forEach(comment => {
+        const div = document.createElement('div');
+        const h3 = document.createElement('h3');
+        const p = document.createElement('p');
+        const deleteButton = document.createElement('button');
+        const editButton = document.createElement('button');
+        }
+    )
+
+    h3.innerText = comment['title'];
+    p.innerText = comment['body'];
+    deleteButton.innerText = 'Delete'
+    deleteButton.addEventListener('click', e => deleteComment(comment))
+    editButton.innerText = 'Edit'
+    editButton.addEventListener('click', e => editComment(comment))
+
+    commentList().appendChild(div);
+
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     loadStrategy();

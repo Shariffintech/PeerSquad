@@ -16,10 +16,10 @@
     </ul>
     
     <h2 class="subtitle"> Please Submit your strategies for peer review </h2>
-    <h3 class="subtitle"> Create A New Strategy</h3>
+  
 
     <section>
-        
+      <h3 class="subtitle" id="form-header"> Create A New Strategy</h3>
         <form id="strategy-form" method="post">
             <div class="field">
                 <div class="column is-one-third">
@@ -33,10 +33,11 @@
             <textarea class="textarea is-hovered I" placeholder="Count to 10 and ask child..." name="description" id="description"></textarea>
             </div>
             <br>
+
+            <div class="column is-three-fifths">
+            <label for="tier">Tier</label>
             <br>
 
-            <div>
-            <label for="tier">Tier</label>
             <div class="select is-primary is-small">
             <select name="tier" id="tier">
                 <option value="1">1</option>
@@ -45,11 +46,14 @@
             </select>
             </div>
             </div>
-            <br>
+            
+
         
 
-            <div class>
+            <div class="column is-three-fifths">
             <label for="category">Strategy Category:</label>
+            <br>
+          
             <div class="select is-primary is-small">
             <select name="category" id="category">
                 <option value="">Select a Category</option>
@@ -62,9 +66,9 @@
             </select>
             </div>
             </div>
+        
 
-            <br>
-
+    
             <div class="column is-three-fifths">
             <label for="reference">Reference:</label>
             <input class="input is-link is-small" type="text" name="reference" id="reference" >
@@ -94,25 +98,26 @@
               </button>
             </header>
             <br>
-            
+          
             <div class="card-content">
+              
                 <div class="content" id="strategies">
-                
-                <a href="#">@bulmaio</a>. <a href="#">#css</a> <a href="#">#responsive</a>
-                <br>
+                 
+                  
+                    <footer class="card-footer">
+                      <a href="#" class="card-footer-item">Save</a>
+                      <a href="#" class="card-footer-item"id="Edit">Edit</a>
+                      <a href="#" class="card-footer-item" id="Delete">Delete</a>
+                    </footer>
+                  </div>
+              
+                  
+            
            
               </div>
             </div>
-            <!-- <footer class="card-footer">
-              <a href="#" class="card-footer-item">Save</a>
-              <a href="#" class="card-footer-item">Edit</a>
-              <a href="#" class="card-footer-item">Delete</a>
-            </footer> -->
           </div>
-        
-     
         </div>
-        
     </section>
     <script src="javascripts/index.js"></script>
 </div>

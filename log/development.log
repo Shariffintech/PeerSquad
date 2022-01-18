@@ -10917,3 +10917,99 @@ Processing by StrategiesController#index as */*
 Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1414)
 
 
+Started GET "/strategies" for ::1 at 2022-01-18 03:21:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:21:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 03:21:23 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.0ms | Allocations: 1880)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefee134e68>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 03:21:23 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 04:29:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 117ms (Views: 0.4ms | ActiveRecord: 33.2ms | Allocations: 4623)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 04:29:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 5.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 04:30:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 04:30:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.9ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 04:30:13 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.1ms | Allocations: 1881)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefed26d790>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 04:30:14 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+

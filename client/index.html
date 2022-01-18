@@ -9,128 +9,165 @@
 </head>
 <body>
     <div class="container is-max-widescreen">
-    <h1 class="title"> Student Strategies </h1>
-    <!-- list all strategies from ruby on rails backend api -->
+
+<!--------------------------------------------------------------------------------------------->
+<!--  STRATEGY FORM BELOW THIS LINE -->
+<!--------------------------------------------------------------------------------------------->
+    <h1 class="title"> Student Strategy Form </h1>
+
     <ul>
 
     </ul>
-    
+
     <h2 class="subtitle"> Please Submit your strategies for peer review </h2>
-  
+
 
     <section>
       <h3 class="subtitle" id="form-header"> Create A New Strategy</h3>
-        <form id="strategy-form" method="post">
-            <div class="field">
-                <div class="column is-one-third">
+      <form id="strategy-form" method="post">
+        <div class="field">
+          <div class="column is-one-third">
             <label for="name">Strategy Name:</label>
             <input class="input is-one-third" type="text" placeholder="Calm down counting" name="name" id="name">
-                </div>
-            </div>
-
-            <div class="column is-three-fifths">
-            <label for="description">Strategy Description:</label>
-            <textarea class="textarea is-hovered I" placeholder="Count to 10 and ask child..." name="description" id="description"></textarea>
-            </div>
-            <br>
-
-            <div class="column is-three-fifths">
-            <label for="tier">Tier</label>
-            <br>
-
-            <div class="select is-primary is-small">
-            <select name="tier" id="tier">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-            </div>
-            </div>
-            
-
-        
-
-            <div class="column is-three-fifths">
-            <label for="category">Strategy Category:</label>
-            <br>
-          
-            <div class="select is-primary">
-            <select name="category" id="category">
-                <option value="">Select a Category</option>
-                <option value="Academic">Academic</option>
-                <option value="Social">Social</option>
-                <option value="Emotional">Emotional</option>
-                <option value="Literacy">Literacy</option>
-                <option value="Developmental">Developmental</option>
-               
-            </select>
-            </div>
-            </div>
-        
-
-    
-            <div class="column is-three-fifths">
-            <label for="reference">Reference:</label>
-            <input class="input is-link is-small" type="text" name="reference" id="reference" >
-            </div>
-            <br>
-
-            <div class="column is-three-fifths">
-            <label for="comment">Comment</label>
-            <textarea class="textarea is-hovered I comment-comment" placeholder="Add a comment..." name="comment" id="comment-body"></textarea>
-            </div>
-
-            <input class="is-primary button is-black" type="submit" value="Create Strategy" id="submit">
-
-        </form>
-        
-    </section>
-    <br>
-
-    <section>
-     
-
-
-          <div class="card">
-            <header class="card-header">
-              
-                <div class="column is-half card-header-title"><h1 class="title"> All Strategies </h1></div>
-            
-              <button class="card-header-icon" aria-label="more options">
-                <span class="icon">
-                  <i class="fas fa-angle-down" aria-hidden="true"></i>
-                </span>
-              </button>
-            </header>
-            <br>
-          
-            
-                <div class="content" id="strategies">
-                  
-                    <div class="modal" id="Add Comment">
-                      <div class="modal-background">
-
-                    
-                      <div class="modal-content">
-                        <!-- Any other Bulma elements you want -->
-                      </div>
-                      <button class="modal-close is-large" aria-label="close"></button>
-                  
-                    </div>
-                  
-                
-                 
-                </div>
-              
-                  
-            
-           
-              </div>
-            </div>
           </div>
         </div>
+
+        <div class="column is-three-fifths">
+          <label for="description">Strategy Description:</label>
+          <textarea class="textarea is-hovered I" placeholder="Count to 10 and ask child..." name="description"
+            id="description"></textarea>
+        </div>
+        <br>
+
+        <div class="column is-three-fifths">
+          <label for="tier">Tier</label>
+          <br>
+
+          <div class="select is-primary is-small">
+            <select name="tier" id="tier">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+
+
+
+
+        <div class="column is-three-fifths">
+          <label for="category">Strategy Category:</label>
+          <br>
+
+          <div class="select is-primary">
+            <select name="category" id="category">
+              <option value="">Select a Category</option>
+              <option value="Academic">Academic</option>
+              <option value="Social">Social</option>
+              <option value="Emotional">Emotional</option>
+              <option value="Literacy">Literacy</option>
+              <option value="Developmental">Developmental</option>
+
+            </select>
+          </div>
+        </div>
+
+
+
+        <div class="column is-three-fifths">
+          <label for="reference">Reference:</label>
+          <input class="input is-link is-small" type="text" name="reference" id="reference">
+        </div>
+        <br>
+
+        <input class="is-primary button is-black" type="submit" value="Create Strategy" id="submit">
+
+      </form>
+
     </section>
+    <br>
+<!--------------------------------------------------------------------------------------------->
+<!--  SUBMITTED STRATEGIES BELOW THIS LINE -->
+<!--------------------------------------------------------------------------------------------->
+    <section>
+
+      <div class="card">
+        <header class="card-header">
+          <div class="column is-half card-header-title">
+            <h1 class="title"> All Strategies </h1>
+          </div>
+
+          <button class="card-header-icon" aria-label="more options">
+            <span class="icon">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </header>
+
+        <br>
+
+        <!-- <button class="js-modal-trigger button is-primary" data-target="comments">
+          Open JS example modal
+        </button> -->
+        <div class="content" id="strategies">
+          
+        </div>
+      </div>
+      </div>
+      </div>
+    </section>
+
+<!--------------------------------------------------------------------------------------------->
+<!--  COMMENT FORM BELOW THIS LINE -->
+<!--------------------------------------------------------------------------------------------->
+
+    <section>
+      <div class="modal" id="Add Comment">
+        <div class="modal-background">
+          <div class="modal-content">
+            <form id="comment-form" method="post">
+              <div class="field">
+                <div class="column is-one-third">
+                  <label for="name">Title:</label>
+                  <input class="input is-one-third" type="text" placeholder="Calm down counting" name="name"
+                    id="comment-title">
+                </div>
+              </div>
+              <br>
+              <div class="column is-three-fifths">
+                <label for="comment">Comment:</label>
+                <textarea class="textarea is-hovered I"
+                  placeholder="This strategy worked for 50% of my students and I have a large class. I might not use it again. 5/10."
+                  name="comment" id="comment-body"></textarea>
+              </div>
+              <br>
+              <input class="is-primary button is-black" type="submit" value="Submit" id="submit">
+            </form>
+          </div>
+          <button class="modal-close is-large" aria-label="close"></button>
+        </div>
+      </div>
+    </section>
+
+
+<!--------------------------------------------------------------------------------------------->
+<!--  COMMENT MODAL BELOW THIS LINE -->
+<!--------------------------------------------------------------------------------------------->
+    <div id="comments" class="modal">
+      <div class="modal-background"></div>
+      <div class="modal-content">
+        <div class="box">
+          <p>Modal JS example</p>
+        </div>
+      </div>
+      <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
     <script src="javascripts/index.js"></script>
-</div>
-</body>
-</html>
+    <script src="javascripts/modal.js"></script>
+   
+    </body>
+    </html>
+
+
+    

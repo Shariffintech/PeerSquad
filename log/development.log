@@ -9691,3 +9691,1229 @@ Processing by StrategiesController#index as */*
 Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1414)
 
 
+Started GET "/strategies" for ::1 at 2022-01-17 19:25:40 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 5.7ms | Allocations: 11179)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:25:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:30:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1434)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:30:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:35:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (3.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 24ms (Views: 0.1ms | ActiveRecord: 4.3ms | Allocations: 1434)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:35:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:38:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1434)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:38:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:43:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 73ms (Views: 0.1ms | ActiveRecord: 12.1ms | Allocations: 4588)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:43:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:44:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:44:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 28ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 1415)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:44:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1415)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 19:44:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 22:34:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 71ms (Views: 0.5ms | ActiveRecord: 10.1ms | Allocations: 4624)
+
+
+Started GET "/strategies" for ::1 at 2022-01-17 22:34:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:13:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 136ms (Views: 2.3ms | ActiveRecord: 25.3ms | Allocations: 4568)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:13:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.2ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:28:36 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 82ms (Views: 0.1ms | ActiveRecord: 21.1ms | Allocations: 4624)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:28:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:35:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 117ms (Views: 0.2ms | ActiveRecord: 19.1ms | Allocations: 4567)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:35:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:35:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:35:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:13 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 79ms (Views: 0.1ms | ActiveRecord: 27.3ms | Allocations: 4567)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:13 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:47 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:47 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:47:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:49:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.4ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:49:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:49:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:49:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:50:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1415)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:50:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:51:48 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:51:48 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/comments" for ::1 at 2022-01-18 01:51:50 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.0ms | Allocations: 2169)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 01:53:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1413)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:53:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (4.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 5.5ms | Allocations: 1414)
+
+
+Started GET "/comments" for ::1 at 2022-01-18 01:53:10 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1552)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 01:53:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1413)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 01:53:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1414)
+
+
+Started GET "/comments" for ::1 at 2022-01-18 01:53:37 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms | Allocations: 1552)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 02:10:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 71ms (Views: 0.1ms | ActiveRecord: 11.0ms | Allocations: 4622)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:10:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/comments" for ::1 at 2022-01-18 02:10:53 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"comment"=>{}}
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 12.4ms | Allocations: 1551)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 02:14:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1413)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:14:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:15:01 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (6.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:44:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 6.0ms | Allocations: 2460)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:11:in `show'
+Started GET "/strategies" for ::1 at 2022-01-18 02:16:28 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 46ms (Views: 0.4ms | ActiveRecord: 15.7ms | Allocations: 6575)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:16:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:16:31 -0500
+  
+SyntaxError (/Users/shariftarver/Desktop/Software.eng/FlatironSchool/code/Mod4/ed-tech-spa/app/controllers/comments_controller.rb:50: syntax error, unexpected end-of-input, expecting end):
+  
+app/controllers/comments_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+app/controllers/comments_controller.rb:50: syntax error, unexpected end-of-input, expecting end
+Started GET "/strategies" for ::1 at 2022-01-18 02:16:42 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 10.5ms | Allocations: 6569)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:16:42 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 18ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:16:43 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:49:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 2.0ms | Allocations: 2496)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:11:in `show'
+Started GET "/strategies" for ::1 at 2022-01-18 02:17:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (43.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 67ms (Views: 0.2ms | ActiveRecord: 47.7ms | Allocations: 6567)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:17:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.3ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:17:14 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 2.8ms | Allocations: 2033)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefee12fa08>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:31:38 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 14.2ms | Allocations: 2094)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefedf94f18>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/strategies" for ::1 at 2022-01-18 02:31:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 2.1ms | Allocations: 6009)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:31:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:31:50 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.6ms | Allocations: 1877)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007feff39109c0>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:31:50 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 1553)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 02:32:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1413)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:32:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:32:35 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.5ms | Allocations: 1877)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefee0a1500>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:32:35 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms | Allocations: 1552)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/strategies" for ::1 at 2022-01-18 02:33:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.3ms | ActiveRecord: 2.6ms | Allocations: 1413)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:33:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:33:04 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.8ms | Allocations: 1879)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefed3cd450>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:33:04 -0500
+Processing by CommentsController#index as */*
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 1552)
+
+
+  
+NameError (uninitialized constant CommentsController::CommentSerializer):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:34:35 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 4.0ms | Allocations: 2021)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefed34b270>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:34:35 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 52)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:34:59 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.6ms | Allocations: 1875)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefed3cea30>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:35:00 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 02:42:13 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 9.9ms | Allocations: 2091)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007feff3869e90>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 02:42:13 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 1ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:42:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 46ms (Views: 0.2ms | ActiveRecord: 18.3ms | Allocations: 6479)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:42:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:43:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (3.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 4.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:43:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:43:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.5ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:43:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:45:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:45:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:46:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:46:29 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:50:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 2.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:50:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:52:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:52:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:53:16 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (5.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 6.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:53:17 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:55:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.3ms | ActiveRecord: 1.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:55:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 2.4ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 15ms (Views: 0.2ms | ActiveRecord: 2.8ms | Allocations: 1415)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (5.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 6.2ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 4.6ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 1.2ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 2.6ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:56:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:57:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 02:57:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:00:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (3.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 3.6ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:00:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:00:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (2.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 16ms (Views: 0.3ms | ActiveRecord: 3.3ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:00:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 2.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:01:57 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (17.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 17.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:01:57 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 17ms (Views: 0.2ms | ActiveRecord: 1.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:02:13 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 1.4ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:02:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (9.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 29ms (Views: 0.2ms | ActiveRecord: 9.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:04:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (10.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 32ms (Views: 0.2ms | ActiveRecord: 11.0ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:04:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (3.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.1ms | ActiveRecord: 3.9ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:05:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 2.1ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:05:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (4.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 5.2ms | Allocations: 1415)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:06:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 1.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:06:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:09:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (1.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 2.2ms | Allocations: 1414)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:09:40 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 1.3ms | Allocations: 1414)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 03:09:42 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.7ms | Allocations: 1878)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefedcc7038>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 03:09:42 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 03:09:44 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.7ms | Allocations: 1875)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007feff3873fa8>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 03:09:44 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/comments/undefined" for ::1 at 2022-01-18 03:10:10 -0500
+Processing by CommentsController#show as JSON
+  Parameters: {"id"=>"undefined", "comment"=>{}}
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `set_comment'
+  [1m[36mCACHE Comment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:10:in `show'
+Redirected to 
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.6ms | Allocations: 1875)
+
+
+  
+NoMethodError (undefined method `create_url' for #<CommentsController:0x007fefee17dde8>
+Did you mean?  create):
+  
+app/controllers/comments_controller.rb:14:in `show'
+Started GET "/comments" for ::1 at 2022-01-18 03:10:10 -0500
+Processing by CommentsController#index as */*
+Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 48)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:17:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 61ms (Views: 0.1ms | ActiveRecord: 11.9ms | Allocations: 4649)
+
+
+Started GET "/strategies" for ::1 at 2022-01-18 03:17:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:45:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:59:in `to_serialized_json'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 1414)
+
+

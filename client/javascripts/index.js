@@ -10,6 +10,7 @@ let comments = [];
 
 
 const strategyForm = () => document.getElementById('strategy-form');
+const commentForm = () => document.getElementById('comment-form');
 const strategyFormSubmit = () => document.getElementById('submit');
 const getStrategyName = () => document.getElementById('name');
 const getStrategyReference = () => document.getElementById('reference');
@@ -17,7 +18,7 @@ const getStrategyTier = () => document.getElementById('tier');
 const getStrategyCategory = () => document.getElementById('category');
 const getStrategyDescription = () => document.getElementById('description');
 const formHeader = () => document.getElementById('form-header');
-const getComTitle = () =>document.getElementById('comment-title');
+const getComTitle = () => document.getElementById('comment-title');
 const getComBody = () => document.getElementById('comment-body');
 const strategyList = () => document.getElementById('strategies');
 const commentList = () => document.getElementById('comments');
@@ -34,18 +35,15 @@ const resetStrategies = () => {
 
 const attachFormEvents = () => {
     strategyForm().addEventListener('submit', createStrategy);
+    commentForm().addEventListener('submit', createComment);
 };
 
 
 //event handlers
 
-// add comment to each strategy
-
-
 const createStrategy = async (e) => {
     e.preventDefault();
-
-
+    // create a new strategy object
     const strongParams = {
         strategy: { 
         name: getStrategyName().value,
@@ -55,7 +53,7 @@ const createStrategy = async (e) => {
         category: getStrategyCategory().value
         }
     };
-
+    // fetch the strategies endpoint
     const res = await fetch(baseUrl + "/strategies", {
         method: "POST",
         headers: {
@@ -64,12 +62,14 @@ const createStrategy = async (e) => {
         },
         body: JSON.stringify(strongParams)
     });
-
+    // get the new strategy from the response
     const strategy = await res.json();
 
     // push new strategy to the strategies array
     strategies.push(strategy);
+    // render the new strategy
     renderStrategy(strategy);
+    // clear the form
     strategyForm().reset();
     alert('Strategy created successfully');
 };
@@ -94,6 +94,7 @@ const deleteStrategy = async strategy => {
 
 
 const editStrategy = strategy => {
+    // trigger a modal to edit a strategy
     strategyForm().removeEventListener('submit', createStrategy);
     getStrategyName().value = strategy.name;
     getStrategyDescription().value = strategy.description;
@@ -146,32 +147,99 @@ async function updateStrategy(e) {
     renderStrategies();
     
 
-};
+}
 
-
-const createComment = async (c) => {
+const commentModal = async (c) =>{
     c.preventDefault();
 
-    const strongParams = {
-        comment: {
-            title: getComTitle().value,
-            body: getComBody().value
+    //trigger a modal on click event to show list of comments associated with a strategy
+    const modal = document.getElementById('comment-modal');
+    const span = document.getElementsByClassName("close")[0];
+    
+    // get the strategy id from the data-id attribute
+    const strategy = this;
+    console.log(strategy);
+    // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
+    const res = await fetch(baseUrl + `/comments/${strategy.id}`,
+        {   method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+                
+            }
+        }
+    );
+    const comments = await res.json();
+    if (comments.length === 0) {
+        alert('No comments found for this strategy. Please create a comment');
+    } else {
+        // render the comments
+        renderComments(comments);
+    }
+   
+    // get the comments from the response
+    const comment = await comments.json();
+
+    // filter the comments to get the comments associated with the strategy
+    const filteredComments = comments.filter(c => c.strategy_id === strategy.id);
+    
+    // render the comments
+    commentList.innerHTML = '';
+    filteredComments.forEach(c => renderComment(c));
+
+    // close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
         }
     };
 
-    const res = await fetch(baseUrl + `/comments/${id}`, {
+    comment.forEach(comment => {
+        if(comment.strategy_id === strategy.id){
+
+            commentList.innerHTML += 
+            `<li>${comment.title}</li>`,
+            `<li>${comment.body}</li>`; 
+  
+        }
+    }
+    );
+};
+
+
+
+// add comment to each strategy
+const createComment = async (strategy) => {
+    // trigger a comment modal, then retrieve the comment title and body
+    commentModal();
+
+   
+    const strongParams = {
+        comment: {
+        title: getComTitle().value,
+        body: getComBody().value,
+        strategy_id: strategy.id
+        }
+    };
+    const response = await fetch(`${baseUrl}/comments`, {
         method: 'POST',
         headers: {
-            "Accept": "application/json",
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
         },
         body: JSON.stringify(strongParams)
     });
-    const comment = await res.json();
+    const comment = await response.json();
+    // push comment on the comments array
+    comments.push(comment);
     renderComment(comment);
+    getComTitle().value = '';
     alert('Comment successfully added');
+};
 
-};  
 
 const deleteComment = async (comment) => {
     // fetching the strategy with the ID of the strategy we want to delete.
@@ -230,14 +298,13 @@ const renderStrategy = (strategy) => {
     deleteButton.className = 'button is-primary is-light m-1';
 
     commentButton.innerText = ' + Add Comment';
-    commentButton.addEventListener('click', createComment);
-    commentButton.className = 'modal-button button is-primary is-light m-1'; 
+    commentButton.addEventListener('click', commentModal);
+    commentButton.className = 'js-modal-trigger button is-primary is-light m-1'; 
+    commentButton.datatarget = '#comments';
     commentButton.id = 'Add Comment';
-    commentButton.dataType = 'modal';
-    commentButton.onclick = function() {
-        const modal = document.querySelector('.modal');
-        modal.style.display = 'block';
-    };
+    // commentButton.onclick = function() {
+    //     document.querySelector('.Add Comment')
+    // };
     // appends the new div to the strategyList() element, apply class name strategy card
 
     p.style.color = 'blue';
@@ -269,6 +336,13 @@ const renderStrategies = async () => {
     strategies.forEach(strategy => renderStrategy(strategy));
 };
 
+const renderComments = async () => {
+    
+    comments = await loadComments();
+    // loops through the strategies array and calls the renderStrategy() function for each strategy
+    comments.forEach(comment => renderComment(comment));
+};
+
 
 const loadStrategy = async () => {
     const res = await fetch(baseUrl + '/strategies');
@@ -297,7 +371,6 @@ const loadComments = async () => {
 
 const renderComment = async (comment) => {
     
-    const commentList = document.getElementById('comments');
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
     const p = document.createElement('p');

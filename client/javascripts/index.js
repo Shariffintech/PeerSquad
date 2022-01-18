@@ -17,9 +17,11 @@ const getStrategyTier = () => document.getElementById('tier');
 const getStrategyCategory = () => document.getElementById('category');
 const getStrategyDescription = () => document.getElementById('description');
 const formHeader = () => document.getElementById('form-header');
-const getComTitle = () =>document.getElementById('title');
-const getComBody = () => document.getElementById('body');
+const getComTitle = () =>document.getElementById('comment-title');
+const getComBody = () => document.getElementById('comment-body');
 const strategyList = () => document.getElementById('strategies');
+const commentList = () => document.getElementById('comments');
+const scrollTop = () => document.documentElement.scrollTop = 0;
 
 
 const resetStrategies = () => {
@@ -35,7 +37,10 @@ const attachFormEvents = () => {
 };
 
 
-//event handler
+//event handlers
+
+// add comment to each strategy
+
 
 const createStrategy = async (e) => {
     e.preventDefault();
@@ -99,14 +104,15 @@ const editStrategy = strategy => {
     formHeader().innerText = 'Edit strategy';
     updateStrategy = updateStrategy.bind(strategy); 
     strategyForm().addEventListener('submit', updateStrategy);
- 
+    strategyForm().addEventListener('click', scrollTop);
+    alert('Please update the '+ strategy.name +' strategy in the form fields');
+    scrollTop();
 
     };
     
-updateStrategy = async e => {
-    e.preventDefault();
+async function updateStrategy(e) {
+     e.preventDefault();
   
-    console.log(this);
   
  const strongParams = {
     strategy: {
@@ -118,7 +124,7 @@ updateStrategy = async e => {
         }
     };
   
-    const response = await fetch(baseUrl + `/strategies/${ this.id }`, {
+    const response = await fetch(baseUrl + `/strategies/${this.id}`, {
       method: 'PATCH',
       headers: {
         'Accept': 'application/json',
@@ -131,20 +137,21 @@ updateStrategy = async e => {
     const index = strategies.indexOf(this);
     strategies[index] = newStrategy;
   
-    strategyForm().removeEventListener('submit', updateStrategy);
+    strategyForm().removeEventListener('submit', updateStrategy,);
     formHeader().innerText = "Create Strategy";
     strategyFormSubmit().value = "Create Strategy";
     strategyForm().addEventListener('submit', createStrategy);
-  
-    renderStrategy();
+    
+
+    renderStrategies();
+    
+
 };
 
 
 const createComment = async (c) => {
     c.preventDefault();
 
-    const id = c.target.dataset.id;
-    
     const strongParams = {
         comment: {
             title: getComTitle().value,
@@ -194,30 +201,48 @@ const renderStrategy = (strategy) => {
     const p4 = document.createElement('p');
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
+    const commentButton = document.createElement('button');
 
     // creates two new elements, h3 and p, and adds them to the new div
     // sets the textContent of the h3, p elements to the strategy content.
    
-    h2.innerText = strategy.name;
-    h4.innerText = strategy.tier;
-    h3.textContent = strategy.category;
-    p3.innerText = strategy.description;
-    p.innerText = strategy.reference;
-    p4.innerText = strategy.created_at;
+    h2.innerText = 'Strategy: '+ strategy.name;
+    h4.innerText = 'Tier: ' + strategy.tier;
+    h3.textContent = 'Category: ' + strategy.category;
+    p3.innerText = 'Description: ' + strategy.description;
+    p.innerText = 'Reference: ' + strategy.reference;
+    p4.innerText = 'Timestamp: ' + strategy.created_at;
+
 
     // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
     
-    editButton.innerText = 'Edit';
-    editButton.addEventListener('click', e => editStrategy(strategy));
-    
-    deleteButton.innerText = 'Delete';
-    deleteButton.addEventListener('click', e => deleteStrategy(strategy));
+    editButton.innerText = 'Edit Strategy';
+    editButton.addEventListener('click', e => editStrategy(strategy),);
+    editButton.className = 'button is-primary is-light m-1';
+    editButton.id = 'Edit Strategy';
 
+    // on click evoke scrollTop() function for edit button
+
+
+    
+    deleteButton.innerText = 'Delete Strategy';
+    deleteButton.addEventListener('click', e => deleteStrategy(strategy));
+    deleteButton.className = 'button is-primary is-light m-1';
+
+    commentButton.innerText = ' + Add Comment';
+    commentButton.addEventListener('click', createComment);
+    commentButton.className = 'modal-button button is-primary is-light m-1'; 
+    commentButton.id = 'Add Comment';
+    commentButton.dataType = 'modal';
+    commentButton.onclick = function() {
+        const modal = document.querySelector('.modal');
+        modal.style.display = 'block';
+    };
     // appends the new div to the strategyList() element, apply class name strategy card
 
     p.style.color = 'blue';
     h3.style.color = 'green';
-    div.className = 'strategy-card';
+    div.className = 'strategy-card m-3 p-3 has-background-warning-light';
    
 
     // adding elements into the DOM
@@ -229,6 +254,7 @@ const renderStrategy = (strategy) => {
     div.appendChild(p4);
     div.appendChild(deleteButton);
     div.appendChild(editButton);
+    div.appendChild(commentButton);
 
     strategyList().appendChild(div);
     return strategyList();
@@ -257,14 +283,19 @@ const loadStrategies = async () => {
     return strategies;
 };
 
+const loadComment = async () => {
+    const res = await fetch(baseUrl + '/comments');
+    comment = await res.json();
+    renderComments();
+};
+
 const loadComments = async () => {
     const res = await fetch(baseUrl + '/comments');
     const comments = await res.json();
     return comments;
 };
 
-
-const renderComments = async (comment) => {
+const renderComment = async (comment) => {
     
     const commentList = document.getElementById('comments');
     const div = document.createElement('div');
@@ -279,15 +310,15 @@ const renderComments = async (comment) => {
 
     // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
-    deleteButton.innerText = 'Delete';
+    deleteButton.innerText = 'Delete Strategy';
     deleteButton.addEventListener('click', e => deleteComment(comment));
 
 
-    editButton.innerText = 'Edit';
+    editButton.innerText = 'Edit Strategy';
     editButton.addEventListener('click', e => editComment(comment));
 
     // appends the new div to the commentsList() element, apply class name comment card
-    div.className = 'comment-card';
+    div.className = 'modal';
     div.appendChild(h3);
     div.appendChild(p);
     div.appendChild(deleteButton);
@@ -295,6 +326,7 @@ const renderComments = async (comment) => {
 
     
     commentList().appendChild(div);
+    return commentList();
 
 };
 

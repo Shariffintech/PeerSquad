@@ -54,7 +54,7 @@
             <label for="category">Strategy Category:</label>
             <br>
           
-            <div class="select is-primary is-small">
+            <div class="select is-primary">
             <select name="category" id="category">
                 <option value="">Select a Category</option>
                 <option value="Academic">Academic</option>
@@ -74,6 +74,11 @@
             <input class="input is-link is-small" type="text" name="reference" id="reference" >
             </div>
             <br>
+
+            <div class="column is-three-fifths">
+            <label for="comment">Comment</label>
+            <textarea class="textarea is-hovered I comment-comment" placeholder="Add a comment..." name="comment" id="comment-body"></textarea>
+            </div>
 
             <input class="is-primary button is-black" type="submit" value="Create Strategy" id="submit">
 
@@ -99,17 +104,23 @@
             </header>
             <br>
           
-            <div class="card-content">
-              
+            
                 <div class="content" id="strategies">
-                 
                   
-                    <footer class="card-footer">
-                      <a href="#" class="card-footer-item">Save</a>
-                      <a href="#" class="card-footer-item"id="Edit">Edit</a>
-                      <a href="#" class="card-footer-item" id="Delete">Delete</a>
-                    </footer>
-                  </div>
+                    <div class="modal" id="Add Comment">
+                      <div class="modal-background">
+
+                    
+                      <div class="modal-content">
+                        <!-- Any other Bulma elements you want -->
+                      </div>
+                      <button class="modal-close is-large" aria-label="close"></button>
+                  
+                    </div>
+                  
+                
+                 
+                </div>
               
                   
             

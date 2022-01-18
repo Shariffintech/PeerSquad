@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
     def index
         strategies = Comment.all
-        render json: CommentSerializer.new(strategies).to_serialized_json
+        render json: CommentSerializer.new(comments, include: [:strategies]).to_serialized_json
     end
 
     def show
@@ -14,9 +14,9 @@ class CommentsController < ApplicationController
     def create
         @comment = Comment.new(comment_params)
         if @comment.save
-            render json: @comment, status: :created, location: @comment
+            render json: @comment
         else
-            render json: @comment.errors, status: :unprocessable_entity
+            render json: @comment.errors
         end
     end
 

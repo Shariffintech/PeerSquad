@@ -149,36 +149,33 @@ async function updateStrategy(e) {
 
 }
 
-const commentModal = async (c) =>{
-    c.preventDefault();
+const commentModal = async (strategy) =>{
+    strategy.preventDefault();
 
     //trigger a modal on click event to show list of comments associated with a strategy
     const modal = document.getElementById('comment-modal');
     const span = document.getElementsByClassName("close")[0];
     
-    // get the strategy id from the data-id attribute
-    const strategy = this;
+   
     console.log(strategy);
     // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
-    const res = await fetch(baseUrl + `/comments/${strategy.id}`,
+    const res = await fetch(baseUrl + `/strategies/${strategy.id}/${comment.id}`,
         {   method: 'GET',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-                
             }
         }
     );
     const comments = await res.json();
     if (comments.length === 0) {
         alert('No comments found for this strategy. Please create a comment');
+        createComment();
     } else {
         // render the comments
         renderComments(comments);
     }
    
-    // get the comments from the response
-    const comment = await comments.json();
 
     // filter the comments to get the comments associated with the strategy
     const filteredComments = comments.filter(c => c.strategy_id === strategy.id);
@@ -270,6 +267,7 @@ const renderStrategy = (strategy) => {
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
     const commentButton = document.createElement('button');
+    const showCommentButton = document.createElement('button');
 
     // creates two new elements, h3 and p, and adds them to the new div
     // sets the textContent of the h3, p elements to the strategy content.
@@ -305,7 +303,11 @@ const renderStrategy = (strategy) => {
     // commentButton.onclick = function() {
     //     document.querySelector('.Add Comment')
     // };
+
+    // showCommentButton.className = 'js-modal-trigger button is-primary is-light m-1';
+    // showCommentButton.id = "Show Comments"
     // appends the new div to the strategyList() element, apply class name strategy card
+
 
     p.style.color = 'blue';
     h3.style.color = 'green';

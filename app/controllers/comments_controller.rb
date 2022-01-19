@@ -2,20 +2,12 @@ class CommentsController < ApplicationController
     before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
     def index
-        strategies = Comment.all
-        # render json: CommentSerializer.new(comments, include: [:strategies]).to_serialized_json
+        comments = Comment.all
+        render json: comments, include: [:strategies]
     end
 
     def show
         comment = Comment.find_by(id: params[:id])
-       
-        if comment == nil
-            # redirect to create method
-            redirect_to :create
-        else
-            render json: comment
-        end
-        
     end
 
     def create

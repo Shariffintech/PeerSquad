@@ -8,7 +8,7 @@ class StrategiesController < ApplicationController
 
     def show
         strategy = Strategy.find_by(id: params[:id])
-        render json: StrategySerializer.new(id: strategy.id, comments: strategy.comment).to_serialized_json
+        render json: StrategySerializer.new(id: strategy.id).to_serialized_json
         
     end
 

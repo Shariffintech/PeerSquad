@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
+    before_action :get_strategy
     before_action :set_comment, only: [:show, :edit, :update, :destroy]
 
     def index
-        comments = Comment.all
-        render json: comments, include: [:strategies]
+        comments = @strategy.comments
+        render json: comments, include: [:strategy[:id]]
     end
 
     def show
@@ -11,12 +12,15 @@ class CommentsController < ApplicationController
     end
 
     def create
-        @comment = Comment.new(comment_params)
+      
+        @comment = @strategy.comments.build(comment_params)
+
         if @comment.save
             render json: @comment
         else
             render json: @comment.errors
         end
+
     end
 
     def update
@@ -34,12 +38,17 @@ class CommentsController < ApplicationController
 
 
     private
+    def set_comment
+        @comment = Comment.find_by(id: params[:id])
+    end
+
+    def get_strategy
+        @strategy = Strategy.find_by(id: params[:strategy_id])
+    end
 
     def comment_params
         params.require(:comment).permit(:title, :body, :strategy_id)
     end
 
-    def set_comment
-        @comment = Comment.find_by(id: params[:id])
-    end
+    
 end

@@ -111,13 +111,13 @@
 
         <br>
 
-        <button class="js-modal-trigger button is-primary" data-target="comments">
-          Open JS example modal
-        </button>
         
         <div class="content" id="strategies">
           
+          
         </div>
+
+        
       </div>
       </div>
       </div>
@@ -131,36 +131,42 @@
   <div class="modal-background"></div>
   <div class="modal-content">
     <div class="box">
-      <p>Modal JS example</p>
+
+      <!--------------------------------------------------------------------------------------------->
+      <!--  COMMENT FORM BELOW THIS LINE -->
+      <!--------------------------------------------------------------------------------------------->
+      <form id="comment-form" method="post">
+        <div class="field">
+          <div class="column is-one-third">
+            <label for="name">Title:</label>
+            <input class="input is-one-third" type="text" placeholder="Works half the time" name="name"
+              id="comment-title">
+          </div>
+        </div>
+        <br>
+        <div class="column is-three-fifths">
+          <label for="comment">Comment:</label>
+          <textarea class="textarea is-hovered I"
+            placeholder="This strategy worked for 50% of my students and I have a large class. I might not use it again. 5/10."
+            name="comment" id="comment-body"></textarea>
+        </div>
+        <br>
+        <input class="is-primary button is-black" type="submit" value="Add Comment" id="submit">
+      </form>
+
+      <div class="show-comments" id="show-comments">
+
+      </div>
     </div>
   </div>
   <button class="modal-close is-large" aria-label="close"></button>
 </div>
 
-<!--------------------------------------------------------------------------------------------->
-<!--  COMMENT FORM BELOW THIS LINE -->
-<!--------------------------------------------------------------------------------------------->
+
 
     <section>
      
-            <form id="comment-form" method="post">
-              <div class="field">
-                <div class="column is-one-third">
-                  <label for="name">Title:</label>
-                  <input class="input is-one-third" type="text" placeholder="Works half the time" name="name"
-                    id="comment-title">
-                </div>
-              </div>
-              <br>
-              <div class="column is-three-fifths">
-                <label for="comment">Comment:</label>
-                <textarea class="textarea is-hovered I"
-                  placeholder="This strategy worked for 50% of my students and I have a large class. I might not use it again. 5/10."
-                  name="comment" id="comment-body"></textarea>
-              </div>
-              <br>
-              <input class="is-primary button is-black" type="submit" value="Add Comment" id="submit">
-            </form>
+            
           
      
     </section>
@@ -168,7 +174,7 @@
 
 
 
-    <script src="javascripts/index.js"></script>
+    <script src="javascripts/index.js" ></script>
     <script src="javascripts/modal.js"></script>
    
     </body>

@@ -2,13 +2,16 @@ class StrategiesController < ApplicationController
     before_action :set_strategy, except: [:create]
 
     def index
+        # @attendances = @lecture.attendances
         strategies = Strategy.all
-        render json: StrategySerializer.new(strategies).to_serialized_json
+        render json: strategies
+
+        
     end
 
     def show
         strategy = Strategy.find_by(id: params[:id])
-        render json: StrategySerializer.new(id: strategy.id).to_serialized_json
+        render json: strategy
         
     end
 

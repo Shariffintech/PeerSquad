@@ -1,5 +1,7 @@
 /*jshint esversion: 9 */
 
+
+
 // global variabless
 const baseUrl = 'http://localhost:3000';
 let strategies = [];
@@ -25,11 +27,13 @@ const commentList = () => document.getElementById('comments');
 const scrollTop = () => document.documentElement.scrollTop = 0;
 
 
+
 const resetStrategies = () => {
     strategyList().innerHTML = '';
 };
 
 // event listeners
+
 
 // attaching an event listener to the form
 
@@ -39,7 +43,7 @@ const attachFormEvents = () => {
 };
 
 
-//event handlers
+// Crud Strategy Actions
 
 const createStrategy = async (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ const createStrategy = async (e) => {
             "Content-Type": "application/json"
         },
         body: JSON.stringify(strongParams)
-    });
+    }).catch(err => { alert(err) });
     // get the new strategy from the response
     const strategy = await res.json();
 
@@ -81,7 +85,7 @@ const deleteStrategy = async strategy => {
         
          // deleting the strategy with the DELETE HTTP method.
         method: "DELETE"
-    });
+    }).catch(err => { alert(err) });
     // filtering out the strategy from the strategies array.
     strategies = strategies.filter(s => s.id !== strategy.id);
     
@@ -94,7 +98,7 @@ const deleteStrategy = async strategy => {
 
 
 const editStrategy = strategy => {
-    // trigger a modal to edit a strategy
+    
     strategyForm().removeEventListener('submit', createStrategy);
     getStrategyName().value = strategy.name;
     getStrategyDescription().value = strategy.description;
@@ -132,7 +136,7 @@ async function updateStrategy(e) {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(strongParams)
-    });
+    }).catch(err => { alert(err) });
   
     const newStrategy = await response.json();
     const index = strategies.indexOf(this);
@@ -149,71 +153,13 @@ async function updateStrategy(e) {
 
 }
 
-const commentModal = async (strategy) =>{
-    strategy.preventDefault();
-
-    //trigger a modal on click event to show list of comments associated with a strategy
-    const modal = document.getElementById('comment-modal');
-    const span = document.getElementsByClassName("close")[0];
-    
-   
-    console.log(strategy);
-    // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
-    const res = await fetch(baseUrl + `/strategies/${strategy.id}/${comment.id}`,
-        {   method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }
-        }
-    );
-    const comments = await res.json();
-    if (comments.length === 0) {
-        alert('No comments found for this strategy. Please create a comment');
-        createComment();
-    } else {
-        // render the comments
-        renderComments(comments);
-    }
-   
-
-    // filter the comments to get the comments associated with the strategy
-    const filteredComments = comments.filter(c => c.strategy_id === strategy.id);
-    
-    // render the comments
-    commentList.innerHTML = '';
-    filteredComments.forEach(c => renderComment(c));
-
-    // close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    };
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    };
-
-    comment.forEach(comment => {
-        if(comment.strategy_id === strategy.id){
-
-            commentList.innerHTML += 
-            `<li>${comment.title}</li>`,
-            `<li>${comment.body}</li>`; 
-  
-        }
-    }
-    );
-};
+// Crud Comment Actions
 
 
-
-// add comment to each strategy
+// create comment under associated strategy
 const createComment = async (strategy) => {
-    // trigger a comment modal, then retrieve the comment title and body
-    commentModal();
 
-   
+    // trigger a comment modal, then retrieve the comment title and body
     const strongParams = {
         comment: {
         title: getComTitle().value,
@@ -228,7 +174,7 @@ const createComment = async (strategy) => {
             'Accept': 'application/json'
         },
         body: JSON.stringify(strongParams)
-    });
+    }).catch(err => { alert(err) });
     const comment = await response.json();
     // push comment on the comments array
     comments.push(comment);
@@ -236,7 +182,6 @@ const createComment = async (strategy) => {
     getComTitle().value = '';
     alert('Comment successfully added');
 };
-
 
 const deleteComment = async (comment) => {
     // fetching the strategy with the ID of the strategy we want to delete.
@@ -249,10 +194,153 @@ const deleteComment = async (comment) => {
     renderComment(comment);
 };
 
+// renders the comments to the DOM
+
+const commentModal = async (strategy) => {
+
+    // trigger a modal and show a comment form and overlay from the modal.js file
+    // if the user clicks the overlay, close the modal
+    // if the user clicks the submit button, create a call the createComment function to create a new comment
+    
+    // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
+    const res = await fetch(baseUrl + `/strategies/${strategy.currentTarget.dataset.strategyId}/comments`,
+    // add conditional to check if there are comments
+        {   
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+
+        },
+        // catch errors
+        })
+        .catch(err => {alert(err)})
+
+    // console.log(res);
+    const comments = await res.json();
+    if (comments.length === 0) {
+        alert('No comments found for this strategy. Please create a comment');
+        createComment(strategy);
+    } else {
+        // render the comments
+        renderComments(comments);
+        openModal(commentList);
+    }
+
+    // get the comments from the response
+    const comment = await comments.json();
+
+    // filter the comments to get the comments associated with the strategy
+    const filteredComments = comment.filter(c => c.strategy_id === strategy.id);
+
+    // render the comments
+    commentList.innerHTML = '';
+    filteredComments.forEach(c => renderComment(c));
+
+    // Functions to open and close a modal
+    function openModal($el) {
+        $el.classList.add('is-active');
+      }
+    console.log(classList);
+      function closeModal($el) {
+        $el.classList.remove('is-active');
+      }
+    
+      function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+          closeModal($modal);
+        });
+      }
+    
+    // Add a click event on buttons to open a specific modal
+      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+        
+        const modal = $trigger.dataset.target;
+        const $target = document.getElementById(modal);
+        console.log($target);
+        
+      
+        $trigger.addEventListener('click', () => {
+          openModal($target);
+        });
+      });
+    
+      // Add a click event on various child elements to close the parent modal
+      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        const $target = $close.closest('.modal');
+      
+        $close.addEventListener('click', () => {
+          closeModal($target);
+        });
+      });
+    
+      // Add a keyboard event to close all modals
+      document.addEventListener('keydown', (event) => {
+        const e = event || window.event;
+      
+        if (e.keyCode === 27) { // Escape key
+          closeAllModals();
+        }
+      });
+    
+};
+
+const renderComment = async (comment, parentContext) => {
+    
+    const div = document.createElement('div');
+    const h3 = document.createElement('h3');
+    const p = document.createElement('p');
+    const deleteButton = document.createElement('button');
+    const editButton = document.createElement('button');
+     
+
+    h3.innerText = comment.title;
+    p.innerText = comment.body;
+
+    // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
+
+    deleteButton.innerText = 'Delete Comment';
+    deleteButton.addEventListener('click', e => deleteComment(comment));
 
 
+    editButton.innerText = 'Edit Comment';
+    editButton.addEventListener('click', e => editComment(comment));
 
-/* Renderer's */
+    // appends the new div to the commentsList() element, apply class name comment card
+
+    div.appendChild(h3);
+    div.appendChild(p);
+    div.appendChild(deleteButton);
+    div.appendChild(editButton);
+
+    
+    parentContext.appendChild(div);
+};
+
+
+const renderComments = async (comments) => {
+    
+    // comments = await loadComments();
+    console.log('render comments',comments);
+
+    const showComments = document.getElementById('show-comments');
+    // loops through the strategies array and calls the renderComments() function for each strategy
+    comments.forEach(comment => renderComment(comment, showComments));
+};
+
+const loadComment = async () => {
+    const res = await fetch(baseUrl + '/comments').catch(err => { alert(err)} );
+    comment = await res.json();
+    renderComments();
+};
+
+const loadComments = async () => {
+    const res = await fetch(baseUrl + '/comments').catch(err => { alert(err)} );
+    const comments = await res.json();
+    return comments;
+};
+
+/* Strategy Renderer's */
 
 // this function creates a new div element and adds it to the strategyList() element
 const renderStrategy = (strategy) => {
@@ -298,8 +386,9 @@ const renderStrategy = (strategy) => {
     commentButton.innerText = ' + Add Comment';
     commentButton.addEventListener('click', commentModal);
     commentButton.className = 'js-modal-trigger button is-primary is-light m-1'; 
-    commentButton.datatarget = '#comments';
-    commentButton.id = 'Add Comment';
+    // commentButton.dataset.target = 'comments';
+    commentButton.dataset.strategyId = strategy.id;
+
     // commentButton.onclick = function() {
     //     document.querySelector('.Add Comment')
     // };
@@ -333,79 +422,33 @@ const renderStrategy = (strategy) => {
 const renderStrategies = async () => {
     // clear the list of any existing strategies
     resetStrategies();
-    strategies = await loadStrategies();
+    strategies = await loadStrategies().catch(err => console.log(err));
     // loops through the strategies array and calls the renderStrategy() function for each strategy
     strategies.forEach(strategy => renderStrategy(strategy));
+
 };
 
-const renderComments = async () => {
-    
-    comments = await loadComments();
-    // loops through the strategies array and calls the renderStrategy() function for each strategy
-    comments.forEach(comment => renderComment(comment));
-};
 
 
 const loadStrategy = async () => {
-    const res = await fetch(baseUrl + '/strategies');
+    const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
     strategy = await res.json();
     renderStrategies();
 };
 
 const loadStrategies = async () => {
-    const res = await fetch(baseUrl + '/strategies');
+    const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
     const strategies = await res.json();
     
     return strategies;
 };
 
-const loadComment = async () => {
-    const res = await fetch(baseUrl + '/comments');
-    comment = await res.json();
-    renderComments();
-};
 
-const loadComments = async () => {
-    const res = await fetch(baseUrl + '/comments');
-    const comments = await res.json();
-    return comments;
-};
-
-const renderComment = async (comment) => {
-    
-    const div = document.createElement('div');
-    const h3 = document.createElement('h3');
-    const p = document.createElement('p');
-    const deleteButton = document.createElement('button');
-    const editButton = document.createElement('button');
-     
-
-    h3.innerText = comment.title;
-    p.innerText = comment.body;
-
-    // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
-
-    deleteButton.innerText = 'Delete Strategy';
-    deleteButton.addEventListener('click', e => deleteComment(comment));
-
-
-    editButton.innerText = 'Edit Strategy';
-    editButton.addEventListener('click', e => editComment(comment));
-
-    // appends the new div to the commentsList() element, apply class name comment card
-    div.className = 'modal';
-    div.appendChild(h3);
-    div.appendChild(p);
-    div.appendChild(deleteButton);
-    div.appendChild(editButton);
-
-    
-    commentList().appendChild(div);
-    return commentList();
-
-};
 
 document.addEventListener('DOMContentLoaded', () => {
+       
     loadStrategy();
     attachFormEvents();
-});
+
+    
+})  ;

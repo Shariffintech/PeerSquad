@@ -13255,3 +13255,3016 @@ TypeError (no implicit conversion of Symbol into Integer):
   
 app/controllers/comments_controller.rb:7:in `[]'
 app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-20 20:10:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 190ms (Views: 10.2ms | ActiveRecord: 27.6ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-20 20:10:16 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 4.3ms | ActiveRecord: 1.4ms | Allocations: 1628)
+
+
+Started POST "/strategies/2/comments" for ::1 at 2022-01-20 20:10:17 -0500
+Processing by CommentsController#create as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 400 Bad Request in 22ms (ActiveRecord: 0.4ms | Allocations: 613)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: comment):
+  
+app/controllers/comments_controller.rb:50:in `comment_params'
+app/controllers/comments_controller.rb:16:in `create'
+Started GET "/strategies" for ::1 at 2022-01-20 23:05:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 396ms (Views: 17.4ms | ActiveRecord: 48.3ms | Allocations: 3792)
+
+
+Started GET "/strategies" for ::1 at 2022-01-20 23:05:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 6.3ms | ActiveRecord: 0.8ms | Allocations: 1629)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-20 23:06:06 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.5ms | Allocations: 593)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-20 23:31:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 93ms (Views: 4.8ms | ActiveRecord: 9.9ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-20 23:31:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-20 23:31:59 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.4ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-20 23:34:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 1.2ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-20 23:34:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.9ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-20 23:35:09 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-20 23:35:31 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 4.7ms | ActiveRecord: 2.3ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-20 23:35:31 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-20 23:35:33 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:08:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 88ms (Views: 3.9ms | ActiveRecord: 15.2ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:08:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:08:23 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"strategy_id"=>"2"}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 594)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:11:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 6.8ms | ActiveRecord: 2.6ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:11:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:11:46 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:31:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 91ms (Views: 3.2ms | ActiveRecord: 39.9ms | Allocations: 3792)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:31:51 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 3.9ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:31:55 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:41:10 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 154ms (Views: 15.6ms | ActiveRecord: 37.3ms | Allocations: 3736)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:41:10 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:41:12 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.6ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:41:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 3.9ms | ActiveRecord: 2.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:41:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 5.3ms | ActiveRecord: 1.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:41:28 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:42:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 14ms (Views: 7.7ms | ActiveRecord: 2.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:42:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:42:57 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:42:59 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:42:59 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:42:59 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:43:00 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:43:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (5.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 4.5ms | ActiveRecord: 7.2ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:43:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 1.5ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:43:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 2.3ms | ActiveRecord: 7.0ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:43:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:43:56 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:44:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:44:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:45:01 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 00:48:30 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.6ms | ActiveRecord: 1.0ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 00:48:30 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 00:48:35 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 01:14:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 54ms (Views: 19.4ms | ActiveRecord: 2.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 01:14:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 10.0ms | ActiveRecord: 2.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 01:14:14 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:04:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 278ms (Views: 4.1ms | ActiveRecord: 34.8ms | Allocations: 3796)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:04:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (10.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 31ms (Views: 2.3ms | ActiveRecord: 11.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:04:40 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:05:20 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.3ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:05:20 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 3.2ms | ActiveRecord: 1.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:05:21 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:05:33 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:05:36 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 4.4ms | ActiveRecord: 2.5ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:05:36 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.5ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:05:38 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:06:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 2.6ms | ActiveRecord: 1.1ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:06:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:06:39 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:07:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 1.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:07:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:07:07 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:09:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.9ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:09:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 1.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:10:00 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:10:46 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (3.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 2.7ms | ActiveRecord: 4.0ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:10:47 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:10:48 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:18:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 130ms (Views: 5.6ms | ActiveRecord: 24.6ms | Allocations: 3791)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:18:56 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (3.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 50ms (Views: 4.6ms | ActiveRecord: 4.3ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:19:15 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 02:19:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (6.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 2.9ms | ActiveRecord: 9.0ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 02:19:25 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 1.5ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 02:19:27 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 03:00:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 143ms (Views: 9.7ms | ActiveRecord: 22.7ms | Allocations: 3738)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 03:00:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 4.2ms | ActiveRecord: 2.2ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:00:39 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.0ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 03:11:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 102ms (Views: 5.7ms | ActiveRecord: 17.5ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 03:11:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (3.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 15ms (Views: 6.7ms | ActiveRecord: 3.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:11:07 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:11:15 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (1.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.6ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:12:35 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 03:12:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.4ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 03:12:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.1ms | ActiveRecord: 1.1ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:12:41 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"strategy_id"=>"2"}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 591)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 03:12:44 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"strategy_id"=>"2"}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 590)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:30:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 98ms (Views: 8.3ms | ActiveRecord: 23.1ms | Allocations: 3791)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:30:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.3ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-21 11:31:02 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"strategy_id"=>"3"}
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.7ms | Allocations: 594)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:32:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (23.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 46ms (Views: 7.5ms | ActiveRecord: 27.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:32:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (21.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 34ms (Views: 5.9ms | ActiveRecord: 22.4ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:32:13 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (2.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 2.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:35:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (3.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 20ms (Views: 4.4ms | ActiveRecord: 4.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:35:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 6.4ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:36:25 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:37:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.5ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:37:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:37:17 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:40:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (8.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 44ms (Views: 13.1ms | ActiveRecord: 9.1ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:40:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.6ms | ActiveRecord: 1.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:41:00 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:41:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (14.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 30ms (Views: 3.2ms | ActiveRecord: 14.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:41:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.3ms | ActiveRecord: 1.5ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:41:16 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (2.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 2.5ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:41:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.9ms | ActiveRecord: 0.6ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:41:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 4.0ms | ActiveRecord: 1.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:41:53 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:42:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:42:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:42:15 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:42:43 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (4.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 3.4ms | ActiveRecord: 5.4ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:42:43 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 4.5ms | ActiveRecord: 1.4ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:42:44 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.2ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:46:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:46:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:46:52 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:47:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:47:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:47:16 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:48:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 1.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:48:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 3.6ms | ActiveRecord: 1.2ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:48:03 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:48:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (3.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.8ms | ActiveRecord: 3.4ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:48:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:48:56 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:54:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:54:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:54:03 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:55:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (3.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 17ms (Views: 6.1ms | ActiveRecord: 3.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:55:18 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.8ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:55:20 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.6ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:55:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 10ms (Views: 2.4ms | ActiveRecord: 1.9ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:55:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 3.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:55:36 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:09 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:09 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.9ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:56:12 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.5ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (3.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 32ms (Views: 4.5ms | ActiveRecord: 7.8ms | Allocations: 1631)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:56:23 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:56:55 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.1ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:56:56 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:57:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 0.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:57:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:57:25 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:58:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 3.4ms | ActiveRecord: 1.6ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:58:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 11:58:07 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.2ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 11:59:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 11:59:33 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.0ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-21 11:59:34 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"3", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:01:28 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:01:28 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (8.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 9.0ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:01:30 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:01:32 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:02:30 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:02:30 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:02:32 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:03:04 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.8ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:03:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.6ms | ActiveRecord: 1.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:03:06 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:03:08 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:03:28 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (23.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 36ms (Views: 6.6ms | ActiveRecord: 25.5ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:03:28 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.5ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:03:29 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:35:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 93ms (Views: 6.6ms | ActiveRecord: 12.5ms | Allocations: 3791)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:35:23 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:35:26 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.4ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 12:36:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 1.9ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 12:36:11 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 12:36:14 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 13:03:43 -0500
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (3.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 41ms (Views: 6.3ms | ActiveRecord: 19.9ms | Allocations: 11390)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 13:03:43 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.3ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 13:03:46 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.5ms | Allocations: 1973)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 17:19:45 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 92ms (Views: 6.1ms | ActiveRecord: 18.0ms | Allocations: 3814)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 17:19:45 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 17:19:47 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.7ms | Allocations: 612)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:00:46 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 56ms (Views: 2.3ms | ActiveRecord: 16.7ms | Allocations: 3756)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:00:46 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:00:49 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 593)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:02:01 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 2.4ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:02:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 1.4ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:02:04 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 590)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:04:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 0.7ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:04:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:04:39 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:05:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (4.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 2.6ms | ActiveRecord: 5.1ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:05:39 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.9ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:05:41 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:05:42 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.7ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:14:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 60ms (Views: 1.4ms | ActiveRecord: 14.0ms | Allocations: 3791)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:14:32 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:14:33 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:17:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:17:49 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.7ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:17:50 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.6ms | Allocations: 590)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:19:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.0ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:19:05 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 1.2ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:19:07 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:27:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 74ms (Views: 4.4ms | ActiveRecord: 16.0ms | Allocations: 3792)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:27:53 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.7ms | ActiveRecord: 2.4ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:27:54 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:38:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 67ms (Views: 1.7ms | ActiveRecord: 18.6ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:38:54 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.0ms | ActiveRecord: 0.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:38:55 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:46:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (2.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 79ms (Views: 2.5ms | ActiveRecord: 14.1ms | Allocations: 3735)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:46:26 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 37ms (Views: 32.2ms | ActiveRecord: 2.0ms | Allocations: 1629)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:46:28 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:46:40 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.7ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:47:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 9ms (Views: 1.7ms | ActiveRecord: 1.1ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:47:37 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:47:39 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 18:48:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.4ms | ActiveRecord: 1.2ms | Allocations: 1627)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 18:48:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 1.6ms | Allocations: 1628)
+
+
+Started GET "/strategies/2/comments" for ::1 at 2022-01-21 18:48:45 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"2", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.3ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+  [1m[36mComment Load (3.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8455.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test"[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8385.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8542.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (8479.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test"[0m
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (5.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (28.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "test"[0m
+  [1m[35m (174.3ms)[0m  [1m[35mCREATE DATABASE "test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments" CASCADE[0m
+  [1m[35m (20.7ms)[0m  [1m[35mCREATE TABLE "comments" ("id" bigserial primary key, "title" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "body" character varying, "strategy_id" bigint)[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE INDEX "index_comments_on_strategy_id" ON "comments" ("strategy_id")[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "strategies" CASCADE[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE TABLE "strategies" ("id" bigserial primary key, "name" character varying, "category" character varying, "tier" integer, "description" character varying, "reference" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mALTER TABLE "comments" ADD CONSTRAINT "fk_rails_fbfef54321"
+FOREIGN KEY ("strategy_id")
+  REFERENCES "strategies" ("id")
+[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220107200010)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20220105002621),
+(20220105064400);
+
+[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-21 23:59:53.414712"], ["updated_at", "2022-01-21 23:59:53.414712"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "schema_sha1"], ["value", "36f409d919a7d1d19ff1522f6eb47b0c12afcdcf"], ["created_at", "2022-01-21 23:59:53.429202"], ["updated_at", "2022-01-21 23:59:53.429202"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (0.8ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calm down counting"], ["category", "Academics"], ["tier", 1], ["description", "Count to 10 and ask child to calm down"], ["reference", "Floyd, D. (2017). The Future of Education: The Role of Technology in the 21st Century. Retrieved from https://www.nytimes.com/2017/04/12/education/the-future-of-education-the-role-of-technology-in-the-21st-century.html"], ["created_at", "2022-01-21 23:59:53.637138"], ["updated_at", "2022-01-21 23:59:53.637138"]]
+  [1m[36mComment Create (2.2ms)[0m  [1m[32mINSERT INTO "comments" ("title", "created_at", "updated_at", "body", "strategy_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This is a test comment"], ["created_at", "2022-01-21 23:59:53.641024"], ["updated_at", "2022-01-21 23:59:53.641024"], ["body", "This is the body of the comment"], ["strategy_id", 1]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (1.0ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Develop a positive attitude"], ["category", "Developmental"], ["tier", 1], ["description", "Develop a positive attitude"], ["reference", "Ralph, J. (2017). Positive Attitude: The Power of Positive Thinking. Retrieved from https://www.amazon.com/Positive-Attitude-Power-Thinking-ebook/dp/B071JZQWQW/ref=sr_1_1?ie=UTF8&qid=1524098982&sr=8-1&keywords=positive+attitude"], ["created_at", "2022-01-21 23:59:53.648098"], ["updated_at", "2022-01-21 23:59:53.648098"]]
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("title", "created_at", "updated_at", "body", "strategy_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This is a another test comment"], ["created_at", "2022-01-21 23:59:53.651764"], ["updated_at", "2022-01-21 23:59:53.651764"], ["body", "This is the body of the comment 2"], ["strategy_id", 2]]
+  [1m[36mTRANSACTION (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mStrategy Create (0.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Read aloud"], ["category", "Literacy"], ["tier", 1], ["description", "Read aloud"], ["reference", "Tom, R. (2017). Reading aloud: How to improve reading comprehension. Retrieved from https://www.amazon.com/Reading-Aloud-Improving-Reading-Comprehension-ebook/dp/B071JZQWQW/ref=sr_1_1?ie=UTF8&qid=1524098982&sr=8-1&keywords=reading+aloud"], ["created_at", "2022-01-21 23:59:53.655065"], ["updated_at", "2022-01-21 23:59:53.655065"]]
+  [1m[36mComment Create (0.5ms)[0m  [1m[32mINSERT INTO "comments" ("title", "created_at", "updated_at", "body", "strategy_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "This is a third test comment"], ["created_at", "2022-01-21 23:59:53.657567"], ["updated_at", "2022-01-21 23:59:53.657567"], ["body", "body of the comment 3"], ["strategy_id", 3]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "strategies"[0m
+Started GET "/strategies" for ::1 at 2022-01-21 19:02:07 -0500
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 32ms (Views: 6.6ms | ActiveRecord: 6.8ms | Allocations: 11382)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:02:07 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms | Allocations: 1620)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:02:10 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 2.0ms | Allocations: 1974)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 19:03:34 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.5ms | ActiveRecord: 1.3ms | Allocations: 1639)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:03:34 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.9ms | Allocations: 1620)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:03:37 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 1.9ms | Allocations: 609)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 19:08:07 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.3ms | ActiveRecord: 1.3ms | Allocations: 1640)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:08:07 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 1.0ms | Allocations: 1620)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:08:09 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.5ms | Allocations: 590)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 19:12:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1619)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:12:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.3ms | ActiveRecord: 0.8ms | Allocations: 1620)
+
+
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" /* loading for inspect */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" ORDER BY "strategies"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:27:46 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 9.8ms | Allocations: 2754)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 19:28:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 24ms (Views: 5.3ms | ActiveRecord: 0.7ms | Allocations: 1623)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:28:35 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 2.8ms | ActiveRecord: 0.9ms | Allocations: 1620)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:28:36 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.4ms | Allocations: 589)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-21 19:47:24 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 64ms (Views: 2.7ms | ActiveRecord: 21.1ms | Allocations: 3728)
+
+
+Started GET "/strategies" for ::1 at 2022-01-21 19:47:24 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.8ms | Allocations: 1620)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-21 19:47:28 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms | Allocations: 593)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 150ms (Views: 9.0ms | ActiveRecord: 22.2ms | Allocations: 3788)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 8ms (Views: 2.8ms | ActiveRecord: 0.8ms | Allocations: 1620)
+
+
+Started DELETE "/strategies/3" for ::1 at 2022-01-22 15:43:14 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (15.3ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 16.3ms | Allocations: 2038)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "strategies" violates foreign key constraint "fk_rails_fbfef54321" on table "comments"
+DETAIL:  Key (id)=(3) is still referenced from table "comments".
+):
+  
+app/controllers/strategies_controller.rb:38:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:17 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.4ms | ActiveRecord: 1.5ms | Allocations: 1619)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 12ms (Views: 5.1ms | ActiveRecord: 1.2ms | Allocations: 1620)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:41 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 13ms (Views: 6.2ms | ActiveRecord: 0.9ms | Allocations: 1620)
+
+
+Started DELETE "/strategies/3" for ::1 at 2022-01-22 15:43:46 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (5.4ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 500 Internal Server Error in 230ms (ActiveRecord: 6.3ms | Allocations: 1988)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "strategies" violates foreign key constraint "fk_rails_fbfef54321" on table "comments"
+DETAIL:  Key (id)=(3) is still referenced from table "comments".
+):
+  
+app/controllers/strategies_controller.rb:38:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-22 15:43:50 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 1619)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:02 -0500
+Processing by StrategiesController#index as */*
+Completed 500 Internal Server Error in 11ms (Allocations: 534)
+
+
+  
+ArgumentError (The :dependent option must be one of [:destroy, :delete_all, :nullify, :restrict_with_error, :restrict_with_exception, :destroy_async], but is :destroy_all):
+  
+app/models/strategy.rb:3:in `<class:Strategy>'
+app/models/strategy.rb:1:in `<main>'
+app/controllers/strategies_controller.rb:48:in `set_strategy'
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 122ms (Views: 12.4ms | ActiveRecord: 22.4ms | Allocations: 7625)
+
+
+Started DELETE "/strategies/3" for ::1 at 2022-01-22 16:21:04 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (9.2ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 10.3ms | Allocations: 2087)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "strategies" violates foreign key constraint "fk_rails_fbfef54321" on table "comments"
+DETAIL:  Key (id)=(3) is still referenced from table "comments".
+):
+  
+app/controllers/strategies_controller.rb:38:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 3.4ms | ActiveRecord: 1.1ms | Allocations: 1619)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 1.1ms | Allocations: 1620)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:58 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 72ms (Views: 2.3ms | ActiveRecord: 1.6ms | Allocations: 1623)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 1.3ms | Allocations: 1620)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 16:21:59 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 3.2ms | ActiveRecord: 0.8ms | Allocations: 1620)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-22 16:22:01 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"3", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.5ms | Allocations: 597)
+
+
+  
+ActiveRecord::AssociationNotFoundError (Association named 'comments' was not found on Strategy; perhaps you misspelled it?):
+  
+app/controllers/comments_controller.rb:6:in `index'
+Started DELETE "/strategies/3" for ::1 at 2022-01-22 16:22:07 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (2.4ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 3]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 3.5ms | Allocations: 1986)
+
+
+  
+ActiveRecord::InvalidForeignKey (PG::ForeignKeyViolation: ERROR:  update or delete on table "strategies" violates foreign key constraint "fk_rails_fbfef54321" on table "comments"
+DETAIL:  Key (id)=(3) is still referenced from table "comments".
+):
+  
+app/controllers/strategies_controller.rb:38:in `destroy'
+Started GET "/strategies" for ::1 at 2022-01-22 16:22:09 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.9ms | Allocations: 1619)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 17:04:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 86ms (Views: 10.9ms | ActiveRecord: 18.7ms | Allocations: 8613)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 17:04:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 2.1ms | ActiveRecord: 1.1ms | Allocations: 1620)
+
+
+Started DELETE "/strategies/2" for ::1 at 2022-01-22 17:04:05 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 2]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mComment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (0.7ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 2]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 204 No Content in 53ms (ActiveRecord: 17.2ms | Allocations: 7286)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 17:04:06 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.9ms | Allocations: 1483)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 17:04:10 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 1.2ms | Allocations: 1483)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 17:04:10 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 5ms (Views: 1.9ms | ActiveRecord: 0.8ms | Allocations: 1483)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-22 17:45:21 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 185.8ms | Allocations: 2748)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-22 19:50:02 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 163ms (Views: 10.4ms | ActiveRecord: 27.6ms | Allocations: 3590)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 19:50:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 7ms (Views: 2.7ms | ActiveRecord: 1.0ms | Allocations: 1483)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-22 19:50:04 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.3ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies" for ::1 at 2022-01-22 20:41:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 156ms (Views: 10.0ms | ActiveRecord: 23.3ms | Allocations: 3590)
+
+
+Started GET "/strategies" for ::1 at 2022-01-22 20:41:38 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 11ms (Views: 4.4ms | ActiveRecord: 1.1ms | Allocations: 1483)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-22 20:41:40 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.4ms | Allocations: 592)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/1/comments" for ::1 at 2022-01-22 20:43:52 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.2ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'
+Started GET "/strategies/1/comments" for ::1 at 2022-01-22 20:44:00 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:46:in `get_strategy'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.5ms | Allocations: 588)
+
+
+  
+TypeError (no implicit conversion of Symbol into Integer):
+  
+app/controllers/comments_controller.rb:7:in `[]'
+app/controllers/comments_controller.rb:7:in `index'

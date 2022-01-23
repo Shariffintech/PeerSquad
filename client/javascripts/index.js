@@ -210,79 +210,78 @@ const commentModal = async (strategy) => {
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json',
-
-        },
-        // catch errors
+            }
         })
-        .catch(err => {alert(err)})
+        // catch any errors
+        .catch(err => { alert(err) });
+        
+      
 
-    // console.log(res);
     const comments = await res.json();
-    if (comments.length === 0) {
-        alert('No comments found for this strategy. Please create a comment');
-        createComment(strategy);
-    } else {
-        // render the comments
+    // if there are comments, render them to the DOM
+    // if comments are not found, prompt the user to create a comment
+    if (comments.length > 0) { 
         renderComments(comments);
-        openModal(commentList);
+    } else {
+        // if there are no comments, prompt the user to create a comment
+        alert('No comments found. Please create a comment');
+
+        document.addEventListener('DOMContentLoaded', () => {
+       
+            // Functions to open and close a modal
+                    function openModal($el) {
+                        $el.classList.add('is-active');
+                      }
+                   
+                      function closeModal($el) {
+                        $el.classList.remove('is-active');
+                      }
+                    
+                      function closeAllModals() {
+                        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+                          closeModal($modal);
+                        });
+                      }
+                    
+                    // Add a click event on buttons to open a specific modal
+                      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+                        
+                        const modal = $trigger.dataset.target;
+                        const $target = document.getElementById(modal);
+                        console.log($target);
+                        
+                      
+                        $trigger.addEventListener('click', () => {
+                          openModal($target);
+                        });
+                      });
+                    
+                      // Add a click event on various child elements to close the parent modal
+                      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+                        const $target = $close.closest('.modal');
+                      
+                        $close.addEventListener('click', () => {
+                          closeModal($target);
+                        });
+                      });
+                    
+                      // Add a keyboard event to close all modals
+                      document.addEventListener('keydown', (event) => {
+                        const e = event || window.event;
+                      
+                        if (e.keyCode === 27) { // Escape key
+                          closeAllModals();
+                        }
+                      });
+    
+                      openModal(commentList);
+    
+                    });
+           
     }
 
-    // get the comments from the response
-    const comment = await comments.json();
-
-    // filter the comments to get the comments associated with the strategy
-    const filteredComments = comment.filter(c => c.strategy_id === strategy.id);
-
-    // render the comments
-    commentList.innerHTML = '';
-    filteredComments.forEach(c => renderComment(c));
-
-    // Functions to open and close a modal
-    function openModal($el) {
-        $el.classList.add('is-active');
-      }
-    console.log(classList);
-      function closeModal($el) {
-        $el.classList.remove('is-active');
-      }
     
-      function closeAllModals() {
-        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-          closeModal($modal);
-        });
-      }
-    
-    // Add a click event on buttons to open a specific modal
-      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-        
-        const modal = $trigger.dataset.target;
-        const $target = document.getElementById(modal);
-        console.log($target);
-        
-      
-        $trigger.addEventListener('click', () => {
-          openModal($target);
-        });
-      });
-    
-      // Add a click event on various child elements to close the parent modal
-      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-        const $target = $close.closest('.modal');
-      
-        $close.addEventListener('click', () => {
-          closeModal($target);
-        });
-      });
-    
-      // Add a keyboard event to close all modals
-      document.addEventListener('keydown', (event) => {
-        const e = event || window.event;
-      
-        if (e.keyCode === 27) { // Escape key
-          closeAllModals();
-        }
-      });
-    
+          
 };
 
 const renderComment = async (comment, parentContext) => {
@@ -325,7 +324,10 @@ const renderComments = async (comments) => {
 
     const showComments = document.getElementById('show-comments');
     // loops through the strategies array and calls the renderComments() function for each strategy
-    comments.forEach(comment => renderComment(comment, showComments));
+    // comments.forEach(comment => renderComment(comment, showComments));
+    for await (const comment of comments) {
+        renderComment(comment, showComments);
+    }
 };
 
 const loadComment = async () => {
@@ -383,7 +385,7 @@ const renderStrategy = (strategy) => {
     deleteButton.addEventListener('click', e => deleteStrategy(strategy));
     deleteButton.className = 'button is-primary is-light m-1';
 
-    commentButton.innerText = ' + Add Comment';
+    commentButton.innerText = 'Comments';
     commentButton.addEventListener('click', commentModal);
     commentButton.className = 'js-modal-trigger button is-primary is-light m-1'; 
     // commentButton.dataset.target = 'comments';

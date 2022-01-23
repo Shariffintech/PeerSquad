@@ -226,7 +226,7 @@ const commentModal = async (strategy) => {
         // if there are no comments, prompt the user to create a comment
         alert('No comments found. Please create a comment');
 
-        document.addEventListener('DOMContentLoaded', () => {
+        
        
             // Functions to open and close a modal
                     function openModal($el) {
@@ -248,7 +248,6 @@ const commentModal = async (strategy) => {
                         
                         const modal = $trigger.dataset.target;
                         const $target = document.getElementById(modal);
-                        console.log($target);
                         
                       
                         $trigger.addEventListener('click', () => {
@@ -273,10 +272,15 @@ const commentModal = async (strategy) => {
                           closeAllModals();
                         }
                       });
+
+                      const el = document.getElementById("comments");
+                      console.log({commentList});
+                      openModal(el);
+                      
+                    //   commentButton.onclick = function() {
+                    //       document.querySelector('.Add Comment')
+                    //   };
     
-                      openModal(commentList);
-    
-                    });
            
     }
 
@@ -388,16 +392,9 @@ const renderStrategy = (strategy) => {
     commentButton.innerText = 'Comments';
     commentButton.addEventListener('click', commentModal);
     commentButton.className = 'js-modal-trigger button is-primary is-light m-1'; 
-    // commentButton.dataset.target = 'comments';
+ 
     commentButton.dataset.strategyId = strategy.id;
 
-    // commentButton.onclick = function() {
-    //     document.querySelector('.Add Comment')
-    // };
-
-    // showCommentButton.className = 'js-modal-trigger button is-primary is-light m-1';
-    // showCommentButton.id = "Show Comments"
-    // appends the new div to the strategyList() element, apply class name strategy card
 
 
     p.style.color = 'blue';

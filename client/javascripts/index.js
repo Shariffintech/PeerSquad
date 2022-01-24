@@ -242,15 +242,12 @@ const commentModal = async (strategy) => {
     } else {
         // if there are no comments, prompt the user to create a comment
         alert('No comments found. Please create a comment');
-                      openModal(el);
-                      
-                    //   commentButton.onclick = function() {
-                    //       document.querySelector('.Add Comment')
-                    //   };
-    
-           
+        openModal(el);
+        
     }
-
+        
+    openModal(el);
+                        
     
           
 };
@@ -283,21 +280,23 @@ const createComment = async (e) => {
     comments.push(comment);
     renderComment(comment);
     getComTitle().value = '';
+    getComBody().value = '';
     alert('Comment successfully added');
 };
 
 const deleteComment = async comment => {
+
     // fetching the strategy with the ID of the strategy we want to delete.
-    await fetch(baseUrl + `/comments/${comment.id}`, {
+    await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
         method: 'DELETE'
     }).catch(err => { alert(err) });
     // filtering out the strategy from the strategies array.
-    comments = comments.filter(c => c.id !== id);
+    comments = comments.filter(c => c.id !== comment.id);
 
     alert('Comment successfully deleted');
-    renderComment(comments);
+  
+    renderComments(comments);
 
-    
 
 };
 
@@ -307,7 +306,8 @@ const editComment = (comment) => {
     getComBody().value = comment.body;
     formHeader().innerText = "Edit Comment";
     commentFormSubmit().value = "Edit Comment";
-    commentForm().addEventListener('submit', updateComment);
+    commentForm().addEventListener('submit',(comment) => {updateComment(comment)});
+    console.log(comment);
 };
 
 async function updateComment(e){
@@ -318,7 +318,9 @@ async function updateComment(e){
         body: getComBody().value,
         }
     }
-    const response = await fetch(baseUrl + `/comments/${this.id}`, {
+    
+    
+    const response = await fetch(baseUrl + `/strategies/${strategy.id}/comments/${comment.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -331,7 +333,6 @@ async function updateComment(e){
 
     const index = comments.indexOf(editedComment);
     comments[index] = editedComment;
-    commentForm.removeEventListner('submit', updateComment);
     formHeader().innerText = 'Update Comment';
     commentFormSubmit().value = 'Update Comment';
     commentForm().addEventListener('submit', createComment);
@@ -434,15 +435,6 @@ const renderComments = async (comments) => {
     openModal(el);
     comments.forEach(comment => renderComment(comment, el));
 
-
-    // loop through the comments array and render each comment
-    
-    const showComments = document.getElementById('show-comments');
-    // loops through the strategies array and calls the renderComments() function for each strategy
-    // comments.forEach(comment => renderComment(comment, showComments));
-    for await (const comment of comments) {
-        renderComment(comment, showComments);
-    }
 };
 
 const loadComment = async () => {

@@ -44,7 +44,7 @@ class CommentsController < ApplicationController
 
     private
     def set_comment
-        @comment = @strategy.comment.find(params[:id])
+        @comment = @strategy.comments.find(params[:id])
     end
 
     def get_strategy

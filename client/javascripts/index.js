@@ -28,6 +28,7 @@ const scrollTop = () => document.documentElement.scrollTop = 0;
 
 
 
+
 const resetStrategies = () => {
     strategyList().innerHTML = '';
 };
@@ -155,46 +156,7 @@ async function updateStrategy(e) {
 
 // Crud Comment Actions
 
-
-// create comment under associated strategy
-const createComment = async (strategy) => {
-
-    // trigger a comment modal, then retrieve the comment title and body
-    const strongParams = {
-        comment: {
-        title: getComTitle().value,
-        body: getComBody().value,
-        strategy_id: strategy.id
-        }
-    };
-    const response = await fetch(`${baseUrl}/comments`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        },
-        body: JSON.stringify(strongParams)
-    }).catch(err => { alert(err) });
-    const comment = await response.json();
-    // push comment on the comments array
-    comments.push(comment);
-    renderComment(comment);
-    getComTitle().value = '';
-    alert('Comment successfully added');
-};
-
-const deleteComment = async (comment) => {
-    // fetching the strategy with the ID of the strategy we want to delete.
-    await fetch(baseUrl + `/comments/${comment.id}`, {
-        method: 'DELETE'
-    });
-    // filtering out the strategy from the strategies array.
-    comments = comments.filter(s => s.id !== id);
-
-    renderComment(comment);
-};
-
-// renders the comments to the DOM
+// renders the comments to the DOM, prompts the create comment form if none exists
 
 const commentModal = async (strategy) => {
 
@@ -218,63 +180,67 @@ const commentModal = async (strategy) => {
       
 
     const comments = await res.json();
+
+
+    // Functions to open and close a modal
+    function openModal($el) {
+                
+        console.log($el);
+        $el.classList.add("is-active");
+       
+        $el.setAttribute('strategyId', strategy.target.dataset.strategyId);
+      }
+    
+      function closeModal($el) {
+        $el.classList.remove('is-active');
+      }
+    
+      function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+          closeModal($modal);
+        });
+      }
+    
+    // Add a click event on buttons to open a specific modal
+      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+        
+        const modal = $trigger.dataset.target;
+        const $target = document.getElementById(modal);
+        
+      
+        $trigger.addEventListener('click', () => {
+          openModal($target);
+        });
+      });
+    
+      // Add a click event on various child elements to close the parent modal
+      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        const $target = $close.closest('.modal');
+      
+        $close.addEventListener('click', () => {
+          closeModal($target);
+        });
+      });
+    
+      // Add a keyboard event to close all modals
+      document.addEventListener('keydown', (event) => {
+        const e = event || window.event;
+      
+        if (e.keyCode === 27) { // Escape key
+          closeAllModals();
+        }
+      });
+      const el = document.getElementById("comments");
     // if there are comments, render them to the DOM
+
     // if comments are not found, prompt the user to create a comment
+    
     if (comments.length > 0) { 
         renderComments(comments);
+
     } else {
         // if there are no comments, prompt the user to create a comment
         alert('No comments found. Please create a comment');
-
-        
-       
-            // Functions to open and close a modal
-                    function openModal($el) {
-                        $el.classList.add('is-active');
-                      }
-                   
-                      function closeModal($el) {
-                        $el.classList.remove('is-active');
-                      }
-                    
-                      function closeAllModals() {
-                        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
-                          closeModal($modal);
-                        });
-                      }
-                    
-                    // Add a click event on buttons to open a specific modal
-                      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
-                        
-                        const modal = $trigger.dataset.target;
-                        const $target = document.getElementById(modal);
-                        
-                      
-                        $trigger.addEventListener('click', () => {
-                          openModal($target);
-                        });
-                      });
-                    
-                      // Add a click event on various child elements to close the parent modal
-                      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
-                        const $target = $close.closest('.modal');
-                      
-                        $close.addEventListener('click', () => {
-                          closeModal($target);
-                        });
-                      });
-                    
-                      // Add a keyboard event to close all modals
-                      document.addEventListener('keydown', (event) => {
-                        const e = event || window.event;
-                      
-                        if (e.keyCode === 27) { // Escape key
-                          closeAllModals();
-                        }
-                      });
-
-                      const el = document.getElementById("comments");
-                      console.log({commentList});
                       openModal(el);
                       
                     //   commentButton.onclick = function() {
@@ -288,6 +254,78 @@ const commentModal = async (strategy) => {
           
 };
 
+
+// create comment under associated strategy
+const createComment = async (e) => {
+    e.preventDefault();
+   // create strong params for the comment
+    const strongParams = {
+        comment: {
+        title: getComTitle().value,
+        body: getComBody().value,
+        }
+    };
+
+    const strategyId = document.getElementById('comments').getAttribute('strategyid')
+    // post the comment to the comments endpoint with the associated strategy id
+    const response = await fetch(baseUrl + `/strategies/${strategyId}/comments`, {
+        
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(strongParams)
+    }).catch(err => { alert(err) });
+    const comment = await response.json();
+    // push comment on the comments array
+    comments.push(comment);
+    renderComment(comment);
+    getComTitle().value = '';
+    alert('Comment successfully added');
+};
+
+const deleteComment = async (comment) => {
+    // fetching the strategy with the ID of the strategy we want to delete.
+    await fetch(baseUrl + `/comments/${comment.id}`, {
+        method: 'DELETE'
+    }).catch(err => { alert(err) });
+    // filtering out the strategy from the strategies array.
+    comments = comments.filter(c => c.id !== id);
+
+    alert('Comment successfully deleted');
+    renderComment(comments);
+
+    
+
+};
+
+const editComment = async (comment) => {
+    // fetching the strategy with the ID of the strategy we want to edit.
+    const response = await fetch(baseUrl + `/comments/${comment.id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+            comment: {
+                title: getComTitle().value,
+                body: getComBody().value
+            }
+        })
+    }).catch(err => { alert(err) });
+    const editedComment = await response.json();
+    // filtering out the strategy from the strategies array.
+    comments = comments.filter(c => c.id !== id);
+    // pushing the edited strategy on the strategies array.
+    comments.push(editedComment);
+    // rendering the edited strategy.
+    renderComment(editedComment);
+};
+
+
+
 const renderComment = async (comment, parentContext) => {
     
     const div = document.createElement('div');
@@ -298,16 +336,21 @@ const renderComment = async (comment, parentContext) => {
      
 
     h3.innerText = comment.title;
+    h3.className = 'title is-3';
     p.innerText = comment.body;
+    p.className = 'body is-5';
 
     // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
     deleteButton.innerText = 'Delete Comment';
     deleteButton.addEventListener('click', e => deleteComment(comment));
+    deleteButton.className = 'button is-danger';
 
 
     editButton.innerText = 'Edit Comment';
     editButton.addEventListener('click', e => editComment(comment));
+    editButton.className = 'button is-warning';
+
 
     // appends the new div to the commentsList() element, apply class name comment card
 
@@ -315,17 +358,71 @@ const renderComment = async (comment, parentContext) => {
     div.appendChild(p);
     div.appendChild(deleteButton);
     div.appendChild(editButton);
+    // append div to the show-comments element
+    const showComments = () => document.getElementById('show-comments').appendChild(div);
 
-    
-    parentContext.appendChild(div);
+
+    showComments();
 };
 
 
 const renderComments = async (comments) => {
-    
-    // comments = await loadComments();
-    console.log('render comments',comments);
+    // Functions to open and close a modal
+    function openModal($el) {
+                
+        $el.classList.add("is-active");
+       
 
+      }
+    
+      function closeModal($el) {
+        $el.classList.remove('is-active');
+      }
+    
+      function closeAllModals() {
+        (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+          closeModal($modal);
+        });
+      }
+    
+    // Add a click event on buttons to open a specific modal
+      (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+        
+        const modal = $trigger.dataset.target;
+        const $target = document.getElementById(modal);
+        
+      
+        $trigger.addEventListener('click', () => {
+          openModal($target);
+        });
+      });
+    
+      // Add a click event on various child elements to close the parent modal
+      (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+        const $target = $close.closest('.modal');
+      
+        $close.addEventListener('click', () => {
+          closeModal($target);
+        });
+      });
+    
+      // Add a keyboard event to close all modals
+      document.addEventListener('keydown', (event) => {
+        const e = event || window.event;
+      
+        if (e.keyCode === 27) { // Escape key
+          closeAllModals();
+        }
+      });
+
+    const el = document.getElementById("comments");
+    // open modal and render comments
+    openModal(el);
+    comments.forEach(comment => renderComment(comment, el));
+
+
+    // loop through the comments array and render each comment
+    
     const showComments = document.getElementById('show-comments');
     // loops through the strategies array and calls the renderComments() function for each strategy
     // comments.forEach(comment => renderComment(comment, showComments));
@@ -361,7 +458,7 @@ const renderStrategy = (strategy) => {
     const editButton = document.createElement('button');
     const deleteButton = document.createElement('button');
     const commentButton = document.createElement('button');
-    const showCommentButton = document.createElement('button');
+    
 
     // creates two new elements, h3 and p, and adds them to the new div
     // sets the textContent of the h3, p elements to the strategy content.
@@ -388,10 +485,12 @@ const renderStrategy = (strategy) => {
     deleteButton.innerText = 'Delete Strategy';
     deleteButton.addEventListener('click', e => deleteStrategy(strategy));
     deleteButton.className = 'button is-primary is-light m-1';
+    deleteButton.id = 'Delete Strategy';
 
     commentButton.innerText = 'Comments';
     commentButton.addEventListener('click', commentModal);
     commentButton.className = 'js-modal-trigger button is-primary is-light m-1'; 
+    commentButton.id = 'Comments';
  
     commentButton.dataset.strategyId = strategy.id;
 
@@ -413,7 +512,9 @@ const renderStrategy = (strategy) => {
     div.appendChild(editButton);
     div.appendChild(commentButton);
 
+    commentList().appendChild(div);
     strategyList().appendChild(div);
+    
     return strategyList();
 
 };

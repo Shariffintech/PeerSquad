@@ -4,16 +4,21 @@ class CommentsController < ApplicationController
 
     def index
         comments = @strategy.comments
-        render json: comments, include: [:strategy[:id]]
+        render json: comments, include: [:strategy]
     end
 
     def show
         comment = Comment.find_by(id: params[:id])
     end
 
+    def new
+        @comment = @strategy.comments.build
+    end
+
     def create
-      
+        
         @comment = @strategy.comments.build(comment_params)
+        
 
         if @comment.save
             render json: @comment
@@ -39,11 +44,12 @@ class CommentsController < ApplicationController
 
     private
     def set_comment
-        @comment = Comment.find_by(id: params[:id])
+        @comment = @strategy.comment.find(params[:id])
     end
 
     def get_strategy
-        @strategy = Strategy.find_by(id: params[:strategy_id])
+        @strategy = Strategy.find(params[:strategy_id])
+        
     end
 
     def comment_params

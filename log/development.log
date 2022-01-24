@@ -23936,3 +23936,139 @@ Processing by CommentsController#index as JSON
 Completed 200 OK in 101ms (Views: 67.2ms | ActiveRecord: 11.1ms | Allocations: 1029326)
 
 
+Started PATCH "/comments/4" for ::1 at 2022-01-24 02:24:47 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/comments/4"):
+  
+Started GET "/strategies" for ::1 at 2022-01-24 02:26:14 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (2.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 380ms (Views: 68.9ms | ActiveRecord: 53.3ms | Allocations: 1669788)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 02:26:15 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (16.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 169ms (Views: 59.3ms | ActiveRecord: 17.5ms | Allocations: 793455)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-24 02:26:17 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 110ms (Views: 74.2ms | ActiveRecord: 4.1ms | Allocations: 1032014)
+
+
+Started PATCH "/comments/4" for ::1 at 2022-01-24 02:26:48 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/comments/4"):
+  
+Started GET "/strategies" for ::1 at 2022-01-24 02:42:07 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (2.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (4.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 1027ms (Views: 719.6ms | ActiveRecord: 64.3ms | Allocations: 1672270)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 02:42:08 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 67ms (Views: 41.1ms | ActiveRecord: 2.2ms | Allocations: 793455)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-24 02:42:11 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 81ms (Views: 55.2ms | ActiveRecord: 3.0ms | Allocations: 1032014)
+
+
+Started PATCH "/comments/4" for ::1 at 2022-01-24 02:42:16 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/comments/4"):
+  
+Started GET "/strategies" for ::1 at 2022-01-24 03:00:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (5.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 317ms (Views: 62.4ms | ActiveRecord: 41.1ms | Allocations: 1669844)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 03:00:12 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (5.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (5.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 69ms (Views: 32.3ms | ActiveRecord: 10.1ms | Allocations: 794225)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-24 03:00:23 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 83ms (Views: 58.2ms | ActiveRecord: 3.2ms | Allocations: 1032014)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 03:01:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 80ms (Views: 47.7ms | ActiveRecord: 2.4ms | Allocations: 793455)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 03:01:19 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 61ms (Views: 38.1ms | ActiveRecord: 1.9ms | Allocations: 793455)
+
+
+Started GET "/strategies/1/comments" for ::1 at 2022-01-24 03:01:21 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (4.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+  [1m[36mStrategy Load (1.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 82ms (Views: 59.9ms | ActiveRecord: 6.4ms | Allocations: 1029326)
+
+
+Started PATCH "/comments/comment-form" for ::1 at 2022-01-24 03:01:35 -0500
+  
+ActionController::RoutingError (No route matches [PATCH] "/comments/comment-form"):
+  

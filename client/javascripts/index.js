@@ -14,6 +14,7 @@ let comments = [];
 const strategyForm = () => document.getElementById('strategy-form');
 const commentForm = () => document.getElementById('comment-form');
 const strategyFormSubmit = () => document.getElementById('submit');
+const commentFormSubmit = () => document.getElementById('comment-submit');
 const getStrategyName = () => document.getElementById('name');
 const getStrategyReference = () => document.getElementById('reference');
 const getStrategyTier = () => document.getElementById('tier');
@@ -285,7 +286,7 @@ const createComment = async (e) => {
     alert('Comment successfully added');
 };
 
-const deleteComment = async (comment) => {
+const deleteComment = async comment => {
     // fetching the strategy with the ID of the strategy we want to delete.
     await fetch(baseUrl + `/comments/${comment.id}`, {
         method: 'DELETE'
@@ -300,29 +301,42 @@ const deleteComment = async (comment) => {
 
 };
 
-const editComment = async (comment) => {
-    // fetching the strategy with the ID of the strategy we want to edit.
-    const response = await fetch(baseUrl + `/comments/${comment.id}`, {
+const editComment = (comment) => {
+    commentForm().removeEventListener('submit', createComment);
+    getComTitle().value = comment.title;
+    getComBody().value = comment.body;
+    formHeader().innerText = "Edit Comment";
+    commentFormSubmit().value = "Edit Comment";
+    commentForm().addEventListener('submit', updateComment);
+};
+
+async function updateComment(e){
+    e.preventDefault();
+    const strongParams = {
+        comment: {
+        title: getComTitle().value,
+        body: getComBody().value,
+        }
+    }
+    const response = await fetch(baseUrl + `/comments/${this.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
             'Accept': 'application/json'
         },
-        body: JSON.stringify({
-            comment: {
-                title: getComTitle().value,
-                body: getComBody().value
-            }
-        })
+        body: JSON.stringify({strongParams})
     }).catch(err => { alert(err) });
+
     const editedComment = await response.json();
-    // filtering out the strategy from the strategies array.
-    comments = comments.filter(c => c.id !== id);
-    // pushing the edited strategy on the strategies array.
-    comments.push(editedComment);
-    // rendering the edited strategy.
-    renderComment(editedComment);
-};
+
+    const index = comments.indexOf(editedComment);
+    comments[index] = editedComment;
+    commentForm.removeEventListner('submit', updateComment);
+    formHeader().innerText = 'Update Comment';
+    commentFormSubmit().value = 'Update Comment';
+    commentForm().addEventListener('submit', createComment);
+    renderComments();
+}
 
 
 

@@ -52,13 +52,13 @@ class StrategiesController < ApplicationController
 end
 
 
-class StrategySerializer
+# class StrategySerializer
 
-    def initialize(strategy_object)
-        @strategy_object = strategy_object
-    end
+#     def initialize(strategy_object)
+#         @strategy_object = strategy_object
+#     end
 
-    def to_serialized_json
-        @strategy_object.to_json
-    end
-end
+#     def to_serialized_json
+#         @strategy_object.to_json
+#     end
+# end

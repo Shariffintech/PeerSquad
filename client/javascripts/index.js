@@ -166,15 +166,7 @@ const commentModal = async (strategy) => {
     // if the user clicks the submit button, create a call the createComment function to create a new comment
     
     // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
-    const res = await fetch(baseUrl + `/strategies/${strategy.currentTarget.dataset.strategyId}/comments`,
-    // add conditional to check if there are comments
-        {   
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json',
-            }
-        })
+    const res = await fetch(baseUrl + `/strategies/${strategy.currentTarget.dataset.strategyId}/comments`)
         // catch any errors
         .catch(err => { alert(err) });
         
@@ -186,7 +178,7 @@ const commentModal = async (strategy) => {
     // Functions to open and close a modal
     function openModal($el) {
                 
-        console.log($el);
+        
         $el.classList.add("is-active");
        
         $el.setAttribute('strategyId', strategy.target.dataset.strategyId);
@@ -306,11 +298,11 @@ const editComment = (comment) => {
     getComBody().value = comment.body;
     formHeader().innerText = "Edit Comment";
     commentFormSubmit().value = "Edit Comment";
-    commentForm().addEventListener('submit',(comment) => {updateComment(comment)});
-    console.log(comment);
+    commentForm().addEventListener('submit', comment => {updateComment(comment)});
+  
 };
 
-async function updateComment(e){
+async function updateComment(e) {
     e.preventDefault();
     const strongParams = {
         comment: {
@@ -319,8 +311,8 @@ async function updateComment(e){
         }
     }
     
-    
-    const response = await fetch(baseUrl + `/strategies/${strategy.id}/comments/${comment.id}`, {
+    console.log(comment)
+    const response = await fetch(baseUrl + `/strategies/${strategy.target.dataset.strategyId}/comments/${this.id}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
@@ -536,11 +528,11 @@ const renderStrategies = async () => {
 
 
 
-const loadStrategy = async () => {
-    const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
-    strategy = await res.json();
-    renderStrategies();
-};
+// const loadStrategy = async () => {
+//     const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
+//     strategy = await res.json();
+//     renderStrategies();
+// };
 
 const loadStrategies = async () => {
     const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
@@ -553,7 +545,7 @@ const loadStrategies = async () => {
 
 document.addEventListener('DOMContentLoaded', () => {
        
-    loadStrategy();
+    renderStrategies();
     attachFormEvents();
 
     

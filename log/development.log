@@ -26825,3 +26825,130 @@ Processing by CommentsController#index as JSON
 Completed 200 OK in 60ms (Views: 30.5ms | ActiveRecord: 2.3ms | Allocations: 561939)
 
 
+Started GET "/strategies/1/comments" for ::1 at 2022-01-24 13:19:41 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"1", "comment"=>{}}
+  [1m[36mStrategy Load (2.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (5.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 377ms (Views: 35.5ms | ActiveRecord: 91.5ms | Allocations: 1439673)
+
+
+Started POST "/strategies" for ::1 at 2022-01-24 13:27:47 -0500
+Processing by StrategiesController#create as JSON
+  Parameters: {"strategy"=>{"name"=>"Calm down counting", "description"=>"Count 10 and breathe", "tier"=>"1", "reference"=>"Floyd, D. (2017). The Future of Education: The Role of Technology in the 21st Century. Retrieved from https://www.nytimes.com/2017/04/12/education/the-future-of-education-the-role-of-technology-in-the-21st-century.html", "category"=>"Social"}}
+  [1m[36mTRANSACTION (5.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+  [1m[36mStrategy Create (8.4ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calm down counting"], ["category", "Social"], ["tier", 1], ["description", "Count 10 and breathe"], ["reference", "Floyd, D. (2017). The Future of Education: The Role of Technology in the 21st Century. Retrieved from https://www.nytimes.com/2017/04/12/education/the-future-of-education-the-role-of-technology-in-the-21st-century.html"], ["created_at", "2022-01-24 18:27:47.288047"], ["updated_at", "2022-01-24 18:27:47.288047"]]
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (5.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+Completed 201 Created in 364ms (Views: 51.2ms | ActiveRecord: 49.7ms | Allocations: 1839297)
+
+
+Started DELETE "/strategies/6" for ::1 at 2022-01-24 13:28:18 -0500
+Processing by StrategiesController#destroy as */*
+  Parameters: {"id"=>"6"}
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 6]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mStrategy Destroy (12.5ms)[0m  [1m[31mDELETE FROM "strategies" WHERE "strategies"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/strategies_controller.rb:38:in `destroy'
+Completed 204 No Content in 147ms (ActiveRecord: 19.8ms | Allocations: 1137344)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 13:28:20 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.7ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 95ms (Views: 57.5ms | ActiveRecord: 2.9ms | Allocations: 794800)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-24 13:28:30 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"3", "comment"=>{}}
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 62ms (Views: 30.5ms | ActiveRecord: 2.4ms | Allocations: 561939)
+
+
+Started POST "/strategies/3/comments" for ::1 at 2022-01-24 13:28:55 -0500
+Processing by CommentsController#create as JSON
+  Parameters: {"comment"=>{"title"=>"Works all the time", "body"=>"works all the time"}, "strategy_id"=>"3"}
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mStrategy Load (1.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mComment Create (7.1ms)[0m  [1m[32mINSERT INTO "comments" ("title", "created_at", "updated_at", "body", "strategy_id") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "Works all the time"], ["created_at", "2022-01-24 18:28:56.081464"], ["updated_at", "2022-01-24 18:28:56.081464"], ["body", "works all the time"], ["strategy_id", 3]]
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+  [1m[36mTRANSACTION (2.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:23:in `create'
+Completed 200 OK in 174ms (Views: 11.0ms | ActiveRecord: 13.9ms | Allocations: 1499328)
+
+
+Started DELETE "/strategies/3/comments/17" for ::1 at 2022-01-24 13:29:07 -0500
+Processing by CommentsController#destroy as */*
+  Parameters: {"strategy_id"=>"3", "id"=>"17"}
+  [1m[36mStrategy Load (4.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["strategy_id", 3], ["id", 17], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:47:in `set_comment'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/comments_controller.rb:41:in `destroy'
+  [1m[36mComment Destroy (1.1ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 17]]
+  ↳ app/controllers/comments_controller.rb:41:in `destroy'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/comments_controller.rb:41:in `destroy'
+Completed 204 No Content in 119ms (ActiveRecord: 9.4ms | Allocations: 1034261)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-24 13:29:13 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"3", "comment"=>{}}
+  [1m[36mStrategy Load (5.3ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 65ms (Views: 33.5ms | ActiveRecord: 7.3ms | Allocations: 561939)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 13:29:21 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.9ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 102ms (Views: 57.2ms | ActiveRecord: 3.4ms | Allocations: 793456)
+
+
+Started GET "/strategies" for ::1 at 2022-01-24 13:29:22 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (1.0ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (1.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+Completed 200 OK in 89ms (Views: 50.9ms | ActiveRecord: 2.6ms | Allocations: 793456)
+
+
+Started GET "/strategies/3/comments" for ::1 at 2022-01-24 13:29:24 -0500
+Processing by CommentsController#index as JSON
+  Parameters: {"strategy_id"=>"3", "comment"=>{}}
+  [1m[36mStrategy Load (1.2ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+  ↳ app/controllers/comments_controller.rb:7:in `index'
+Completed 200 OK in 65ms (Views: 35.2ms | ActiveRecord: 2.5ms | Allocations: 561939)
+
+

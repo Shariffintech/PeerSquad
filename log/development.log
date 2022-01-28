@@ -27763,3 +27763,102 @@ Processing by StrategiesController#index as */*
 Completed 200 OK in 35ms (Views: 15.1ms | ActiveRecord: 14.8ms | Allocations: 4628)
 
 
+Started POST "/strategies" for ::1 at 2022-01-28 13:00:12 -0500
+Processing by StrategiesController#create as JSON
+  Parameters: {"strategy"=>{"name"=>"Calm down counting", "reference"=>"345", "tier"=>"1", "category"=>"", "description"=>",M 123"}}
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+  [1m[36mStrategy Create (22.0ms)[0m  [1m[32mINSERT INTO "strategies" ("name", "category", "tier", "description", "reference", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["name", "Calm down counting"], ["category", ""], ["tier", 1], ["description", ",M 123"], ["reference", "345"], ["created_at", "2022-01-28 18:00:13.323286"], ["updated_at", "2022-01-28 18:00:13.323286"]]
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (154.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/strategies_controller.rb:21:in `create'
+[active_model_serializers]   [1m[36mComment Load (5.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:22:in `create'
+[active_model_serializers] Rendered StrategySerializer with ActiveModelSerializers::Adapter::Attributes (31.61ms)
+Completed 201 Created in 765ms (Views: 38.9ms | ActiveRecord: 263.6ms | Allocations: 5425)
+
+
+Started GET "/strategies" for ::1 at 2022-01-28 13:06:44 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (4.8ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (4.1ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (5.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (8.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (51.46ms)
+Completed 200 OK in 157ms (Views: 41.5ms | ActiveRecord: 41.3ms | Allocations: 7883)
+
+
+Started GET "/strategies" for ::1 at 2022-01-28 13:06:45 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (27.51ms)
+Completed 200 OK in 43ms (Views: 31.6ms | ActiveRecord: 3.7ms | Allocations: 5716)
+
+
+Started GET "/strategies/undefined/comments" for ::1 at 2022-01-28 13:06:54 -0500
+Processing by CommentsController#index as */*
+  Parameters: {"strategy_id"=>"undefined"}
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:51:in `get_strategy'
+Completed 404 Not Found in 8ms (ActiveRecord: 0.6ms | Allocations: 530)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Strategy with 'id'=undefined):
+  
+app/controllers/comments_controller.rb:51:in `get_strategy'
+Started GET "/strategies" for ::1 at 2022-01-28 13:07:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.6ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.5ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (14.53ms)
+Completed 200 OK in 23ms (Views: 17.1ms | ActiveRecord: 2.3ms | Allocations: 5715)
+
+
+Started GET "/strategies" for ::1 at 2022-01-28 13:07:03 -0500
+Processing by StrategiesController#index as */*
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies" WHERE "strategies"."id" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/strategies_controller.rb:48:in `set_strategy'
+  [1m[36mStrategy Load (0.4ms)[0m  [1m[34mSELECT "strategies".* FROM "strategies"[0m
+  ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 1]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 3]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 7]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers]   [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."strategy_id" = $1[0m  [["strategy_id", 8]]
+[active_model_serializers]   ↳ app/controllers/strategies_controller.rb:7:in `index'
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with ActiveModelSerializers::Adapter::Attributes (25.38ms)
+Completed 200 OK in 35ms (Views: 27.5ms | ActiveRecord: 3.5ms | Allocations: 5716)
+
+

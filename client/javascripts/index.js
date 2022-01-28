@@ -62,8 +62,8 @@ const deleteStrategy = async strategy => {
 
 
 const editStrategy = strategy => {
-  const strategies = new Strategy();
   strategyForm().removeEventListener('submit', createStrategy);
+  
   getStrategyName().value = strategy.name;
   getStrategyDescription().value = strategy.description;
   getStrategyReference().value = strategy.reference;
@@ -72,7 +72,7 @@ const editStrategy = strategy => {
   strategyFormSubmit().value = 'Update Strategy';
   formHeader().innerText = 'Edit strategy';
   updateStrategy = updateStrategy.bind(strategy);
-  // strategyForm().addEventListener('submit', updateStrategy);
+  
   strategyForm().addEventListener('submit', updateStrategy);
   strategyForm().addEventListener('click', scrollTop);
   alert('Please update the ' + strategy.name + ' strategy in the form fields');
@@ -82,7 +82,6 @@ const editStrategy = strategy => {
 
 async function updateStrategy(e) {
   e.preventDefault();
-
 
   const strongParams = {
     strategy: {
@@ -116,7 +115,9 @@ async function updateStrategy(e) {
   strategyForm().removeEventListener('submit', updateStrategy, );
   formHeader().innerText = "Create Strategy";
   strategyFormSubmit().value = "Create Strategy";
-  strategyForm().addEventListener('submit', createStrategy);
+  strategyForm().addEventListener('submit', (event) => {
+    createStrategy(event);
+  });
 
 
   Strategy.renderAll();

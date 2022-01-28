@@ -1,6 +1,5 @@
 /*jshint esversion: 8 */
 
-
 class Comment {
     constructor() {
       this.comments = [];
@@ -12,8 +11,9 @@ class Comment {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
-        }
-      })
+        },
+        body: JSON.stringify(comment)
+      }).catch(err => { alert(err) });
       return await response.json();
 
     }
@@ -22,29 +22,49 @@ class Comment {
     }
   
     // Crud Comment Actions
-    async create(e) {
+    async create() {
 
-      e.preventDefault();
+     
       const title = getComTitle().value;
       const body = getComBody().value;
       const strategy_id = document.getElementById('comments').getAttribute('strategyid')
-      const comment = new Comment(title, body, strategy_id);
-  
-      const response = await fetch(baseUrl + `/strategies/${strategyId}/comments`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'Accept': 'application/json'
-          },
-          body: JSON.stringify(comment)
-      }).catch(err => { alert(err) });
-      const newComment = await response.json();
-      comments.push(newComment);
-      renderComments();
+      const comment = await this.getComments(
+        {
+          comment: {
+            title,
+            body,
+            strategy_id
+        }
+        });
+      this.comments.push(comment);
+      this.render(comment);
+   
       getComTitle().value = '';
       getComBody().value = '';
       alert('Comment successfully created');
     }
+
+    attachFormEvents() {
+      commentForm().addEventListener('submit', createComment);
+    }
+
+
+    static async deleteComment(comment) {
+      // fetching the Comment with the ID of the Comment we want to delete.
+      await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
+          method: "DELETE"
+      }).catch(err => {
+          // alert('Comment was not deleted');
+          alert(err)
+      });
+
+      // Remove strategy and re-render
+      this.comments = this.comments.filter(({ id }) => id !== comment.id);
+      this.renderAll();
+
+      alert('Strategy successfully deleted');
+  };
+
 
     
 
@@ -90,10 +110,7 @@ class Comment {
     renderAll() {
       this.comments.forEach(comment => this.render(comment));
     }
-
-
-      
-    
+ 
   };
 
 

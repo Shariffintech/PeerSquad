@@ -19,3 +19,4 @@ const commentList = () => document.getElementById('comments');
 const commentFormSubmit = () => document.getElementById('comment-submit');
 const commentForm = () => document.getElementById('comment-form');
 
+const baseUrl = 'http://localhost:3000';

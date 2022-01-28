@@ -1,18 +1,56 @@
 // fetch the strategies endpoint
+/*jshint esversion: 8 */
+
+const strategyForm = () => document.getElementById('strategy-form');
+const strategyFormSubmit = () => document.getElementById('submit');
+const getStrategyName = () => document.getElementById('name');
+const getStrategyReference = () => document.getElementById('reference');
+const getStrategyTier = () => document.getElementById('tier');
+const getStrategyCategory = () => document.getElementById('category');
+const getStrategyDescription = () => document.getElementById('description');
+const strategyList = () => document.getElementById('strategies');
+
+const formHeader = () => document.getElementById('form-header');
+const scrollTop = () => document.documentElement.scrollTop = 0;
+
+const getComTitle = () => document.getElementById('comment-title');
+const getComBody = () => document.getElementById('comment-body');
+
+const commentList = () => document.getElementById('comments');
+const commentFormSubmit = () => document.getElementById('comment-submit');
+const commentForm = () => document.getElementById('comment-form');
+
+const baseUrl = 'http://localhost:3000';
 
 class Strategy {
     constructor() {
-        this.strategies = [];
+        // this.strategies = [];
+        this.events();
+        this.getStrategies();
     }
 
-    static async getStrategy() {
+    events() {
+        document.querySelector('#strategy-form')
+            .addEventListener('submit', event => {
+                event.preventDefault();
+                this.create();
+            });
+    }
+
+    async getStrategies() {
+        const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
+        this.strategies = await res.json();
+        this.renderAll();
+    }
+
+    static async getStrategy(strategy) {
         const res = await fetch(baseUrl + "/strategies", {
             method: "POST",
             headers: {
                 "Accept": "application/json",
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(strongParams)
+            body: JSON.stringify(strategy)
         }).catch(err => {
             alert(err)
         });
@@ -31,7 +69,9 @@ class Strategy {
         });
 
         // Remove strategy and re-render
-        this.strategies = this.strategies.filter(({ id }) => id !== strategy.id);
+        this.strategies = this.strategies.filter(({
+            id
+        }) => id !== strategy.id);
         this.renderAll();
 
         alert('Strategy successfully deleted');
@@ -45,7 +85,7 @@ class Strategy {
         const category = getStrategyCategory().value;
         const description = getStrategyDescription().value;
 
-        const strategy = await this.getStrategy({
+        const strategy = await Strategy.getStrategy({
             strategy: {
                 name,
                 reference,
@@ -58,9 +98,6 @@ class Strategy {
         this.strategies.push(strategy);
         this.render(strategy);
 
-        /*newStrategy.render();
-        strategyForm().reset();
-        scrollTop();*/
         alert('Strategy successfully created');
     }
 
@@ -70,7 +107,7 @@ class Strategy {
 
     attachFormEvents() {
         strategyForm().addEventListener('submit', createStrategy);
-        commentForm().addEventListener('submit', createComment);
+
     }
 
     // render a strategy
@@ -145,6 +182,8 @@ class Strategy {
         this.strategies.forEach(strategy => this.render(strategy));
     }
 }
+
+new Strategy();
 
 ////////////////////////////////////////
 ////////// Refatoring above ^^

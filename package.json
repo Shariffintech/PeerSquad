@@ -1,0 +1,23 @@
+{
+  "name": "ed-tech-spa",
+  "version": "1.0.0",
+  "description": "Strategy ed tech single page application",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Shariffintech/ed-tech-spa.git"
+  },
+  "author": "Sharif Tarver",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Shariffintech/ed-tech-spa/issues"
+  },
+  "homepage": "https://github.com/Shariffintech/ed-tech-spa#readme"
+}

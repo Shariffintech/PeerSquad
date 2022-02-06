@@ -1,117 +1,130 @@
-// fetch the strategies endpoint
-/*jshint esversion: 8 */
 
-const strategyForm = () => document.getElementById('strategy-form');
-const strategyFormSubmit = () => document.getElementById('submit');
-const getStrategyName = () => document.getElementById('name');
-const getStrategyReference = () => document.getElementById('reference');
-const getStrategyTier = () => document.getElementById('tier');
-const getStrategyCategory = () => document.getElementById('category');
-const getStrategyDescription = () => document.getElementById('description');
-const strategyList = () => document.getElementById('strategies');
-
-const formHeader = () => document.getElementById('form-header');
-const scrollTop = () => document.documentElement.scrollTop = 0;
-
-const getComTitle = () => document.getElementById('comment-title');
-const getComBody = () => document.getElementById('comment-body');
-
-const commentList = () => document.getElementById('comments');
-const commentFormSubmit = () => document.getElementById('comment-submit');
-const commentForm = () => document.getElementById('comment-form');
-
-const baseUrl = 'http://localhost:3000';
+window.formHeader = () => document.getElementById('form-header');
+window.scrollTop = () => document.documentElement.scrollTop = 0;
+window.baseUrl = 'http://localhost:3000';
 
 class Strategy {
-    constructor() {
-        // this.strategies = [];
-        this.events();
-        this.getStrategies();
+
+    static strategies = [];
+    constructor(strategy) {
+ 
+        this._name = strategy.name;
+        this._category = strategy.category;
+        this._description = strategy.description;
+        this._tier = strategy.tier;
+        this._reference = strategy.reference;
+        this._id = strategy.id;
+       
+        Strategy.strategies.push(this);
+       
+    } 
+
+
+    static resetStrategies() {
+        strategyList().innerHTML = '';
     }
 
-    events() {
-        document.querySelector('#strategy-form')
-            .addEventListener('submit', event => {
-                event.preventDefault();
-                this.create();
+
+   static getStrategies() {
+         fetch(baseUrl + '/strategies')
+        .then(res => res.json())
+        .then(strategiesObj => {Strategy.renderAll(strategiesObj)})
+        .catch(err => console.log(err));
+      
+    }
+
+     // render all strategies
+      static renderAll(strategiesObj) {
+        
+        // clear the strategy list
+        Strategy.resetStrategies();
+        // iterate over all strategies to create a new instance strategy
+
+        strategiesObj.forEach(
+            strategy => {
+                const strategyObj = new Strategy(strategy)
+                strategyObj.render();
             });
+       
+  
+
     }
-
-    async getStrategies() {
-        const res = await fetch(baseUrl + '/strategies').catch(err => console.log(err));
-        this.strategies = await res.json();
-        this.renderAll();
-    }
-
-    static async getStrategy(strategy) {
-        const res = await fetch(baseUrl + "/strategies", {
-            method: "POST",
-            headers: {
-                "Accept": "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(strategy)
-        }).catch(err => {
-            alert(err)
-        });
-
-        // get the new strategy from the response
-        return await res.json();
-    }
-
-    static async deleteStrategy(strategy) {
-        // fetching the strategy with the ID of the strategy we want to delete.
-        await fetch(baseUrl + `/strategies/${strategy.id}`, {
-            method: "DELETE"
-        }).catch(err => {
-            // alert('Strategy was not deleted');
-            alert(err)
-        });
-
-        // Remove strategy and re-render
-        this.strategies = this.strategies.filter(({
-            id
-        }) => id !== strategy.id);
-        this.renderAll();
-
-        alert('Strategy successfully deleted');
-    };
 
     // create a new strategy
-    async create() {
-        const name = getStrategyName().value;
-        const reference = getStrategyReference().value;
-        const tier = getStrategyTier().value;
-        const category = getStrategyCategory().value;
-        const description = getStrategyDescription().value;
+    static async create() {
+        e.preventDefault();
 
-        const strategy = await Strategy.getStrategy({
+        const strongParams = {
             strategy: {
-                name,
-                reference,
-                tier,
-                category,
-                description
+            name : getStrategyName().value,
+            reference: getStrategyReference().value,
+            tier : getStrategyTier().value,
+            category : getStrategyCategory().value,
+            description : getStrategyDescription().value,
             }
-        });
+            
 
-        this.strategies.push(strategy);
-        this.render(strategy);
+        }
+    
+        const data = await Api.post('/strategies', strongParams);
+        
+        const strategyObj = new Strategy(data);
+
+        strategyObj.render();
+        
+        //reset the form
+        resetStrategies();
+   
 
         alert('Strategy successfully created');
     }
 
-    resetStrategies() {
-        strategyList().innerHTML = '';
+
+
+    // edit a strategy
+    static async edit(strategy) {
+        const strongParams = {
+            strategy: {
+            name : getStrategyName().value,
+            reference: getStrategyReference().value,
+            tier : getStrategyTier().value,
+            category : getStrategyCategory().value,
+            description : getStrategyDescription().value,
+            
+            }
+
+        }
+    
+        const data = await Api.patch('/strategies/' , strongParams);
+        const strategyObj = new Strategy(data);
+        strategyObj.render();
+        alert('Strategy successfully edited');
     }
 
-    attachFormEvents() {
-        strategyForm().addEventListener('submit', createStrategy);
 
+    static events() {
+        document.querySelector('#strategy-form')
+            .addEventListener('submit', event => {
+                event.preventDefault();
+                Strategy.create();
+               
+            })
+
+        document.querySelector('#comment-form')
+        .addEventListener('submit', event => {
+          event.preventDefault();
+          this.create();
+        });
     }
+
 
     // render a strategy
-    render(strategy) {
+    render() {
+        
+        // create an instance of comment
+        const comments = new Comment(this);
+        
+        console.log(comments);
         const div = document.createElement('div');
         const h3 = document.createElement('h3');
         const h4 = document.createElement('h4');
@@ -126,34 +139,39 @@ class Strategy {
         // creates two new elements, h3 and p, and adds them to the new div
         // sets the textContent of the h3, p elements to the strategy content.
 
-        h2.innerText = 'Strategy: ' + strategy.name;
-        h4.innerText = 'Tier: ' + strategy.tier;
-        h3.textContent = 'Category: ' + strategy.category;
-        p3.innerText = 'Description: ' + strategy.description;
-        p.innerText = 'Reference: ' + strategy.reference;
-        p4.innerText = 'Timestamp: ' + strategy.created_at;
+        h2.innerText = 'Strategy: ' + this._name;
+        h4.innerText = 'Tier: ' + this._tier;
+        h3.textContent = 'Category: ' + this._category;
+        p3.innerText = 'Description: ' + this._description;
+        p.innerText = 'Reference: ' + this._reference;
+        p4.innerText = 'id: ' + this._id;
+    
 
-
+      
         // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
         editButton.innerText = 'Edit Strategy';
-        editButton.addEventListener('click', () => this.editStrategy(strategy));
+        editButton.addEventListener('click', () => editStrategy(strategy));
         editButton.className = 'button is-primary is-light m-1';
         editButton.id = 'Edit Strategy';
 
         // on click evoke scrollTop() function for edit button
 
         deleteButton.innerText = 'Delete Strategy';
-        deleteButton.addEventListener('click', () => this.deleteStrategy(strategy));
+        // deleteButton.addEventListener('click', () => Strategy.delete(strategy));
+        deleteButton.addEventListener('click', () => deleteStrategy(strategy));
         deleteButton.className = 'button is-primary is-light m-1';
         deleteButton.id = 'Delete Strategy';
 
         commentButton.innerText = 'Comments';
+        commentButton.addEventListener('click', () => comments.render()); 
+        // comments.render.bind(comments)
         commentButton.addEventListener('click', commentModal);
         commentButton.className = 'js-modal-trigger button is-primary is-light m-1';
         commentButton.id = 'Comments';
 
-        commentButton.dataset.strategyId = this.id;
+        commentButton.dataset.strategyId = this._id;
+        
 
         p.style.color = 'blue';
         h3.style.color = 'green';
@@ -176,14 +194,25 @@ class Strategy {
         return strategyList();
     }
 
-    // render all strategies
-    renderAll() {
-        this.resetStrategies();
-        this.strategies.forEach(strategy => this.render(strategy));
-    }
-}
 
-new Strategy();
+     // delete a strategy
+    // static async delete(strategy) {
+    //     console.log('strategy', strategy);
+
+    //     const res = await Api.delete('/strategies/' + strategy.id);
+
+    //     const strategyObj = new Strategy(res);
+
+    //     strategyObj.render();
+
+    //     if (res.status === 204) {
+    //         alert('Strategy successfully deleted');
+    //         this.getStrategies();
+    //     }
+    // }
+
+ 
+}
 
 ////////////////////////////////////////
 ////////// Refatoring above ^^

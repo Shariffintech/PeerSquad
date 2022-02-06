@@ -1,74 +1,51 @@
 /*jshint esversion: 8 */
+class Comment extends Strategy {
 
-class Comment {
-    constructor() {
-      this.comments = [];
+  static comments = [];
+  constructor(strategy,comment) {
+    super(strategy);
+    this._title = comment.title;
+    this._body = comment.body;
+    this._id = comment.id;
+    strategy._id = strategy.id;
+    console.log(strategy._id);
+    Comment.comments.push(this);
     
-    }
+  }
 
-    static async getComments() {
-      const response = await fetch(baseUrl + `/strategies/${strategyId}/comments`, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(comment)
-      }).catch(err => { alert(err) });
-      return await response.json();
-
-    }
-    static attachFormEvents () {
-      commentForm().addEventListener('submit', createComment);
-    }
   
-    // Crud Comment Actions
-    async create() {
 
-     
-      const title = getComTitle().value;
-      const body = getComBody().value;
-      const strategy_id = document.getElementById('comments').getAttribute('strategyid')
-      const comment = await this.getComments(
-        {
-          comment: {
-            title,
-            body,
-            strategy_id
-        }
-        });
-      this.comments.push(comment);
-      this.render(comment);
-   
-      getComTitle().value = '';
-      getComBody().value = '';
-      alert('Comment successfully created');
-    }
+  // get all comments from associated strategy
+  static getComments() {
 
-    attachFormEvents() {
-      commentForm().addEventListener('submit', createComment);
-    }
+    fetch(Api.baseUrl + `/strategies/${this.comments}/comments`)
+      .then(res => res.json())
+      //render all comments associated with the strategy
+      .then(comments => { this._comments = comments; this.renderAll(); });
+      if(this._comments === undefined){
+        alert('No comments found for this strategy');
+      } else {
+        //render all comments associated with the strategy
+        this.renderAll();
+      }
+  }
 
+  static renderAll() {
+    Comment.resetComments();
+    const commentObj = new Comment(comment)
+    commentObj.render();
+ }
 
-    static async deleteComment(comment) {
-      // fetching the Comment with the ID of the Comment we want to delete.
-      await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
-          method: "DELETE"
-      }).catch(err => {
-          // alert('Comment was not deleted');
-          alert(err)
-      });
+  get comments() {
+    return this._comments;
+  }
 
-      // Remove strategy and re-render
-      this.comments = this.comments.filter(({ id }) => id !== comment.id);
-      this.renderAll();
-
-      alert('Strategy successfully deleted');
-  };
+  static resetComments() {
+    commentList().innerHTML = '';
+  }
 
 
-    
-
-    render(comment) {
+  render() {
     const div = document.createElement('div');
     const h3 = document.createElement('h3');
     const p = document.createElement('p');
@@ -76,20 +53,20 @@ class Comment {
     const editButton = document.createElement('button');
      
 
-    h3.innerText = this.title;
+    h3.innerText = this._title;
     h3.className = 'title is-3';
-    p.innerText = this.body;
+    p.innerText = this._body;
     p.className = 'body is-5';
 
     // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
     deleteButton.innerText = 'Delete Comment';
-    deleteButton.addEventListener('click', () => this.deleteComment(comment));
+    deleteButton.addEventListener('click', () => Comment.delete(comment));
     deleteButton.className = 'button is-danger';
 
 
     editButton.innerText = 'Edit Comment';
-    editButton.addEventListener('click', () => this.editComment(comment));
+    editButton.addEventListener('click', () => Comment.edit(comment));
     editButton.className = 'button is-warning';
 
 
@@ -105,16 +82,59 @@ class Comment {
 
     showComments();
 
-      }
-    
-    renderAll() {
-      this.comments.forEach(comment => this.render(comment));
+  }
+
+  // Crud Comment Actions
+  static async create() {
+
+    e.preventDefault();
+
+    const strongParams = {
+      comment: {
+        title: getComTitle().value,
+        body: getComBody().value,
+
     }
- 
+   
+    const  res = await Api.post('/comments', strongParams);
+
+    const commentObj = new Comment(res);
+
+    commentObj.render();
+
+
+   resetComments();
+
+    alert('Comment successfully created');
+  }
+
+
+  static async deleteComment(comment) {
+    // fetching the Comment with the ID of the Comment we want to delete.
+    await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
+      method: "DELETE"
+    }).catch(err => {
+      // alert('Comment was not deleted');
+      alert(err)
+    });
+
+    // Remove strategy and re-render
+    this._comments = this._comments.filter(({id}) => id !== comment.id);
+    this.renderAll();
+
+    alert('Strategy successfully deleted');
   };
 
+  
 
+  static async loadComments(){
+    const res = await fetch(baseUrl + '/comments')
+    .catch(err => {alert(err)});
+    const comments = await res.json();
+    comments.forEach(comment => this.render(comment));
+    Comment.renderAll();
+  }
 
+  
 
-
-
+};

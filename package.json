@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/Shariffintech/ed-tech-spa/issues"
   },
-  "homepage": "https://github.com/Shariffintech/ed-tech-spa#readme"
+  "homepage": "https://github.com/Shariffintech/ed-tech-spa#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.10.2",
+    "@typescript-eslint/parser": "^5.10.2",
+    "eslint": "^8.8.0",
+    "lint": "eslint -c .eslintrc.js --ext .ts,.js,.tsx,.jsx --ignore-path .gitignore ."
+  }
+  
 }

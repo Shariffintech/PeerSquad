@@ -1,21 +1,12 @@
-class Api {
-        static baseUrl() { 
-            return 'http://localhost:3000/'; 
-        }
-        static headers() {
-                return {
-                    headers: {
-                    "Accept": "application/json",
-                    "Content-Type": "application/json"
-                    }
-                }
-        }
+/*jshint esversion:8*/
 
-        // static baseUrl = 'http://localhost:3001';
-        // static headers = {
-        //   "Accept": "application/json",
-        //   "Content-Type": "application/json"
-        // }
+class Api {
+
+        static baseUrl = 'http://localhost:3000';
+        static headers = {
+          "Accept": "application/json",
+          "Content-Type": "application/json"
+          }
       
         static async get(url) {
             const response = await fetch(Api.baseUrl + url);
@@ -32,4 +23,27 @@ class Api {
             const object = await response.json();
             return object;
         }
+
+        static async patch(url, data) {
+          const response = await fetch(Api.baseUrl + url, {
+            method: "PATCH",
+            headers: Api.headers,
+            body: JSON.stringify(data)
+          })
+            const object = await response.json();
+            return object;
+        }
+
+        // static async delete(url) {
+          
+          
+        //   const response = await fetch(Api.baseUrl + , {
+        //     method: "DELETE",
+        //     headers: Api.headers
+        //   })
+        //   console.log(response);
+        //     const object = await response.json();
+        //     return object;
+   
+        // }
     }

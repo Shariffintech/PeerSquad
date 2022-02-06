@@ -3,7 +3,7 @@
 Strategy.events();
 Strategy.getStrategies();
 // Comment.events();
-// Comment.getComments();
+Comment.getComments();
 
 async function updateStrategy(e) {
   e.preventDefault();

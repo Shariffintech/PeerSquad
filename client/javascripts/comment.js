@@ -2,18 +2,16 @@
 class Comment extends Strategy {
 
   static comments = [];
-  constructor(strategy,comment) {
+  constructor(strategy,title,body) {
     super(strategy);
-    this._title = comment.title;
-    this._body = comment.body;
-    this._id = comment.id;
+    this._title = title;
+    this._body = body;
     strategy._id = strategy.id;
     console.log(strategy._id);
     Comment.comments.push(this);
     
   }
 
-  
 
   // get all comments from associated strategy
   static getComments() {
@@ -21,24 +19,28 @@ class Comment extends Strategy {
     fetch(Api.baseUrl + `/strategies/${this.comments}/comments`)
       .then(res => res.json())
       //render all comments associated with the strategy
-      .then(comments => { this._comments = comments; this.renderAll(); });
+      .then(commentsObj => { Comment.renderAll(commentsObj) })
       if(this._comments === undefined){
-        alert('No comments found for this strategy');
+        // render all strategies
+        Strategy.getStrategies();
       } else {
         //render all comments associated with the strategy
         this.renderAll();
       }
   }
 
-  static renderAll() {
+  static renderAll(commentObj) {
     Comment.resetComments();
-    const commentObj = new Comment(comment)
-    commentObj.render();
+    commentObj.forEach(
+      comment => {
+        const commentObj = new Comment(comment);
+        commentObj.render();
+    });
  }
 
-  get comments() {
-    return this._comments;
-  }
+  // get comments() {
+  //   return this._comments;
+  // }
 
   static resetComments() {
     commentList().innerHTML = '';
@@ -94,11 +96,12 @@ class Comment extends Strategy {
         title: getComTitle().value,
         body: getComBody().value,
 
+     }
     }
-   
-    const  res = await Api.post('/comments', strongParams);
+    
+    const data = await Api.post('/comments', strongParams);
 
-    const commentObj = new Comment(res);
+    const commentObj = new Comment(data);
 
     commentObj.render();
 
@@ -127,13 +130,7 @@ class Comment extends Strategy {
 
   
 
-  static async loadComments(){
-    const res = await fetch(baseUrl + '/comments')
-    .catch(err => {alert(err)});
-    const comments = await res.json();
-    comments.forEach(comment => this.render(comment));
-    Comment.renderAll();
-  }
+
 
   
 

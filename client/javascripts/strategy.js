@@ -44,6 +44,7 @@ class Strategy {
             strategy => {
                 const strategyObj = new Strategy(strategy)
                 strategyObj.render();
+                debugger;
             });
        
   
@@ -165,7 +166,7 @@ class Strategy {
 
         commentButton.innerText = 'Comments';
         commentButton.addEventListener('click', () => comments.render()); 
-        // comments.render.bind(comments)
+        // commentButton.addEventListener('click', comments.render.bind(comments));
         commentButton.addEventListener('click', commentModal);
         commentButton.className = 'js-modal-trigger button is-primary is-light m-1';
         commentButton.id = 'Comments';
@@ -196,20 +197,20 @@ class Strategy {
 
 
      // delete a strategy
-    // static async delete(strategy) {
-    //     console.log('strategy', strategy);
+    static async delete(strategy) {
+        console.log('strategy', strategy);
 
-    //     const res = await Api.delete('/strategies/' + strategy.id);
+        const res = await Api.delete('/strategies/' + strategy.id);
 
-    //     const strategyObj = new Strategy(res);
+        const strategyObj = new Strategy(res);
 
-    //     strategyObj.render();
+        strategyObj.render();
 
-    //     if (res.status === 204) {
-    //         alert('Strategy successfully deleted');
-    //         this.getStrategies();
-    //     }
-    // }
+        if (res.status === 204) {
+            alert('Strategy successfully deleted');
+            this.getStrategies();
+        }
+    }
 
  
 }

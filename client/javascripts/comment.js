@@ -1,15 +1,14 @@
-/*jshint esversion: 8 */
-class Comment extends Strategy {
+
+class Comment  {
 
   static comments = [];
-  constructor(strategy,title,body) {
-    super(strategy);
-    this._title = title;
-    this._body = body;
-    strategy._id = strategy.id;
-    console.log(strategy._id);
+  constructor(comment) {
+    console.log('in comment')
+    this._title = comment.title;
+    console.log('in comment 2')
+    this._body = comment.body;
+    this.strategy_id = comment.strategy.id
     Comment.comments.push(this);
-    
   }
 
 
@@ -18,23 +17,21 @@ class Comment extends Strategy {
 
     fetch(Api.baseUrl + `/strategies/${this.comments}/comments`)
       .then(res => res.json())
-      //render all comments associated with the strategy
+      //render all comments associated with the strategy, if there are any
       .then(commentsObj => { Comment.renderAll(commentsObj) })
-      if(this._comments === undefined){
-        // render all strategies
-        Strategy.getStrategies();
-      } else {
-        //render all comments associated with the strategy
-        this.renderAll();
-      }
+      .catch(err => console.log(err));
   }
 
-  static renderAll(commentObj) {
+  // edit a comment
+  static async edit(comment) {
+  }
+
+  static renderAll(strategy, commentsAry) {
     Comment.resetComments();
-    commentObj.forEach(
-      comment => {
-        const commentObj = new Comment(comment);
-        commentObj.render();
+    commentsAry.forEach(
+      c => {
+        const comment = new Comment(c);
+        comment.render();
     });
  }
 
@@ -43,7 +40,9 @@ class Comment extends Strategy {
   // }
 
   static resetComments() {
-    commentList().innerHTML = '';
+    // erase comments from comments array
+    Comment.comments = [];
+
   }
 
 
@@ -79,34 +78,35 @@ class Comment extends Strategy {
     div.appendChild(deleteButton);
     div.appendChild(editButton);
     // append div to the show-comments element
-    const showComments = () => document.getElementById('show-comments').appendChild(div);
+    const showComments = () => document.getElementById('show-comments')
 
 
-    showComments();
+    showComments().appendChild(div);
 
   }
 
   // Crud Comment Actions
   static async create() {
 
-    e.preventDefault();
 
     const strongParams = {
       comment: {
         title: getComTitle().value,
         body: getComBody().value,
-
      }
     }
     
-    const data = await Api.post('/comments', strongParams);
+    
+    const strategyId = commentList().getAttribute('strategyid');
+    
+  
+    const data = await Api.post(`/strategies/${strategyId}/comments`, strongParams);
 
     const commentObj = new Comment(data);
 
     commentObj.render();
 
-
-   resetComments();
+    resetComments();
 
     alert('Comment successfully created');
   }
@@ -128,6 +128,13 @@ class Comment extends Strategy {
     alert('Strategy successfully deleted');
   };
 
+  static events() {
+    document.querySelector('#comment-form')
+    .addEventListener('submit', event => {
+      event.preventDefault();
+      Comment.create();
+    });    
+  }
   
 
 

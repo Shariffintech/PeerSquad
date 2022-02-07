@@ -15,12 +15,14 @@ class Api {
           }
         
         static async post(url, data) {
+          
           const response = await fetch(Api.baseUrl + url, {
             method: "POST",
             headers: Api.headers,
             body: JSON.stringify(data)
           })
             const object = await response.json();
+            console.log(url)
             return object;
         }
 
@@ -34,7 +36,16 @@ class Api {
             return object;
         }
 
-        // static async delete(url) {
+        static async delete(url) {
+
+          console.log(url)
+          const response = await fetch(Api.baseUrl + url, {
+            method: "DELETE",
+            headers: Api.headers
+          })
+            const object = await response.json();
+            return object;
+        }
           
           
         //   const response = await fetch(Api.baseUrl + , {

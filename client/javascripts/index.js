@@ -2,8 +2,8 @@
 
 Strategy.events();
 Strategy.getStrategies();
-// Comment.events();
-Comment.getComments();
+Comment.events();
+//Comment.getComments();
 
 async function updateStrategy(e) {
   e.preventDefault();
@@ -47,22 +47,22 @@ async function updateStrategy(e) {
 
 }
 
-const deleteStrategy = async strategy => {
-  const strategy_id = strategy.strategy_id;
-  // fetching the strategy with the ID of the strategy we want to delete.
-  await fetch(Api.baseUrl + '/strategies/' + strategy_id, {
+// const deleteStrategy = async strategy => {
+//   const strategy_id = strategy.strategy_id;
+//   // fetching the strategy with the ID of the strategy we want to delete.
+//   await fetch(Api.baseUrl + '/strategies/' + strategy_id, {
 
-    // deleting the strategy with the DELETE HTTP method.
-    method: "DELETE"
-  }).catch(err => {
-    alert(err)
-  });
-  // filtering out the strategy from the strategies array.
-  console.log(strategy);
-  Strategy.all = Strategy.all.filter(s => s.id !== strategy.id);
+//     // deleting the strategy with the DELETE HTTP method.
+//     method: "DELETE"
+//   }).catch(err => {
+//     alert(err)
+//   });
+//   // filtering out the strategy from the strategies array.
+//   console.log(strategy);
+//   Strategy.all = Strategy.all.filter(s => s.id !== strategy.id);
 
 
-};
+// };
 
 const commentModal = async (strategy) => {
 
@@ -70,8 +70,10 @@ const commentModal = async (strategy) => {
   // if the user clicks the overlay, close the modal
   // if the user clicks the submit button, create a call the createComment function to create a new comment
 
+  
+
   // get the comments associated with the strategy if no comments are found, prompt the user to create a comment
-  const res = await fetch(Api.baseUrl + `/strategies/${strategy.currentTarget.dataset.strategyId}/comments`)
+  const res = await fetch(Api.baseUrl + `/strategies/${strategy._id}/comments`)
     // catch any errors
     .catch(err => {
       alert(err)
@@ -81,14 +83,16 @@ const commentModal = async (strategy) => {
 
   const comments = await res.json();
 
+  console.log(comments)
 
   // Functions to open and close a modal
   function openModal($el) {
 
 
     $el.classList.add("is-active");
+    console.log('open modal')
 
-    $el.setAttribute('strategyId', strategy.target.dataset.strategyId);
+    $el.setAttribute('strategyId', strategy._id);
   }
 
   function closeModal($el) {
@@ -137,13 +141,11 @@ const commentModal = async (strategy) => {
   // if comments are not found, prompt the user to create a comment
 
   if (comments.length > 0) {
-    renderComments(comments);
-
+    Comment.renderAll(strategy, comments);    
   } else {
     // if there are no comments, prompt the user to create a comment
     alert('No comments found. Please create a comment');
-    openModal(el);
-
+    //openModal(el);
   }
 
   openModal(el);

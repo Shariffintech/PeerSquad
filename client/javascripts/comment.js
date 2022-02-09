@@ -5,6 +5,7 @@ class Comment  {
   constructor(comment) {
     this._title = comment.title;
     this._body = comment.body;
+    this._id = comment.id;
     this.strategy_id = comment.strategy.id
     Comment.comments.push(this);
   }
@@ -21,7 +22,28 @@ class Comment  {
   }
 
   // edit a comment
-  static async edit(comment) {
+  async edit(comment) {
+    const strongParams = {
+      comment: {
+        title: getComTitle().value,
+        body: getComBody().value,
+      }
+    }
+    await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(strongParams),
+    }).catch(err => {
+      alert(err)
+    });
+
+    // Remove strategy and re-render
+    this._comments = this._comments.filter(({id}) => id !== comment.id);
+    this.renderAll();
+
+    alert('Comment successfully edited');
   }
 
   static renderAll(strategy, commentsAry) {
@@ -40,6 +62,11 @@ class Comment  {
   static resetComments() {
     // erase comments from comments array
     Comment.comments = [];
+
+    // erase comments from the show-comments element
+    const showComments = () => document.getElementById('show-comments');
+    showComments().innerHTML = '';
+
 
   }
 
@@ -104,26 +131,34 @@ class Comment  {
 
     commentObj.render();
 
-    resetComments();
+    
 
-    alert('Comment successfully created');
+    if (data.status >= 200 && data.status < 300) {
+      alert('Comment successfully created');
+      this.getComments();
+    }
+
+    resetComments();
   }
 
 
-  static async deleteComment(comment) {
-    // fetching the Comment with the ID of the Comment we want to delete.
-    await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
-      method: "DELETE"
-    }).catch(err => {
-      // alert('Comment was not deleted');
-      alert(err)
-    });
+  async delete() {
+    console.log(`strat`, this);
 
-    // Remove strategy and re-render
-    this._comments = this._comments.filter(({id}) => id !== comment.id);
-    this.renderAll();
+    const res = await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
+    
+    const commentObj = new Comment(res);
 
-    alert('Strategy successfully deleted');
+    commentObj.render();
+
+    // if response is  200-204, remove the comment from the DOM
+    if (res.status >= 200 && res.status < 300) {
+      alert('Strategy successfully deleted');
+      this.getComments();
+
+    }
+
+    resetComments();
   };
 
   static events() {

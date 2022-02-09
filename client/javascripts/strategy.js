@@ -90,6 +90,9 @@ class Strategy {
         alert('Strategy successfully created');
         //render all the strategies
         Strategy.getStrategies();
+
+       
+
     }
 
     // update strategy

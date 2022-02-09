@@ -3,66 +3,50 @@
 Strategy.events();
 Strategy.getStrategies();
 Comment.events();
-//Comment.getComments();
-
-async function updateStrategy(e) {
-  e.preventDefault();
-
-  const strongParams = {
-    strategy: {
-      name: getStrategyName().value,
-      description: getStrategyDescription().value,
-      reference: getStrategyReference().value,
-      tier: getStrategyTier().value,
-      category: getStrategyCategory().value
-    }
-  };
-
-  const response = await fetch(Api.baseUrl + `/strategies/${this.id}`, {
-    method: 'PATCH',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(strongParams)
-  }).catch(err => {
-    alert(err)
-  });
-
-  const newStrategy = await response.json();
-  const index = Strategy.all.indexOf(this);
-  Strategy.all[index] = new Strategy(newStrategy);
 
 
-  strategyForm().removeEventListener('submit', updateStrategy, );
-  formHeader().innerText = "Create Strategy";
-  strategyFormSubmit().value = "Create Strategy";
-  strategyForm().addEventListener('submit', (event) => {
-    createStrategy(event);
-  });
+// async function updateStrategy(e) {
+//   e.preventDefault();
+
+//   const strongParams = {
+//     strategy: {
+//       name: getStrategyName().value,
+//       description: getStrategyDescription().value,
+//       reference: getStrategyReference().value,
+//       tier: getStrategyTier().value,
+//       category: getStrategyCategory().value
+//     }
+//   };
+
+//   const response = await fetch(Api.baseUrl + `/strategies/${this.id}`, {
+//     method: 'PATCH',
+//     headers: {
+//       'Accept': 'application/json',
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify(strongParams)
+//   }).catch(err => {
+//     alert(err)
+//   });
+
+//   const newStrategy = await response.json();
+//   const index = Strategy.all.indexOf(this);
+//   Strategy.all[index] = new Strategy(newStrategy);
+
+
+//   strategyForm().removeEventListener('submit', updateStrategy, );
+//   formHeader().innerText = "Create Strategy";
+//   strategyFormSubmit().value = "Create Strategy";
+//   strategyForm().addEventListener('submit', (event) => {
+//     createStrategy(event);
+//   });
 
 
   // Strategy.renderAll();
 
 
-}
+// }
 
-// const deleteStrategy = async strategy => {
-//   const strategy_id = strategy.strategy_id;
-//   // fetching the strategy with the ID of the strategy we want to delete.
-//   await fetch(Api.baseUrl + '/strategies/' + strategy_id, {
-
-//     // deleting the strategy with the DELETE HTTP method.
-//     method: "DELETE"
-//   }).catch(err => {
-//     alert(err)
-//   });
-//   // filtering out the strategy from the strategies array.
-//   console.log(strategy);
-//   Strategy.all = Strategy.all.filter(s => s.id !== strategy.id);
-
-
-// };
 
 const commentModal = async (strategy) => {
 

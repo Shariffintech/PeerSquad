@@ -5,7 +5,12 @@ window.baseUrl = 'http://localhost:3000';
 
 class Strategy {
 
+    // todo change static method to prototype method and set getters for read only 
+    // properties and setters for writable properties 
+    // Strategy.prototype.all = [];
+
     static all = [];
+
     constructor(strategy) {
  
         this._name = strategy.name;
@@ -17,6 +22,8 @@ class Strategy {
         Strategy.all.push(this);
        
     } 
+
+
 
 
     static resetStrategies() {
@@ -54,8 +61,8 @@ class Strategy {
     }
 
     // create a new strategy
-    static async create(e) {
-        e.preventDefault();
+    static async create() {
+       
 
         const strongParams = {
             strategy: {
@@ -77,32 +84,68 @@ class Strategy {
         strategyObj.render();
         
         //reset the form
-        resetStrategies();
+        Strategy.resetStrategies();
    
 
         alert('Strategy successfully created');
+        //render all the strategies
+        Strategy.getStrategies();
     }
 
+    // update strategy
 
-
-    // edit a strategy
-    static async edit(strategy) {
-        const strongParams = {
-            strategy: {
-            name : getStrategyName().value,
-            reference: getStrategyReference().value,
-            tier : getStrategyTier().value,
-            category : getStrategyCategory().value,
-            description : getStrategyDescription().value,
-            
+        async update(e) {
+            e.preventDefault();
+            const strongParams = {
+                strategy: {
+                    name : getStrategyName().value,
+                    reference: getStrategyReference().value,
+                    tier : getStrategyTier().value,
+                    category : getStrategyCategory().value,
+                    description : getStrategyDescription().value,
+                }
             }
-
+    
+            const data = await Api.patch(`/strategies/` + this._id, strongParams);
+            const strategyObj = new Strategy(data);
+            strategyObj.render();
+            if (res.status === 204) {
+                alert('Strategy successfully deleted');
+                this.getStrategies();
+            } else {
+                alert('Strategy not deleted');
+            }
+        
+            const newStrategy = await response.json();
+            const index = Strategy.all.indexOf(this);
+            Strategy.all[index] = new Strategy(newStrategy);
+        
+        
+            strategyForm().removeEventListener('submit', updateStrategy );
+            formHeader().innerText = "Create Strategy";
+            strategyFormSubmit().value = "Create Strategy";
+            strategyForm().addEventListener('submit', (event) => {
+              createStrategy(event);
+            });
+        
+        
+            Strategy.renderAll();
         }
     
-        const data = await Api.patch('/strategies/' , strongParams);
-        const strategyObj = new Strategy(data);
-        strategyObj.render();
-        alert('Strategy successfully edited');
+
+    // edit a strategy
+    async edit() {
+        strategyForm().removeEventListener('submit', this.update );
+        getStrategyName().value = this._name;
+        getStrategyDescription().value = this._description;
+        getStrategyTier().value = this._tier;
+        getStrategyCategory().value = this._category;
+        getStrategyReference().value = this._reference;
+        formHeader().innerText = "Edit Strategy";
+        strategyFormSubmit().value = "Update Strategy";
+        scrollTop();
+
+        
     }
 
 
@@ -118,9 +161,7 @@ class Strategy {
 
     // render a strategy
     render() {
-        // create an new instance of comment
-        console.log('this', this)       
-        //const comments = new Comment(this);
+       
         const div = document.createElement('div');
         const h3 = document.createElement('h3');
         const h4 = document.createElement('h4');
@@ -132,7 +173,7 @@ class Strategy {
         const deleteButton = document.createElement('button');
         const commentButton = document.createElement('button');
         
-        console.log('in here')
+
 
         // creates two new elements, h3 and p, and adds them to the new div
         // sets the textContent of the h3, p elements to the strategy content.
@@ -145,9 +186,6 @@ class Strategy {
         p4.innerText = 'id: ' + this._id;
 
       
-    
-
-      
         // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
         editButton.innerText = 'Edit Strategy';
@@ -158,7 +196,7 @@ class Strategy {
       
 
         deleteButton.innerText = 'Delete Strategy';
-        deleteButton.addEventListener('click', () => this.delete(strategy));
+        deleteButton.addEventListener('click', () => this.delete(this.strategy));
         deleteButton.className = 'button is-primary is-light m-1';
         deleteButton.id = 'Delete Strategy';
 

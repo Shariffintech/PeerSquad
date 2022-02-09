@@ -3,9 +3,7 @@ class Comment  {
 
   static comments = [];
   constructor(comment) {
-    console.log('in comment')
     this._title = comment.title;
-    console.log('in comment 2')
     this._body = comment.body;
     this.strategy_id = comment.strategy.id
     Comment.comments.push(this);
@@ -62,12 +60,12 @@ class Comment  {
     // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
     deleteButton.innerText = 'Delete Comment';
-    deleteButton.addEventListener('click', () => Comment.delete(comment));
+    deleteButton.addEventListener('click', () => this.delete(this.comment));
     deleteButton.className = 'button is-danger';
 
 
     editButton.innerText = 'Edit Comment';
-    editButton.addEventListener('click', () => Comment.edit(comment));
+    editButton.addEventListener('click', () => this.edit(this.comment));
     editButton.className = 'button is-warning';
 
 

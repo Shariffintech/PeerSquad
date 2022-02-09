@@ -109,27 +109,17 @@ class Strategy {
                 }
             }
     
-            const data = await Api.patch(`/strategies/` + this._id, strongParams);
-            const strategyObj = new Strategy(data);
-            strategyObj.render();
-            if (res.status === 204) {
-                alert('Strategy successfully deleted');
-                this.getStrategies();
-            } else {
-                alert('Strategy not deleted');
-            }
+            const response = await Api.patch(`/strategies/` + this._id);
         
             const newStrategy = await response.json();
-            const index = Strategy.all.indexOf(this);
-            Strategy.all[index] = new Strategy(newStrategy);
+            const index = Strategy.indexOf(this);
+            Strategy[index] = newStrategy;
         
         
-            strategyForm().removeEventListener('submit', updateStrategy );
+            strategyForm().removeEventListener('submit',this.update);
             formHeader().innerText = "Create Strategy";
             strategyFormSubmit().value = "Create Strategy";
-            strategyForm().addEventListener('submit', (event) => {
-              createStrategy(event);
-            });
+            strategyForm().addEventListener('submit', this.create());
         
         
             Strategy.renderAll();
@@ -192,14 +182,14 @@ class Strategy {
         // sets the textContent of the editButton and deleteButton to 'Edit' and 'Delete'
 
         editButton.innerText = 'Edit Strategy';
-        editButton.addEventListener('click', () => this.edit(this.strategy));
+        editButton.addEventListener('click', () => this.edit(this));
         editButton.className = 'button is-primary is-light m-1';
         editButton.id = 'Edit Strategy';
 
       
 
         deleteButton.innerText = 'Delete Strategy';
-        deleteButton.addEventListener('click', () => this.delete(this.strategy));
+        deleteButton.addEventListener('click', () => this.delete(this));
         deleteButton.className = 'button is-primary is-light m-1';
         deleteButton.id = 'Delete Strategy';
 
@@ -236,18 +226,17 @@ class Strategy {
 
 
      // delete a strategy
-    async delete() {
-    
-        const res = await Api.delete('/strategies/' + this._id);
+     async delete() {
+        await Api.delete(`/strategies/${this._id}`);
 
-        const strategyObj = new Strategy(res);
+       // filter out the deleted strategy from the array
 
-        strategyObj.render();
+       Strategy.all = Strategy.all.filter(strategy => strategy._id !== this._id);
 
-        if (res.status === 204) {
-            alert('Strategy successfully deleted');
-            this.getStrategies();
-        }
+       Strategy.getStrategies()
+
+       alert('Strategy successfully deleted');
+
     }
 
  

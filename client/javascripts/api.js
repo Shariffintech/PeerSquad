@@ -46,17 +46,8 @@ class Api {
             method: "DELETE",
             headers: Api.headers
           })
-            const object = await response.json();
+          
         }
           
           
-        //   const response = await fetch(Api.baseUrl + , {
-        //     method: "DELETE",
-        //     headers: Api.headers
-        //   })
-        //   console.log(response);
-        //     const object = await response.json();
-        //     return object;
-   
-        // }
     }

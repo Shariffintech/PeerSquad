@@ -21,29 +21,42 @@ class Comment  {
       .catch(err => console.log(err));
   }
 
-  // edit a comment
-  async edit(comment) {
+  static resetComments() {
+    // erase comments from comments array
+    Comment.comments = [];
+    
+  }
+
+  async update(e) {
+    e.preventDefault();
+
     const strongParams = {
       comment: {
         title: getComTitle().value,
         body: getComBody().value,
       }
     }
-    await fetch(baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
-      method: 'PATCH',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(strongParams),
-    }).catch(err => {
-      alert(err)
-    });
+    const res = await Api.put(`/strategies/${this.strategy_id}/comments/${this._id}`, strongParams);
+    const commentObj = new Comment(res);
+    commentObj.render();
+    if(res.status >= 200 && res.status < 300) {
+    alert('Comment successfully updated');
+    } else {
+      alert('Comment not updated');
+    }
+   
+    const newComment = await response.json();
+    const index = Comment.all.indexOf(this);
+  }
 
-    // Remove strategy and re-render
-    this._comments = this._comments.filter(({id}) => id !== comment.id);
-    this.renderAll();
-
-    alert('Comment successfully edited');
+  // edit a comment
+  async edit() {
+   commentForm().removeEventListener('submit', this.update);
+   getComTitle().value = this._title;
+    getComBody().value = this._body;
+    commentFormSubmit().value = 'Update Comment';
+   
+    
   }
 
   static renderAll(strategy, commentsAry) {
@@ -59,16 +72,7 @@ class Comment  {
   //   return this._comments;
   // }
 
-  static resetComments() {
-    // erase comments from comments array
-    Comment.comments = [];
 
-    // erase comments from the show-comments element
-    const showComments = () => document.getElementById('show-comments');
-    showComments().innerHTML = '';
-
-
-  }
 
 
   render() {
@@ -106,6 +110,7 @@ class Comment  {
     const showComments = () => document.getElementById('show-comments')
 
 
+
     showComments().appendChild(div);
 
   }
@@ -138,27 +143,22 @@ class Comment  {
       this.getComments();
     }
 
-    resetComments();
+    this.resetComments();
   }
 
 
   async delete() {
-    console.log(`strat`, this);
+
 
     const res = await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
-    
-    const commentObj = new Comment(res);
 
-    commentObj.render();
-
-    // if response is  200-204, remove the comment from the DOM
     if (res.status >= 200 && res.status < 300) {
-      alert('Strategy successfully deleted');
+      alert('Comment successfully deleted');
       this.getComments();
-
     }
 
-    resetComments();
+    this.resetComments();
+
   };
 
   static events() {

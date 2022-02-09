@@ -1,8 +1,4 @@
 
-window.formHeader = () => document.getElementById('form-header');
-window.scrollTop = () => document.documentElement.scrollTop = 0;
-window.baseUrl = 'http://localhost:3000';
-
 class Strategy {
 
     // todo change static method to prototype method and set getters for read only 
@@ -10,6 +6,7 @@ class Strategy {
     // Strategy.prototype.all = [];
 
     static all = [];
+    static currentStrategy = null;
 
     constructor(strategy) {
  
@@ -49,13 +46,12 @@ class Strategy {
 
         strategiesObj.forEach(
             strategy => { 
-                console.log("strategy",strategy)
+                // console.log("strategy",strategy)
                 const strategyObj = new Strategy(strategy)
-                console.log("strategyObj", strategyObj)
-                // bind the strategyObj to the render method and render the strategy object
+                // console.log("strategyObj", strategyObj)
+
                 strategyObj.render(strategyObj);
                 
-            //    strategyObj.bind.render();
 
             });
     }
@@ -91,38 +87,31 @@ class Strategy {
         //render all the strategies
         Strategy.getStrategies();
 
-       
-
     }
 
     // update strategy
 
-        async update(e) {
-            e.preventDefault();
-            const strongParams = {
-                strategy: {
-                    name : getStrategyName().value,
-                    reference: getStrategyReference().value,
-                    tier : getStrategyTier().value,
-                    category : getStrategyCategory().value,
-                    description : getStrategyDescription().value,
-                }
-            }
+        static async update() {
+         
     
-            const response = await Api.patch(`/strategies/` + this._id);
+            const response = await Api.patch(`/strategies/` + Strategy.currentStrategy);
+            const currentStrategy = null;
         
-            const newStrategy = await response.json();
-            const index = Strategy.indexOf(this);
-            Strategy[index] = newStrategy;
-        
-        
+            const updatedStrategy = await response.json();
+
+            const index = Strategy.all.indexOf(this);
+            Strategy.all[index] = new Strategy(updatedStrategy);
+
             strategyForm().removeEventListener('submit',this.update);
             formHeader().innerText = "Create Strategy";
             strategyFormSubmit().value = "Create Strategy";
             strategyForm().addEventListener('submit', this.create());
-        
-        
-            Strategy.renderAll();
+
+            alert('Strategy successfully updated');
+            //render all the strategies
+            Strategy.getStrategies();
+
+
         }
     
 
@@ -134,6 +123,8 @@ class Strategy {
         getStrategyTier().value = this._tier;
         getStrategyCategory().value = this._category;
         getStrategyReference().value = this._reference;
+        Strategy.currentStrategy = this._id
+
         formHeader().innerText = "Edit Strategy";
         strategyFormSubmit().value = "Update Strategy";
         scrollTop();
@@ -143,10 +134,19 @@ class Strategy {
 
 
     static events() {
+
+    
         document.querySelector('#strategy-form')
             .addEventListener('submit', event => {
                 event.preventDefault();
-                Strategy.create();
+                if (strategyFormSubmit().value = 'Update Strategy') {
+                    Strategy.update();
+                    
+                } else {
+                    Strategy.create();
+                }
+                    
+            
                
             })
     }

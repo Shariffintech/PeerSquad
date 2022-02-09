@@ -1,16 +1,13 @@
 // node getters
 
-const strategyForm = () => document.getElementById('strategy-form');
-const strategyFormSubmit = () => document.getElementById('submit');
-const getStrategyName = () => document.getElementById('name');
-const getStrategyReference = () => document.getElementById('reference');
-const getStrategyTier = () => document.getElementById('tier');
-const getStrategyCategory = () => document.getElementById('category');
-const getStrategyDescription = () => document.getElementById('description');
-const strategyList = () => document.getElementById('strategies');
-
-const formHeader = () => document.getElementById('form-header');
-const scrollTop = () => document.documentElement.scrollTop = 0;
+window.strategyForm = () => document.getElementById('strategy-form');
+window.strategyFormSubmit = () => document.getElementById('submit');
+window.getStrategyName = () => document.getElementById('name');
+window.getStrategyReference = () => document.getElementById('reference');
+window.getStrategyTier = () => document.getElementById('tier');
+window.getStrategyCategory = () => document.getElementById('category');
+window.getStrategyDescription = () => document.getElementById('description');
+window.strategyList = () => document.getElementById('strategies');
 
 const getComTitle = () => document.getElementById('comment-title');
 const getComBody = () => document.getElementById('comment-body');
@@ -18,4 +15,9 @@ const getComBody = () => document.getElementById('comment-body');
 const commentList = () => document.getElementById('comments');
 const commentFormSubmit = () => document.getElementById('comment-submit');
 const commentForm = () => document.getElementById('comment-form');
+
+window.formHeader = () => document.getElementById('form-header');
+window.scrollTop = () => document.documentElement.scrollTop = 0;
+window.baseUrl = 'http://localhost:3000';
+
 

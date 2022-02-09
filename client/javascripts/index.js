@@ -49,6 +49,8 @@ Comment.events();
 
 
 const commentModal = async (strategy) => {
+  // reset the show comments div
+  Comment.resetComments();  
 
   // trigger a modal and show a comment form and overlay from the modal.js file
   // if the user clicks the overlay, close the modal

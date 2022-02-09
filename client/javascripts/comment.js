@@ -24,6 +24,14 @@ class Comment  {
   static resetComments() {
     // erase comments from comments array
     Comment.comments = [];
+
+    // clear out the comment form 
+    getComTitle().innerHTML = '';
+    getComBody().innerHTML = '';
+
+    // to do clear out the div
+    const showComments = () => document.getElementById('show-comments');
+    showComments().innerHTML = '';
     
   }
 
@@ -60,6 +68,7 @@ class Comment  {
   }
 
   static renderAll(strategy, commentsAry) {
+    // to do clear out div that im calling reset comments on
     Comment.resetComments();
     commentsAry.forEach(
       c => {
@@ -150,14 +159,13 @@ class Comment  {
   async delete() {
 
 
-    const res = await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
+    await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
 
-    if (res.status >= 200 && res.status < 300) {
-      alert('Comment successfully deleted');
-      this.getComments();
-    }
+    Comment.comments = Comment.comments.filter(c => c._id !== this._id);
 
-    this.resetComments();
+    Comment.getComments();
+
+    alert('Comment successfully deleted');
 
   };
 

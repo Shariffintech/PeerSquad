@@ -1,14 +1,14 @@
-#MTSS Single Page Application
+# MTSS Single Page Application
 
 Peer to peer strategy review portal
 Welcome to the Student Strategies portal!
 
-#Usage
+# Usage
 This project was created under the principle of boosting collaboration and continuity among key stakeholders processes when capturing, organizing and synthesizing essential data used to promote the academic, behavioral, and social emotional competence of children and youth.
 
 These student strategies will be peer reviewed by teached to provide feedback on the most efficient strategies in aiding children in the classroom. The portal is designed to be used by teachers, parents, and administrators to review strategies and provide feedback on students’ strategies.
 
-#Notes:
+# Notes:
 
 
 • This app does not require any prior knowledge of the strategies being reviewed
@@ -16,7 +16,7 @@ These student strategies will be peer reviewed by teached to provide feedback on
 To do
 • Parent portal • Messaging • User Authentication • Multi-User role handling • Adding peer review checks on strategy form fields • Ability to check multiple categories and tiers for each strategy • Strategy search • Feed for most recently submitted strategies
 
-#README
+# README
 How to run the app
 cd into ed-tech-spa
 
@@ -30,7 +30,7 @@ open or drag index.html in your browser.
 
 
 
-#Installation
+# Installation
 
 In your gemfile, please add:
 ```

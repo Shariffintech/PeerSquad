@@ -7,3 +7,13 @@ development:
   password: p@55w0rd
   port: 5432
   host: localhost
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: railway
+  pool: 5
+  username: postgres
+  password: QnxPeOlxwyDlDYm6uTe8
+  port: 5583
+  host: containers-us-west-28.railway.app

@@ -137,35 +137,35 @@ const commentModal = async (strategy) => {
   openModal(el);
 };
 
-const deleteComment = async comment => {
+// const deleteComment = async comment => {
 
-  // fetching the strategy with the ID of the strategy we want to delete.
-  await fetch(Api.baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
-    method: 'DELETE'
-  }).catch(err => {
-    alert(err)
-  });
-  // filtering out the strategy from the strategies array.
-  Comment.all = Comment.all.filter(c => c.id !== comment.id);
+//   // fetching the strategy with the ID of the strategy we want to delete.
+//   await fetch(Api.baseUrl + `/strategies/${comment.strategy_id}/comments/${comment.id}`, {
+//     method: 'DELETE'
+//   }).catch(err => {
+//     alert(err)
+//   });
+//   // filtering out the strategy from the strategies array.
+//   Comment.all = Comment.all.filter(c => c.id !== comment.id);
 
-  alert('Comment successfully deleted');
+//   alert('Comment successfully deleted');
 
-  renderComments(comments);
+//   renderComments(comments);
 
 
-};
+// };
 
-const editComment = (comment) => {
-  commentForm().removeEventListener('submit', createComment);
-  getComTitle().value = comment.title;
-  getComBody().value = comment.body;
-  formHeader().innerText = "Edit Comment";
-  commentFormSubmit().value = "Edit Comment";
-  commentForm().addEventListener('submit', comment => {
-    updateComment(comment)
-  });
+// const editComment = (comment) => {
+//   commentForm().removeEventListener('submit', createComment);
+//   getComTitle().value = comment.title;
+//   getComBody().value = comment.body;
+//   formHeader().innerText = "Edit Comment";
+//   commentFormSubmit().value = "Edit Comment";
+//   commentForm().addEventListener('submit', comment => {
+//     updateComment(comment)
+//   });
 
-};
+// };
 
 async function updateComment(e) {
   e.preventDefault();
@@ -185,10 +185,8 @@ async function updateComment(e) {
     },
     body: JSON.stringify({
       strongParams
-    })
-  }).catch(err => {
-    alert(err)
-  });
+    })})
+    .catch(err => {alert(err)});
 
   const editedComment = await response.json();
 

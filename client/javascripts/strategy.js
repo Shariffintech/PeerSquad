@@ -3,7 +3,6 @@ class Strategy {
 
     // todo change static method to prototype method and set getters for read only 
     // properties and setters for writable properties 
-    // Strategy.prototype.all = [];
 
     static all = [];
     static currentStrategy = null;
@@ -20,11 +19,8 @@ class Strategy {
        
     } 
 
-
-
-
     static resetStrategies() {
-        strategyList().innerHTML = '';
+        strategyList().textContent = '';
     }
 
 
@@ -89,48 +85,58 @@ class Strategy {
 
     }
 
+        // edit a strategy
+        async edit() {
+            strategyForm().removeEventListener('submit', this.update );
+            getStrategyName().value = this._name;
+            getStrategyDescription().value = this._description;
+            getStrategyTier().value = this._tier;
+            getStrategyCategory().value = this._category;
+            getStrategyReference().value = this._reference;
+            Strategy.currentStrategy = this._id
+            formHeader().innerText = "Edit Strategy";
+            strategyFormSubmit().value = "Update Strategy";
+            scrollTop();
+    
+            
+        }
+    
+
     // update strategy
 
         static async update() {
          
+            // make a fetch request to update the strategy
     
-            const response = await Api.patch(`/strategies/` + Strategy.currentStrategy);
-            const currentStrategy = null;
-        
-            const updatedStrategy = await response.json();
+            await Api.patch(`/strategies/` + Strategy.currentStrategy);
 
-            const index = Strategy.all.indexOf(this);
-            Strategy.all[index] = new Strategy(updatedStrategy);
+            // const newStrategy = await response.json();
+            // const index = Strategy.all.indexOf(this);
+            // Strategy.all[index] = new Strategy(newStrategy);
+            // Strategy.getStrategies();
+            
+            // if the update is successful update the strategy list with the edited 
+            Strategy.getStrategies();
 
+            // alert the user that the strategy has been updated
+            alert('Strategy successfully updated');
+
+            // reset the form
+            Strategy.resetStrategies();
+
+
+            // remove the update button, change form back to accept new strategies
             strategyForm().removeEventListener('submit',this.update);
             formHeader().innerText = "Create Strategy";
             strategyFormSubmit().value = "Create Strategy";
             strategyForm().addEventListener('submit', this.create());
 
-            alert('Strategy successfully updated');
-            //render all the strategies
-            Strategy.getStrategies();
-
+            // change global current strategy variable back to null;
+            // Strategy.currentStrategy = null;
+        
 
         }
     
-
-    // edit a strategy
-    async edit() {
-        strategyForm().removeEventListener('submit', this.update );
-        getStrategyName().value = this._name;
-        getStrategyDescription().value = this._description;
-        getStrategyTier().value = this._tier;
-        getStrategyCategory().value = this._category;
-        getStrategyReference().value = this._reference;
-        Strategy.currentStrategy = this._id
-
-        formHeader().innerText = "Edit Strategy";
-        strategyFormSubmit().value = "Update Strategy";
-        scrollTop();
-
-        
-    }
 
 
     static events() {
@@ -139,15 +145,8 @@ class Strategy {
         document.querySelector('#strategy-form')
             .addEventListener('submit', event => {
                 event.preventDefault();
-                if (strategyFormSubmit().value = 'Update Strategy') {
-                    Strategy.update();
-                    
-                } else {
                     Strategy.create();
-                }
-                    
-            
-               
+        
             })
     }
 
@@ -173,7 +172,7 @@ class Strategy {
 
         h2.innerText = 'Strategy: ' + this._name;
         h4.innerText = 'Tier: ' + this._tier;
-        h3.textContent = 'Category: ' + this._category;
+        h3.innerText = 'Category: ' + this._category;
         p3.innerText = 'Description: ' + this._description;
         p.innerText = 'Reference: ' + this._reference;
         p4.innerText = 'id: ' + this._id;
@@ -194,8 +193,6 @@ class Strategy {
         deleteButton.id = 'Delete Strategy';
 
         commentButton.innerText = 'Comments';
-        // commentButton.addEventListener('click', () => comments.render()); 
-        // commentButton.addEventListener('click', comments.render.bind(comments));
         commentButton.addEventListener('click', () => commentModal(this));
         commentButton.className = 'js-modal-trigger button is-primary is-light m-1';
         commentButton.id = 'Comments';
@@ -205,7 +202,10 @@ class Strategy {
 
         p.style.color = 'blue';
         h3.style.color = 'green';
-        div.className = 'strategy-card m-3 p-3 has-background-warning-light';
+        // add strategy id to the div className
+        div.className = 'strategy-card m-3 p-3 has-background-warning-light ' + this._id;
+        div.id = this._id
+       
 
         // adding elements into the DOM
         div.appendChild(h2);
@@ -223,17 +223,15 @@ class Strategy {
 
         return strategyList();
     }
-
+    
 
      // delete a strategy
      async delete() {
         await Api.delete(`/strategies/${this._id}`);
+        
+        // remove the strategy from the DOM
+        document.getElementById(`${this._id}`).remove();
 
-       // filter out the deleted strategy from the array
-
-       Strategy.all = Strategy.all.filter(strategy => strategy._id !== this._id);
-
-       Strategy.getStrategies()
 
        alert('Strategy successfully deleted');
 

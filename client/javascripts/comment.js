@@ -25,13 +25,12 @@ class Comment  {
     // erase comments from comments array
     Comment.comments = [];
 
-    // clear out the comment form 
-    getComTitle().innerHTML = '';
-    getComBody().innerHTML = '';
+    // // clear out the comment form 
+    getComTitle().textContent = '';
+    getComBody().textContent = '';
 
-    // to do clear out the div
-    const showComments = () => document.getElementById('show-comments');
-    showComments().innerHTML = '';
+    // const showComments = () => document.getElementById('show-comments');
+    // showComments().innerHTML = '';
     
   }
 
@@ -68,7 +67,7 @@ class Comment  {
   }
 
   static renderAll(strategy, commentsAry) {
-    // to do clear out div that im calling reset comments on
+ 
     Comment.resetComments();
     commentsAry.forEach(
       c => {
@@ -108,6 +107,8 @@ class Comment  {
     editButton.addEventListener('click', () => this.edit(this.comment));
     editButton.className = 'button is-warning';
 
+    div.id = this._id;
+
 
     // appends the new div to the commentsList() element, apply class name comment card
 
@@ -117,7 +118,6 @@ class Comment  {
     div.appendChild(editButton);
     // append div to the show-comments element
     const showComments = () => document.getElementById('show-comments')
-
 
 
     showComments().appendChild(div);
@@ -145,27 +145,30 @@ class Comment  {
 
     commentObj.render();
 
+    alert('Comment successfully created');
+
+    //removed the render method to render all comments :( bad practice
     
-
-    if (data.status >= 200 && data.status < 300) {
-      alert('Comment successfully created');
-      this.getComments();
-    }
-
-    this.resetComments();
+    this.resetComments(); 
+    
   }
-
 
   async delete() {
 
 
-    await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
-
-    Comment.comments = Comment.comments.filter(c => c._id !== this._id);
-
-    Comment.getComments();
+   await Api.delete(`/strategies/${this.strategy_id}/comments/${this._id}`);
+    // console.log(this._id)
+    // target the comment card that was clicked on
+   document.getElementById(`${this._id}`).remove();
+    
 
     alert('Comment successfully deleted');
+
+  // remove comment from dom
+    // get an element by the id
+    // remove it
+
+
 
   };
 

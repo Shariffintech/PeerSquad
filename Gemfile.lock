@@ -96,6 +96,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.12.5-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.12.5-x86_64-linux)
+      racc (~> 1.4)
     pg (1.2.3)
     puma (5.5.2)
       nio4r (~> 2.0)
@@ -160,6 +162,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.4)
   byebug
   listen (~> 3.3)
+  nokogiri (~> 1.8, >= 1.8.5)
   pg
   puma (~> 5.0)
   rack-cors

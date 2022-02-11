@@ -30,7 +30,7 @@ You're server will have then started under http://localhost:3000
 
 Please open or drag index.html in your browser.
 
-<img src="/gifs/rails-server.gif">
+<img src="/gifs/drag.gif">
 
 
 # Installation

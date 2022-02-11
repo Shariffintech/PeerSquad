@@ -18,16 +18,19 @@ To do
 
 # README
 How to run the app
-cd into ed-tech-spa
+```cd``` into ```ed-tech-spa```
 
 Run the app with the following command in the terminal: rail s
+
+<img src="/gifs/rails-server.gif">
 
 
 
 You're server will have then started under http://localhost:3000
 
-open or drag index.html in your browser.
+Please open or drag index.html in your browser.
 
+<img src="/gifs/rails-server.gif">
 
 
 # Installation

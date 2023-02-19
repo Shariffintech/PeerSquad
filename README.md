@@ -1,4 +1,4 @@
-# MTSS Single Page Application
+# PeerSquad
 
 Peer to peer strategy review portal
 Welcome to the Student Strategies portal!
